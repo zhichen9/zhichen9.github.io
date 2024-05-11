@@ -21,7 +21,7 @@ repository               : "zhichen9/zhichen9.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "test.jpg"
+  avatar           : "profile.png"
   name             : "Zhi(Colin)Chen"
   pronouns         : # example: "she/her"  
   bio              : "M.S. student in Management Science and Engineering"
@@ -56,7 +56,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "https://www.linkedin.com/"
+  linkedin         : # Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -226,23 +226,23 @@ defaults:
       comments: true
       share: true
       related: true
-  # # _pages
-  # - scope:
-  #     path: ""
-  #     type: pages
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  # # _teaching
-  # - scope:
-  #     path: ""
-  #     type: teaching
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     share: true
-  #     comments: true
-  # _publications
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  _publications
   - scope:
       path: ""
       type: publications
@@ -251,23 +251,23 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _Miscellaneous
+  # _portfolio
   - scope:
       path: ""
-      type: Miscellaneous
+      type: portfolio
     values:
       layout: single
       author_profile: true
       share: true
       comment: true
-  # # _talks
-  # - scope:
-  #     path: ""
-  #     type: talks
-  #   values:
-  #     layout: talk
-  #     author_profile: true
-  #     share: true
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+      author_profile: true
+      share: true
 
 
 # Sass/SCSS
