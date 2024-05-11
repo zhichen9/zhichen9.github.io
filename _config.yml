@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Zhi(Colin)Chen/陈智"
+title                    : "Zhi(Colin)Chen"
 title_separator          : "-"
 name                     : &name "Zhi(Colin)Chen"
 description              : &description "M.S. student in Management Science and Engineering"
