@@ -7,10 +7,10 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "AAAA"
-title                    : "AA"
+locale                   : "en-US"
+title                    : "Zhi(Colin)Chen/陈智"
 title_separator          : "-"
-name                     : &name "AAAA"
+name                     : &name "Your Name"
 description              : &description "personal description"
 url                      : https://zhichen9.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -21,14 +21,14 @@ repository               : "zhichen9/zhichen9.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "AAAAA"
-  name             : "AAAAA"
+  avatar           : "profile.png"
+  name             : "Zhi(Colin)Chen"
   pronouns         : # example: "she/her"  
-  bio              : "AAAAA"
-  location         : "AAAAA"
-  employer         : "AAAAA"
+  bio              : "M.S. student in Management Science and Engineering"
+  location         : "Shanghai,China"
+  employer         : "Tongji University"
   uri              : # URL
-  email            : "AAAAA@example.org" 
+  email            : "2230416@tongji.edu.cn" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
