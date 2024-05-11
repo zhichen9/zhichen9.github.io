@@ -10,7 +10,7 @@
 locale                   : "en-US"
 title                    : "Zhi(Colin)Chen"
 title_separator          : "-"
-name                     : &name "Zhi(Colin)Chen"
+name                     : &name "Zhi Chen"
 description              : &description "M.S. student in Management Science and Engineering"
 url                      : https://zhichen9.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -21,14 +21,14 @@ repository               : "zhichen9/zhichen9.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "test.jpg"
   name             : "Zhi(Colin)Chen"
   pronouns         : # example: "she/her"  
   bio              : "M.S. student in Management Science and Engineering"
   location         : "Shanghai,China"
   employer         : "Tongji University"
   uri              : # URL
-  email            : "AAAAA@example.org" 
+  email            : "2230416@tongji.edu.cn" 
 
   # # Academic websites
   # arxiv            : # URL - Update with the correct link to your profile
