@@ -21,7 +21,7 @@ repository               : "zhichen9/zhichen9.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "test1.jpg"
+  avatar           : "test.jpg"
   name             : "Zhi(Colin)Chen"
   pronouns         : # example: "she/her"  
   bio              : "M.S. student in Management Science and Engineering"
