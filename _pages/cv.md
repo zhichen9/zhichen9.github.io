@@ -13,11 +13,11 @@ Education
 ======
 * M.S. Management Science and Engineering, Tongji University, 09.2022-03.2025(Expected)
 * B.S.  Information Management and Information Systems, Hohai University, 09.2016-06.2020
-* Exchange Student. Global Supply Chain Management, Kuhne Logistics University, 09.2022-01.2023
+* Exchange Student, Kuhne Logistics University, 09.2022-01.2023
 
 Research Experience
 ======
-* Research Assistant                    Shanghai, China
+* Research Assistant: Shanghai, China
                                      Nov 2023– Apr 2023
   * Searching and reading of related literature, better understanding of the research, and what methodology will be used in the research. Reproduction based on relevant literature
   * Provide some opinions on the research and refine the hypothesis
