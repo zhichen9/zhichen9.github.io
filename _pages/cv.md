@@ -17,7 +17,7 @@ Education
 
 Research Experience
 ======
-* Nov 2023– Apr 2023: Research Assistant
+* Nov 2023– Apr 2024: Research Assistant
   * Searching and reading of related literature, better understanding of the research, and what methodology will be used in the research. Reproduction based on relevant literature
   * Provide some opinions on the research and refine the hypothesis
   * Solve and analyze the given model
