@@ -16,7 +16,7 @@ Education
 * Hohai University
   * B.S. Information Management and Information Systems &nbsp;&nbsp;&nbsp;&nbsp; Sep.2016-Jun.2020
 * Kuhne Logistics University
-  * Exchange Student &nbsp;&nbsp;&nbsp;&nbsp; Sep.2022-01.2023
+  * Exchange Student &nbsp;&nbsp;&nbsp;&nbsp; Sep.2022-Jan.2023
 
 Research Experience
 ======
