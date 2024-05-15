@@ -12,11 +12,11 @@ redirect_from:
 Education
 ======
 * Tongji University 
-  * M.S. Management Science and Engineering &nbsp;&nbsp;&nbsp;&nbsp; 09.2022-03.2025(Expected)
+  * M.S. Management Science and Engineering &nbsp;&nbsp;&nbsp;&nbsp; Sep.2022-Mar.2025(Expected)
 * Hohai University
-  * B.S. Information Management and Information Systems &nbsp;&nbsp;&nbsp;&nbsp; 09.2016-06.2020
+  * B.S. Information Management and Information Systems &nbsp;&nbsp;&nbsp;&nbsp; Sep.2016-Jun.2020
 * Kuhne Logistics University
-  * Exchange Student &nbsp;&nbsp;&nbsp;&nbsp; 09.2022-01.2023
+  * Exchange Student &nbsp;&nbsp;&nbsp;&nbsp; Sep.2022-01.2023
 
 Research Experience
 ======
