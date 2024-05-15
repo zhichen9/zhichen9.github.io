@@ -27,7 +27,7 @@ Research Experience
   * According to the requirements, search relevant materials and literature to obtain feasible carbon emission calculation formulas
   * According to the obtained carbon emission formula, use python and existing data to solve and analyze
 
-*  Jan 2019– April 2019: Research Assistant
+* Jan 2019– April 2019: Research Assistant
   * Mainly improve the function of the existing river chief management information system, including marking the location of each camera in the google map and labeling it
   * Make some functional changes to the existing system to bid for new projects
   
