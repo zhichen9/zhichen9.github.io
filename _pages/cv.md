@@ -11,9 +11,12 @@ redirect_from:
 
 Education
 ======
-* M.S. Management Science and Engineering, Tongji University, 09.2022-03.2025(Expected)
-* B.S. Information Management and Information Systems, Hohai University, 09.2016-06.2020
-* Exchange Student, Kuhne Logistics University, 09.2022-01.2023
+* Tongji University 
+  * M.S. Management Science and Engineering &nbsp;&nbsp;&nbsp;&nbsp; 09.2022-03.2025(Expected)
+* Hohai University
+  * B.S. Information Management and Information Systems &nbsp;&nbsp;&nbsp;&nbsp; 09.2016-06.2020
+* Kuhne Logistics University
+  * Exchange Student &nbsp;&nbsp;&nbsp;&nbsp; 09.2022-01.2023
 
 Research Experience
 ======
