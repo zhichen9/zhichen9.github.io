@@ -7,6 +7,10 @@
 # server process.
 
 # Basic Site Settings
+
+theme                    : jekyll-theme-minimal
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 locale                   : "en-US"
 title                    : "Zhi(Colin)Chen/陈智"
 title_separator          : "-"
