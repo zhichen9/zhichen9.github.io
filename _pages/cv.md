@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+#title: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -15,12 +15,13 @@ Education
 * B.S. Information Management and Information Systems, Hohai University, 09.2016-06.2022
 * Exchange Student. Global Supply Chain Management, Kuhne Logistics University, 09.2022-01.2023
 
-Work experience
+Research Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Research Assistant                    Shanghai, China
+                                     Nov 2023– Apr 2023
+  * Searching and reading of related literature, better understanding of the research, and what methodology will be used in the research. Reproduction based on relevant literature
+  * Provide some opinions on the research and refine the hypothesis
+  * Solve and analyze the given model
 
 * Fall 2015: Research Assistant
   * Github University
