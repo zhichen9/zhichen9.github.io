@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S. Management Science and Engineering, Tongji University, 09.2022-03.2025(Expected)
+* B.S. Information Management and Information Systems, Hohai University, 09.2016-06.2022
+* Exchange Student. Global Supply Chain Management, Kuhne Logistics University, 09.2022-01.2023
 
 Work experience
 ======
