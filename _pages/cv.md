@@ -10,6 +10,8 @@ redirect_from:
 {% include base_path %}
 
 [Curriculum Vitae](https://www.dropbox.com/scl/fi/lg5vs8n82mcinu0eojtc6/ZHI-CHEN_CV-2024.pdf?rlkey=0tkfqp7p9yv3g8u4a79jowjq8&st=06hj24rx&dl=0)
+<a href="[link](https://www.dropbox.com/scl/fi/lg5vs8n82mcinu0eojtc6/ZHI-CHEN_CV-2024.pdf?rlkey=0tkfqp7p9yv3g8u4a79jowjq8&st=06hj24rx&dl=0)"> <h1>Curriculum Vitae</h1> </a>
+
 
 Education
 ======
