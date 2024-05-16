@@ -7,7 +7,7 @@ redirect_from:
   - /markdown.html
 ---
 
-## Introduction
+# Introduction
 
 I am going to upload my daily life, including: study materials, travel, and social networking. The most important thing is to upload my photography. Stay tuned...
 
