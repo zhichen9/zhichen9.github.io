@@ -18,10 +18,10 @@ I like traveling, walking around the city, seeing different scenery and apprecia
 <style>
     .visitor-map img {
         width: 100%;
-        max-width: 800px; /* 设置最大宽度 */
+        max-width: 1600px; 
         height: auto;
         display: block;
-        margin: 0 auto; /* 图像水平居中 */
+        margin: 0 auto; 
     }
 </style>
 
