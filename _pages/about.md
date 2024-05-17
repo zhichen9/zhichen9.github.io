@@ -16,10 +16,8 @@ I like traveling, walking around the city, seeing different scenery and apprecia
 
 
 
-
-<a href="https://clustrmaps.com/site/1bzq1" title="Visit tracker" class="visitor-map">
-    <img src="https://www.clustrmaps.com/map_v2.png?d=D113BIqKDfM8pZP5GPJmEkbAESO1s1Hos1o90IE087E&cl=ffffff" alt="Visitor map">
+<a href="https://clustrmaps.com/site/1bzq1" title="Visit tracker">
+    <img src="https://www.clustrmaps.com/map_v2.png?d=D113BIqKDfM8pZP5GPJmEkbAESO1s1Hos1o90IE087E&cl=ffffff" width="800" />
 </a>
-
 
 
