@@ -16,6 +16,18 @@ I like traveling, walking around the city, seeing different scenery and apprecia
 
 
 
-<a href="https://info.flagcounter.com/W633"><img src="https://s11.flagcounter.com/map/W633/size_m/txt_050505/border_87CEEB/pageviews_1/viewers_0/flags_0/" alt="Flag Counter" border="0"></a>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+</head>
+<body>
+    <!-- 其他内容 -->
+    
+    <!-- ClustrMaps 代码 -->
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=D113BIqKDfM8pZP5GPJmEkbAESO1s1Hos1o90IE087E&cl=ffffff&w=a"></script>
+</body>
+</html>
 
