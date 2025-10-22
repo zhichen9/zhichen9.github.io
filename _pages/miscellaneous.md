@@ -50,8 +50,16 @@ This page collects some of my travel memories over the years, capturing moments 
 
 
 <!-- ===================
-   ✅ 只显示德国部分
+   ✅ 只显示德国和法国部分
 =================== -->
+
+<h3>Sep. 2022 – France Memories</h3>
+<div class="gallery">
+  {% for i in (1..28) %}
+    <img src="{{ site.baseurl }}/images/travel/2022/sep_france/2022_france_{{ i }}.jpg" width="250" style="margin:5px; border-radius:8px;">
+  {% endfor %}
+</div>
+
 
 <h3>Aug. 2022 – Germany Memories</h3>
 <div class="gallery">
