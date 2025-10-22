@@ -38,7 +38,7 @@ author_profile: true
 
 <h2>Contact</h2>
 <p>
-If you are interested in my research or would like to discuss potential collaborations, please do not hesitate to contact me.  
+If you are interested in exchanging ideas or discussing potential collaborations, please feel free to contact me. 
 I am always happy to connect with researchers, students, and professionals who share similar interests.
 </p>
 
