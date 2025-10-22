@@ -16,7 +16,7 @@ A collection of my travel memories over the years — capturing moments from dif
 =================== -->
 <section style="margin-bottom:60px;">
   <div class="travel-header" style="--accent-color:#c0392b;">
-    <h2>🇮🇹 October 2022 – Italy Memories</h2>
+    <h2>🇮🇹 Oct 2022 – Italy Memories</h2>
     <p>Walking through Rome’s ancient ruins and Venice’s quiet canals — a timeless journey of history and beauty.</p>
   </div>
 
@@ -33,7 +33,7 @@ A collection of my travel memories over the years — capturing moments from dif
 =================== -->
 <section style="margin-bottom:60px;">
   <div class="travel-header" style="--accent-color:#e67e22;">
-    <h2>🇫🇷 September 2022 – France Memories</h2>
+    <h2>🇫🇷 Sep 2022 – France Memories</h2>
     <p>From the Louvre to the Eiffel Tower — exploring art, architecture, and romance under the Parisian lights.</p>
   </div>
 
@@ -50,7 +50,7 @@ A collection of my travel memories over the years — capturing moments from dif
 =================== -->
 <section style="margin-bottom:60px;">
   <div class="travel-header" style="--accent-color:#007acc;">
-    <h2>🇩🇪 August 2022 – Germany Memories</h2>
+    <h2>🇩🇪 Aug 2022 – Germany Memories</h2>
     <p>Exploring the historic streets of Berlin and the waterways of Hamburg — culture, history, and color combined.</p>
   </div>
 
