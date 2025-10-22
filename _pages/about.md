@@ -18,17 +18,8 @@ In my leisure time, I enjoy traveling, exploring cities, experiencing diverse cu
 </p>
 
 
+<hr style="margin-top:15px; margin-bottom:10px;">
 
-<p style="text-align: justify;">
-I am a Ph.D. student in Supply Chain Management at the C. T. Bauer College of Business, University of Houston.
+<p>
+<b>Email:</b> <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a>
 </p>
-
-<p style="text-align: justify;">
-My research interests focus on Healthcare Operations, Digital Platforms, Retail Operations, Online Reviews, and Information Technology.
-</p>
-
-
-<p style="text-align: justify;">
-In my leisure time, I enjoy traveling, exploring cities, experiencing diverse cultures, and playing sports such as basketball, badminton, and cycling.
-</p>
-
