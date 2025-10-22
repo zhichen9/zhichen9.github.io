@@ -11,6 +11,11 @@ author_profile: true
 This page collects some of my travel memories over the years, capturing moments from different cities and countries I have visited.
 </p>
 
+
+<!-- ===================
+   🚫 以下部分暂时隐藏，保留以后用
+===================
+
 <!-- Sweden -->
 <h3>Jan. 2023 – Sweden Memories</h3>
 <div class="gallery">
@@ -46,6 +51,15 @@ This page collects some of my travel memories over the years, capturing moments 
   <img src="{{ site.baseurl }}/images/travel/2022_sweden2.jpg">
 </div>
 
+
+-->
+
+
+<!-- ===================
+   ✅ 只显示德国部分
+=================== -->
+
+
 <!-- Germany -->
 <h3>Aug. 2022 – Germany Memories</h3>
 <div class="gallery">
@@ -78,3 +92,5 @@ This page collects some of my travel memories over the years, capturing moments 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 </style>
+
+
