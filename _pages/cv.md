@@ -26,8 +26,8 @@ author_profile: true
 
 <h2>Research Skills</h2>
 <ul>
-  <li><b>Research Methods:</b> Empirical Analysis, Game Theory, Optimization.</li>
-  <li><b>Technical Proficiencies:</b> C, Java, SPSS, MATLAB, Mathematica.</li>
+  <li><b>Research Methods:</b> Empirical, Game Theory, Optimization.</li>
+  <li><b>Technical Proficiencies:</b> C, Java, SPSS, Stata, MATLAB, Mathematica.</li>
 </ul>
 
 <h2>Awards and Honors</h2>
