@@ -41,3 +41,10 @@ author_profile: true
 If you are interested in my research or would like to discuss potential collaborations, please do not hesitate to contact me.  
 I am always happy to connect with researchers, students, and professionals who share similar interests.
 </p>
+
+
+<hr style="margin-top:15px; margin-bottom:10px;">
+
+<p>
+<b>Email:</b> <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a>
+</p>
