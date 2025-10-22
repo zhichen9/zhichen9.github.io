@@ -59,12 +59,10 @@ This page collects some of my travel memories over the years, capturing moments 
    ✅ 只显示德国部分
 =================== -->
 
-
-<!-- Germany -->
 <h3>Aug. 2022 – Germany Memories</h3>
 <div class="gallery">
   {% for i in (1..36) %}
-    <img src="{{ site.baseurl }}/images/travel/2022_germany{{ i }}.jpg" width="250" style="margin:5px; border-radius:8px;">
+    <img src="{{ site.baseurl }}/images/travel/2022/aug_germany/2022_germany_{{ i }}.jpg" width="250" style="margin:5px; border-radius:8px;">
   {% endfor %}
 </div>
 
@@ -93,5 +91,3 @@ This page collects some of my travel memories over the years, capturing moments 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 </style>
-
-
