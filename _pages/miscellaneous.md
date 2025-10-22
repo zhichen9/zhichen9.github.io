@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Miscellaneous"
+title: ""
 permalink: /miscellaneous/
 author_profile: true
 ---
@@ -11,48 +11,42 @@ author_profile: true
 This page collects some of my travel memories over the years, capturing moments from different cities and countries I have visited.
 </p>
 
-
 <!-- ===================
    🚫 以下部分暂时隐藏，保留以后用
-===================
+=================== -->
 
-<!-- Sweden -->
+<!--
 <h3>Jan. 2023 – Sweden Memories</h3>
 <div class="gallery">
   <img src="{{ site.baseurl }}/images/travel/2023_sweden1.jpg">
   <img src="{{ site.baseurl }}/images/travel/2023_sweden2.jpg">
 </div>
 
-<!-- Denmark -->
 <h3>Dec. 2022 – Denmark Memories</h3>
 <div class="gallery">
   <img src="{{ site.baseurl }}/images/travel/2022_denmark1.jpg">
   <img src="{{ site.baseurl }}/images/travel/2022_denmark2.jpg">
 </div>
 
-<!-- Italy -->
 <h3>Nov. 2022 – Italy Memories</h3>
 <div class="gallery">
   <img src="{{ site.baseurl }}/images/travel/2022_italy1.jpg">
   <img src="{{ site.baseurl }}/images/travel/2022_italy2.jpg">
 </div>
 
-<!-- France -->
 <h3>Oct. 2022 – France Memories</h3>
 <div class="gallery">
   <img src="{{ site.baseurl }}/images/travel/2022_france1.jpg">
   <img src="{{ site.baseurl }}/images/travel/2022_france2.jpg">
 </div>
 
-<!-- Sweden -->
 <h3>Sep. 2022 – Sweden Memories</h3>
 <div class="gallery">
   <img src="{{ site.baseurl }}/images/travel/2022_sweden1.jpg">
   <img src="{{ site.baseurl }}/images/travel/2022_sweden2.jpg">
 </div>
-
-
 -->
+
 
 
 <!-- ===================
