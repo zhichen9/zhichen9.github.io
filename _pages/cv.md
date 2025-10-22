@@ -32,13 +32,7 @@ author_profile: true
 
 <h2>Awards and Honors</h2>
 <ul>
-  <li>National Scholarship, Ministry of Education of China, 2023.</li>
-  <li>Excellent Graduate Student, Tongji University, 2024.</li>
-  <li>Merit Student Award, Hohai University, 2019.</li>
+  <li>Academic Progress Scholarship, Hohai University, 2017.</li>
+  <li>Jiangsu Province College Students’ Innovative Training Plan Program, 2017.</li>
 </ul>
 
-<h2>Editorial and Reviewing Activities</h2>
-<ul>
-  <li>Reviewer, <i>International Journal of Production Economics</i>.</li>
-  <li>Reviewer, <i>European Journal of Operational Research</i>.</li>
-</ul>
