@@ -65,23 +65,29 @@ This page collects some of my travel memories over the years, capturing moments 
 <b>Email:</b> <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a>
 </p>
 
+
+
+
 <style>
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 10px;
+  column-count: 3;
+  column-gap: 12px;
   margin-bottom: 30px;
 }
+
 .gallery img {
-  width: 30%;
-  max-width: 250px;
+  width: 100%;
   height: auto;
   border-radius: 8px;
+  margin-bottom: 12px;
+  break-inside: avoid;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 </style>
+
+
