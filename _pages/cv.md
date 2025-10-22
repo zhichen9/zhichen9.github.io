@@ -5,23 +5,40 @@ permalink: /cv/
 author_profile: true
 ---
 
-## 🏫 Education
-- **Tongji University**, M.S. in Management Science and Engineering  
-  *Sep. 2022 – Jun. 2025*  
-- **Hohai University**, B.S. in Information Management and Information Systems  
-  *Sep. 2016 – Jun. 2020*  
-- **Kühne Logistics University**, Exchange Student  
-  *Sep. 2022 – Jan. 2023*  
+<h2>Education</h2>
+<ul>
+  <li>Ph.D. in Supply Chain Management (2025 - Now), <b>C. T. Bauer College of Business</b>, <a href="https://www.uh.edu/">University of Houston</a>, USA.</li>
+  <li>M.S. in Management Science and Engineering, <a href="https://en.tongji.edu.cn/">Tongji University</a>, Sep. 2022 – Jun. 2025.</li>
+  <li>B.S. in Information Management and Information Systems, <a href="https://en.hhu.edu.cn/">Hohai University</a>, Sep. 2016 – Jun. 2020.</li>
+  <li>Exchange Student, <a href="https://www.the-klu.org/">Kühne Logistics University</a>, Sep. 2022 – Jan. 2023.</li>
+</ul>
 
----
+<h2>Academic Employment</h2>
+<ul>
+  <li>Ph.D. Student, C. T. Bauer College of Business, University of Houston, 2025 – Present.</li>
+  <li>Graduate Research Assistant, Tongji University, 2022 – 2025.</li>
+</ul>
 
-## 🔬 Research Interests
-Healthcare Operations • Digital Platforms • Retail Operations • Online Reviews • Information Technology
+<h2>Research Interests</h2>
+<ul>
+  <li>Healthcare Operations, Digital Platforms, Retail Operations, Online Reviews, Information Technology.</li>
+</ul>
 
----
+<h2>Research Skills</h2>
+<ul>
+  <li><b>Research Methods:</b> Empirical Analysis, Game Theory, Optimization.</li>
+  <li><b>Technical Proficiencies:</b> C, Java, SPSS, MATLAB, Mathematica.</li>
+</ul>
 
-## 🧠 Research Skills
-- **Research Methods:** Empirical Analysis, Game Theory, Optimization  
-- **Technical Proficiencies:** C, Java, SPSS, MATLAB, Mathematica
+<h2>Awards and Honors</h2>
+<ul>
+  <li>National Scholarship, Ministry of Education of China, 2023.</li>
+  <li>Excellent Graduate Student, Tongji University, 2024.</li>
+  <li>Merit Student Award, Hohai University, 2019.</li>
+</ul>
 
-
+<h2>Editorial and Reviewing Activities</h2>
+<ul>
+  <li>Reviewer, <i>International Journal of Production Economics</i>.</li>
+  <li>Reviewer, <i>European Journal of Operational Research</i>.</li>
+</ul>
