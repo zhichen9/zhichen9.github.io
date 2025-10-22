@@ -36,3 +36,8 @@ author_profile: true
   <li>Jiangsu Province College Students’ Innovative Training Plan Program, 2017.</li>
 </ul>
 
+<h2>Contact</h2>
+<p>
+If you are interested in my research or would like to discuss potential collaborations, please do not hesitate to contact me.  
+I am always happy to connect with researchers, students, and professionals who share similar interests.
+</p>
