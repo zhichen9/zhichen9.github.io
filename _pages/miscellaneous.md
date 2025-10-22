@@ -63,7 +63,7 @@ This page collects some of my travel memories over the years, capturing moments 
 <!-- Germany -->
 <h3>Aug. 2022 – Germany Memories</h3>
 <div class="gallery">
-  {% for i in (1..37) %}
+  {% for i in (1..36) %}
     <img src="{{ site.baseurl }}/images/travel/2022_germany{{ i }}.jpg" width="250" style="margin:5px; border-radius:8px;">
   {% endfor %}
 </div>
