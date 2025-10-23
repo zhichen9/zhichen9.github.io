@@ -6,7 +6,6 @@ author_profile: true
 use_javascript: true
 ---
 
-
 <h1 id="top" class="tg-page-title">🌍 Travel Gallery</h1>
 <p class="tg-page-subtitle">Every journey tells a story — automatically organized by year, country, and light.</p>
 
@@ -63,17 +62,18 @@ use_javascript: true
 document.addEventListener("DOMContentLoaded",()=>{
   const galleryContainer=document.getElementById("gallery-container");
 
-  // 自动扫描年份、月份、国家（伪扫描逻辑，可手动扩展后台索引）
+  // 手动配置：年份与国家（目录结构）
   const years=["2023","2022"];
   const countriesPerYear={
     "2023":["jan_sweden"],
     "2022":["nov_denmark","oct_italy","sep_france","aug_germany"]
   };
 
-  // 自动生成年份分区
+  // 自动生成年份区块
   years.forEach(year=>{
     const yearBlock=document.createElement("div");
     yearBlock.className="year-block";
+    yearBlock.id=year;
     const header=document.createElement("div");
     header.className="year-header";
     header.textContent=year+" ✦";
@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     yearBlock.append(header,content);
     galleryContainer.appendChild(yearBlock);
 
-    // 每个国家生成区块
     countriesPerYear[year].forEach(folder=>{
       const [mon,countryRaw]=folder.split("_");
       const country=countryRaw.charAt(0).toUpperCase()+countryRaw.slice(1);
@@ -100,28 +99,40 @@ document.addEventListener("DOMContentLoaded",()=>{
           <p>${country} travel memories — light, rhythm, and calm.</p>
         </div>
         <div class="gallery" id="gallery-${country.toLowerCase()}"></div>
-        <div class="back-top-inline"><a href="#top">↑ Back to Top</a></div>`;
+        <div style="text-align:right;margin-top:10px;"><a href="#top">↑ Back to Top</a></div>`;
       content.appendChild(section);
 
-      // 自动加载图片 (最多40张)
+      // 自动加载图片（无限数量，直到加载失败为止）
       const g=document.getElementById(`gallery-${country.toLowerCase()}`);
-      for(let i=1;i<=40;i++){
-        const path=`{{ site.baseurl }}/images/travel/${year}/${folder}/${year}_${country.toLowerCase()}_${i}.jpg`;
-        const a=document.createElement("a");
-        a.href=path;
-        a.className="glightbox";
-        a.dataset.gallery=country.toLowerCase();
-        a.dataset.title=formatTitle(path);
-        const img=document.createElement("img");
+      let index=1;
+      const basePath="{{ site.baseurl }}" + `/images/travel/${year}/${folder}/`;
+
+      function tryLoad(){
+        const path=basePath+`${year}_${country.toLowerCase()}_${index}.jpg`;
+        const img=new Image();
+        img.onload=()=>{
+          const a=document.createElement("a");
+          a.href=path;
+          a.className="glightbox";
+          a.dataset.gallery=country.toLowerCase();
+          a.dataset.title=formatTitle(path);
+          const im=document.createElement("img");
+          im.src=path;
+          im.alt=country+" photo "+index;
+          a.appendChild(im);
+          g.appendChild(a);
+          fadeIn.observe(im);
+          index++;
+          tryLoad(); // 递归继续加载下一张
+        };
+        img.onerror=()=>{}; // 遇到不存在的文件时停止
         img.src=path;
-        img.alt=country+" photo "+i;
-        a.appendChild(img);
-        g.appendChild(a);
       }
+      tryLoad();
     });
   });
 
-  // 自动导航栏 + 时间轴
+  // 自动导航栏与时间轴
   const nav=document.getElementById("gallery-nav");
   const timeline=document.querySelector(".timeline");
   years.forEach(y=>{
@@ -134,12 +145,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     timeline.appendChild(t);
   });
 
-  // 动画
-  const imgs=document.querySelectorAll(".gallery img");
+  // 图片渐入动画
   const fadeIn=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");fadeIn.unobserve(e.target);}});
   });
-  imgs.forEach(img=>fadeIn.observe(img));
 
   // 返回顶部按钮
   const back=document.createElement("div");
@@ -173,4 +182,3 @@ document.addEventListener("DOMContentLoaded",()=>{
   }
 });
 </script>
-
