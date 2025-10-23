@@ -25,7 +25,7 @@ A collection of travel memories — each place tells a story of moments, light, 
       <a href="{{ site.baseurl }}/images/travel/2022/nov_denmark/2022_denmark_{{ i }}.jpg"
          class="glightbox"
          data-gallery="denmark"
-         data-title="Denmark – Scene {{ i }}">
+         data-title="Denmark — Scene {{ i }}">
          <img src="{{ site.baseurl }}/images/travel/2022/nov_denmark/2022_denmark_{{ i }}.jpg" alt="Denmark photo {{ i }}">
       </a>
     {% endfor %}
@@ -45,7 +45,7 @@ A collection of travel memories — each place tells a story of moments, light, 
       <a href="{{ site.baseurl }}/images/travel/2022/oct_italy/2022_italy_{{ i }}.jpg"
          class="glightbox"
          data-gallery="italy"
-         data-title="Italy – Moment {{ i }}">
+         data-title="Italy — Moment {{ i }}">
          <img src="{{ site.baseurl }}/images/travel/2022/oct_italy/2022_italy_{{ i }}.jpg" alt="Italy photo {{ i }}">
       </a>
     {% endfor %}
@@ -65,7 +65,7 @@ A collection of travel memories — each place tells a story of moments, light, 
       <a href="{{ site.baseurl }}/images/travel/2022/sep_france/2022_france_{{ i }}.jpg"
          class="glightbox"
          data-gallery="france"
-         data-title="France – Moment {{ i }}">
+         data-title="France — Moment {{ i }}">
          <img src="{{ site.baseurl }}/images/travel/2022/sep_france/2022_france_{{ i }}.jpg" alt="France photo {{ i }}">
       </a>
     {% endfor %}
@@ -85,7 +85,7 @@ A collection of travel memories — each place tells a story of moments, light, 
       <a href="{{ site.baseurl }}/images/travel/2022/aug_germany/2022_germany_{{ i }}.jpg"
          class="glightbox"
          data-gallery="germany"
-         data-title="Germany – Memory {{ i }}">
+         data-title="Germany — Memory {{ i }}">
          <img src="{{ site.baseurl }}/images/travel/2022/aug_germany/2022_germany_{{ i }}.jpg" alt="Germany photo {{ i }}">
       </a>
     {% endfor %}
@@ -94,46 +94,69 @@ A collection of travel memories — each place tells a story of moments, light, 
 </div>
 
 <hr style="margin-top:60px; margin-bottom:10px;">
-<p style="text-align:center;">
-<b>Email:</b> <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a>
+<p style="text-align:center; margin-top:40px; color:#555; font-size:15px;">
+  📧 Contact: <a href="mailto:zhichen.colin@gmail.com" style="color:#2980b9; text-decoration:none;">zhichen.colin@gmail.com</a>
 </p>
 
-<!-- 样式 -->
+<!-- CSS -->
 <link rel="stylesheet" href="{{ '/assets/css/glightbox.min.css' | relative_url }}">
 <style>
-#gallery-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(6px);text-align:center;padding:10px;border-bottom:1px solid #ddd;margin-bottom:15px;}
-#gallery-nav a{display:inline-block;margin:0 8px;padding:8px 14px;border-radius:8px;font-weight:600;background:#f4f4f4;color:#333;text-decoration:none;transition:all 0.3s ease;}
-#gallery-nav a.active,#gallery-nav a:hover{background:#333;color:#fff;}
-.timeline{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;font-size:14px;color:#666;margin-bottom:25px;}
-.timeline span{background:#f9f9f9;padding:6px 12px;border-radius:8px;}
-.country-section{background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);border-radius:14px;padding:25px 20px;margin-bottom:60px;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
-.country-header h3{color:var(--theme1);font-size:20px;margin:0 0 5px;font-weight:700;}
-.country-header p{margin:0 0 10px;color:#555;font-size:15px;}
-.photo-desc{font-style:italic;color:#666;margin:6px 0 18px;text-align:center;}
-.gallery{column-count:3;column-gap:15px;}
-.gallery a{display:inline-block;}
-.gallery img{width:100%;height:auto;border-radius:8px;margin-bottom:15px;break-inside:avoid;opacity:0;transform:translateY(15px);transition:all 0.8s ease;}
-.gallery img.visible{opacity:1;transform:translateY(0);}
-.gallery img:hover{transform:scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,0.2);}
-.back-top{text-align:right;margin-top:10px;}
-.back-top a{font-size:14px;color:#666;text-decoration:none;}
-.back-top a:hover{color:var(--theme1);}
-@media(max-width:1000px){.gallery{column-count:2;}}
-@media(max-width:700px){.gallery{column-count:1;}}
+#gallery-nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,0.96); backdrop-filter:blur(6px);
+  text-align:center; padding:10px; border-bottom:1px solid #ddd; margin-bottom:15px;
+}
+#gallery-nav a {
+  display:inline-block; margin:0 8px; padding:8px 14px; border-radius:8px;
+  font-weight:600; background:#f4f4f4; color:#333; text-decoration:none;
+  transition:all 0.3s ease;
+}
+#gallery-nav a.active,#gallery-nav a:hover { background:#333; color:#fff; }
+
+.timeline { display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+  font-size:14px; color:#666; margin-bottom:25px; }
+.timeline span { background:#f9f9f9; padding:6px 12px; border-radius:8px; }
+
+.country-section {
+  background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);
+  border-radius:14px; padding:25px 20px; margin-bottom:60px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+.country-header h3 { color:var(--theme1); font-size:20px; margin:0 0 5px; font-weight:700; }
+.country-header p { margin:0 0 10px; color:#555; font-size:15px; }
+.photo-desc { font-style:italic; color:#666; margin:6px 0 18px; text-align:center; }
+
+.gallery { column-count:3; column-gap:15px; }
+.gallery a { display:inline-block; break-inside:avoid; }
+.gallery img {
+  width:100%; height:auto; border-radius:8px; margin-bottom:15px;
+  break-inside:avoid; opacity:0; transform:translateY(15px);
+  transition:all 0.8s ease; will-change:transform,opacity;
+}
+.gallery img.visible { opacity:1; transform:translateY(0); }
+.gallery img:hover { transform:scale(1.03); box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+
+.back-top { text-align:right; margin-top:10px; }
+.back-top a { font-size:14px; color:#666; text-decoration:none; }
+.back-top a:hover { color:var(--theme1); }
+
+@media(max-width:1000px){ .gallery{column-count:2;} }
+@media(max-width:700px){ .gallery{column-count:1;} }
 </style>
 
+<!-- JS -->
 <script src="{{ '/assets/js/glightbox.min.js' | relative_url }}"></script>
 <script>
-document.addEventListener("DOMContentLoaded",()=>{
+window.addEventListener("load",()=>{
   const nav=document.getElementById("gallery-nav");
   const sections=document.querySelectorAll(".country-section");
+
   sections.forEach(sec=>{
     const name=sec.dataset.country;
     const id=name.toLowerCase();
     sec.id=id;
     const link=document.createElement("a");
-    link.href=`#${id}`;
-    link.textContent=name;
+    link.href=`#${id}`; link.textContent=name;
     nav.appendChild(link);
   });
 
@@ -160,7 +183,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         document.querySelector(`#gallery-nav a[href="#${entry.target.id}"]`)?.classList.add('active');
       }
     });
-  },{threshold:0.5});
+  },{threshold:0.3,rootMargin:"-20% 0px -60% 0px"});
   sections.forEach(sec=>spy.observe(sec));
 
   const imgs=document.querySelectorAll('.gallery img');
@@ -174,13 +197,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   });
   imgs.forEach(img=>fadeIn.observe(img));
 
-  /* 初始化灯箱 */
-  const lightbox=GLightbox({
-    selector:'.glightbox',
-    loop:true,
-    touchNavigation:true,
-    closeButton:true,
-    plyr:{css:false,js:false}
-  });
+  GLightbox({ selector:'.glightbox', loop:true, touchNavigation:true });
 });
 </script>
