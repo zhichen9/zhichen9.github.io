@@ -1,0 +1,118 @@
+# ========================================
+# Travel Photo Descriptions
+# Organized by folder name (reverse-chronological)
+# ========================================
+
+# ======================
+# 2023 Finland
+# ======================
+finland:
+  - id: 1
+    title: "Helsinki Winter Harbor"
+    location: "Helsinki, Finland"
+    date: "Jan 5, 2023"
+    weather: "Snowy, -5°C"
+    landmark: "South Harbor"
+    description: "Frozen boats and warm lights along the harbor — Finland’s capital at its serene best."
+  - id: 2
+    title: "Temppeliaukio Church"
+    location: "Helsinki, Finland"
+    date: "Jan 6, 2023"
+    weather: "Overcast, -4°C"
+    landmark: "Rock Church"
+    description: "Built directly into solid rock in 1969, its copper dome creates a unique acoustic wonder."
+
+# ======================
+# 2022 Sweden (Dec)
+# ======================
+dec_sweden:
+  - id: 1
+    title: "Gamla Stan Christmas Lights"
+    location: "Stockholm, Sweden"
+    date: "Dec 18, 2022"
+    weather: "Snowy, -2°C"
+    landmark: "Old Town, Stockholm"
+    description: "Narrow alleys lit by festive lights — Sweden’s old capital glowing with Nordic winter charm."
+  - id: 2
+    title: "Vasa Museum"
+    location: "Stockholm, Sweden"
+    date: "Dec 19, 2022"
+    weather: "Cloudy, 0°C"
+    landmark: "Vasa Museum"
+    description: "Home to the only almost fully intact 17th-century ship that has ever been salvaged."
+
+# ======================
+# 2022 Denmark (Nov)
+# ======================
+nov_denmark:
+  - id: 1
+    title: "Nyhavn Reflections"
+    location: "Copenhagen, Denmark"
+    date: "Nov 12, 2022"
+    weather: "Cloudy, 6°C"
+    landmark: "Nyhavn Harbor"
+    description: "Colorful 17th-century canal houses — the spirit of Danish hygge by the water."
+  - id: 2
+    title: "Copenhagen Winter Streets"
+    location: "Copenhagen, Denmark"
+    date: "Nov 15, 2022"
+    weather: "Light Rain, 5°C"
+    landmark: "Strøget"
+    description: "One of Europe’s longest pedestrian streets, filled with cozy shops and soft winter lights."
+
+# ======================
+# 2022 Italy (Oct)
+# ======================
+oct_italy:
+  - id: 1
+    title: "Roman Forum Morning"
+    location: "Rome, Italy"
+    date: "Oct 10, 2022"
+    weather: "Sunny, 20°C"
+    landmark: "Roman Forum"
+    description: "Ancient ruins bathed in golden light — where the Roman Republic once stood."
+  - id: 2
+    title: "Venice Canal Twilight"
+    location: "Venice, Italy"
+    date: "Oct 14, 2022"
+    weather: "Mild, 18°C"
+    landmark: "Grand Canal"
+    description: "Gondolas drifting through pastel reflections under the fading Venetian sunset."
+
+# ======================
+# 2022 France (Sep)
+# ======================
+sep_france:
+  - id: 1
+    title: "Eiffel Tower at Dawn"
+    location: "Paris, France"
+    date: "Sep 12, 2022"
+    weather: "Clear, 19°C"
+    landmark: "Eiffel Tower"
+    description: "Soft morning light over Paris — a symbol of art, romance, and timeless elegance."
+  - id: 2
+    title: "Old Lyon Riverbank"
+    location: "Lyon, France"
+    date: "Sep 16, 2022"
+    weather: "Cloudy, 21°C"
+    landmark: "Saône River"
+    description: "Renaissance facades mirrored on calm waters — Lyon’s soul at dusk."
+
+# ======================
+# 2022 Germany (Aug)
+# ======================
+aug_germany:
+  - id: 1
+    title: "Brandenburg Gate"
+    location: "Berlin, Germany"
+    date: "Aug 8, 2022"
+    weather: "Sunny, 23°C"
+    landmark: "Brandenburg Gate"
+    description: "Built in 1791, a neoclassical triumphal arch symbolizing peace and unity."
+  - id: 2
+    title: "Marienplatz Morning"
+    location: "Munich, Germany"
+    date: "Aug 10, 2022"
+    weather: "Clear, 21°C"
+    landmark: "Marienplatz"
+    description: "The heart of Munich since 1158, surrounded by neo-gothic architecture and bell chimes."
