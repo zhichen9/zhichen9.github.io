@@ -4,7 +4,9 @@ title: "Travel Gallery"
 permalink: /miscellaneous/
 author_profile: true
 use_javascript: true
+render_with_liquid: false
 ---
+
 
 # 🌍 Travel Gallery
 _A collection of travel memories — each place tells a story of moments, light, and time._
