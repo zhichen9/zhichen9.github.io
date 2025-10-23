@@ -1,207 +1,202 @@
 ---
 layout: archive
-title: "Travel Gallery"
+title: ""
 permalink: /miscellaneous/
 author_profile: true
-use_javascript: true
-render_with_liquid: false
 ---
 
-
-# 🌍 Travel Gallery
-_A collection of travel memories — each place tells a story of moments, light, and time._
-
-<div class="filter-container">
-  <div id="year-filters" class="year-filters"></div>
-  <div id="country-filters" class="country-filters"></div>
-</div>
-<div id="gallery-container"></div>
-
-<hr style="margin-top:60px; margin-bottom:10px;">
-<p style="text-align:center;">
-  <b>Email:</b> <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a>
+<h1 id="top" style="text-align:center; margin-bottom:15px;">🌍 Travel Gallery</h1>
+<p style="font-size:16px; text-align:center; margin-bottom:40px; color:#555;">
+A collection of travel memories — each place tells a story of moments, light, and time.
 </p>
 
+<nav id="gallery-nav"></nav>
+<div class="timeline"></div>
+
+<!-- 🇩🇰 Denmark -->
+<div class="country-section" data-country="Denmark" style="--theme1:#8e44ad; --theme2:#f3e5f5;">
+  <div class="country-header">
+    <h3>Nov. 2022 – Denmark Memories</h3>
+    <p>Where warmth meets simplicity — Copenhagen’s colors in the northern light.</p>
+  </div>
+  <p class="photo-desc">Nyhavn reflections, winter walks, and Danish hygge at dusk.</p>
+  <div class="gallery">
+    {% for i in (1..36) %}
+      <a href="{{ site.baseurl }}/images/travel/2022/nov_denmark/2022_denmark_{{ i }}.jpg"
+         class="glightbox"
+         data-gallery="denmark"
+         data-title="Denmark — Scene {{ i }}">
+         <img src="{{ site.baseurl }}/images/travel/2022/nov_denmark/2022_denmark_{{ i }}.jpg" alt="Denmark photo {{ i }}">
+      </a>
+    {% endfor %}
+  </div>
+  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
+</div>
+
+<!-- 🇮🇹 Italy -->
+<div class="country-section" data-country="Italy" style="--theme1:#c0392b; --theme2:#fbe9e7;">
+  <div class="country-header">
+    <h3>Oct. 2022 – Italy Memories</h3>
+    <p>Exploring Rome, Florence, and Venice — cities of timeless art and gentle light.</p>
+  </div>
+  <p class="photo-desc">Scenes from Rome’s ruins, Venice’s canals, and Florence’s sunsets.</p>
+  <div class="gallery">
+    {% for i in (1..12) %}
+      <a href="{{ site.baseurl }}/images/travel/2022/oct_italy/2022_italy_{{ i }}.jpg"
+         class="glightbox"
+         data-gallery="italy"
+         data-title="Italy — Moment {{ i }}">
+         <img src="{{ site.baseurl }}/images/travel/2022/oct_italy/2022_italy_{{ i }}.jpg" alt="Italy photo {{ i }}">
+      </a>
+    {% endfor %}
+  </div>
+  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
+</div>
+
+<!-- 🇫🇷 France -->
+<div class="country-section" data-country="France" style="--theme1:#d35400; --theme2:#fff3e0;">
+  <div class="country-header">
+    <h3>Sep. 2022 – France Memories</h3>
+    <p>Paris mornings, Lyon evenings — beauty in light, architecture, and rhythm.</p>
+  </div>
+  <p class="photo-desc">From the Eiffel Tower to quiet Paris streets and Provençal charm.</p>
+  <div class="gallery">
+    {% for i in (1..28) %}
+      <a href="{{ site.baseurl }}/images/travel/2022/sep_france/2022_france_{{ i }}.jpg"
+         class="glightbox"
+         data-gallery="france"
+         data-title="France — Moment {{ i }}">
+         <img src="{{ site.baseurl }}/images/travel/2022/sep_france/2022_france_{{ i }}.jpg" alt="France photo {{ i }}">
+      </a>
+    {% endfor %}
+  </div>
+  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
+</div>
+
+<!-- 🇩🇪 Germany -->
+<div class="country-section" data-country="Germany" style="--theme1:#2980b9; --theme2:#e3f2fd;">
+  <div class="country-header">
+    <h3>Aug. 2022 – Germany Memories</h3>
+    <p>Berlin’s energy and Munich’s calm — stories written in streets and rivers.</p>
+  </div>
+  <p class="photo-desc">Berlin walls, Hamburg harbors, and summer nights by the Rhine.</p>
+  <div class="gallery">
+    {% for i in (1..36) %}
+      <a href="{{ site.baseurl }}/images/travel/2022/aug_germany/2022_germany_{{ i }}.jpg"
+         class="glightbox"
+         data-gallery="germany"
+         data-title="Germany — Memory {{ i }}">
+         <img src="{{ site.baseurl }}/images/travel/2022/aug_germany/2022_germany_{{ i }}.jpg" alt="Germany photo {{ i }}">
+      </a>
+    {% endfor %}
+  </div>
+  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
+</div>
+
+<hr style="margin-top:60px; margin-bottom:10px;">
+<p style="text-align:center; margin-top:40px; color:#555; font-size:15px;">
+  📧 Contact: <a href="mailto:zhichen.colin@gmail.com" style="color:#2980b9; text-decoration:none;">zhichen.colin@gmail.com</a>
+</p>
+
+<!-- CSS -->
 <link rel="stylesheet" href="{{ '/assets/css/glightbox.min.css' | relative_url }}">
 <style>
-:root {
-  --tg-accent:#4a7bd0;
-  --tg-text:#333;
-  --tg-muted:#666;
+#gallery-nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,0.96); backdrop-filter:blur(6px);
+  text-align:center; padding:10px; border-bottom:1px solid #ddd; margin-bottom:15px;
 }
-@media(prefers-color-scheme:dark){
-  :root{ --tg-text:#eee; --tg-muted:#aaa; --tg-accent:#81aef7; background:#111; color:#eee;}
+#gallery-nav a {
+  display:inline-block; margin:0 8px; padding:8px 14px; border-radius:8px;
+  font-weight:600; background:#f4f4f4; color:#333; text-decoration:none;
+  transition:all 0.3s ease;
 }
-h1{text-align:center;margin-bottom:5px;}
-.filter-container{text-align:center;margin:20px 0;}
-.country-filters button, .year-filters button{
-  margin:5px;
-  padding:8px 16px;
-  border:none;
-  border-radius:20px;
-  background:#f4f4f4;
-  color:var(--tg-text);
-  cursor:pointer;
-  font-weight:600;
-  transition:.3s;
+#gallery-nav a.active,#gallery-nav a:hover { background:#333; color:#fff; }
+
+.timeline { display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+  font-size:14px; color:#666; margin-bottom:25px; }
+.timeline span { background:#f9f9f9; padding:6px 12px; border-radius:8px; }
+
+.country-section {
+  background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);
+  border-radius:14px; padding:25px 20px; margin-bottom:60px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
-.country-filters button.active, .year-filters button.active,
-.country-filters button:hover, .year-filters button:hover{
-  background:linear-gradient(135deg,var(--tg-accent),#333);
-  color:#fff;
+.country-header h3 { color:var(--theme1); font-size:20px; margin:0 0 5px; font-weight:700; }
+.country-header p { margin:0 0 10px; color:#555; font-size:15px; }
+.photo-desc { font-style:italic; color:#666; margin:6px 0 18px; text-align:center; }
+
+.gallery { column-count:3; column-gap:15px; }
+.gallery a { display:inline-block; break-inside:avoid; }
+.gallery img {
+  width:100%; height:auto; border-radius:8px; margin-bottom:15px;
+  break-inside:avoid; opacity:0; transform:translateY(15px);
+  transition:all 0.8s ease; will-change:transform,opacity;
 }
-.year-filters{margin-bottom:15px;}
-.gallery{column-count:3;column-gap:15px;}
-.gallery a{display:inline-block;}
-.gallery img{width:100%;border-radius:10px;margin-bottom:15px;break-inside:avoid;opacity:0;transform:translateY(10px);transition:.8s;}
-.gallery img.visible{opacity:1;transform:translateY(0);}
-.gallery img:hover{transform:scale(1.02);box-shadow:0 8px 16px rgba(0,0,0,.15);}
-.country-section{background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);border-radius:14px;padding:25px 20px;margin-bottom:40px;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
-.country-header h3{color:var(--theme1);font-size:20px;font-weight:700;}
-.country-header p{color:var(--tg-muted);font-size:15px;}
-#tg-backtop{position:fixed;right:22px;bottom:26px;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,var(--tg-accent),#111);box-shadow:0 8px 22px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:.4s;animation:breath 2s infinite;}
-#tg-backtop.show{opacity:1;visibility:visible;}
-#tg-backtop:hover{transform:translateY(-3px);}
-#tg-backtop .tooltip{position:absolute;right:60px;bottom:10px;background:#111;color:#fff;padding:5px 8px;border-radius:6px;font-size:12px;opacity:0;transition:.2s;}
-#tg-backtop:hover .tooltip{opacity:1;}
-@keyframes breath{0%,100%{box-shadow:0 0 12px rgba(74,123,208,.6);}50%{box-shadow:0 0 20px rgba(74,123,208,.8);}}
-@media(max-width:1000px){.gallery{column-count:2;}}@media(max-width:700px){.gallery{column-count:1;}}
+.gallery img.visible { opacity:1; transform:translateY(0); }
+.gallery img:hover { transform:scale(1.03); box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+
+.back-top { text-align:right; margin-top:10px; }
+.back-top a { font-size:14px; color:#666; text-decoration:none; }
+.back-top a:hover { color:var(--theme1); }
+
+@media(max-width:1000px){ .gallery{column-count:2;} }
+@media(max-width:700px){ .gallery{column-count:1;} }
 </style>
 
+<!-- JS -->
 <script src="{{ '/assets/js/glightbox.min.js' | relative_url }}"></script>
 <script>
-document.addEventListener("DOMContentLoaded",()=>{
-  const galleryContainer=document.getElementById("gallery-container");
+window.addEventListener("load",()=>{
+  const nav=document.getElementById("gallery-nav");
+  const sections=document.querySelectorAll(".country-section");
 
-  // 🗓️ 年份与国家配置
-  const years=["2023","2022"];
-  const countriesPerYear={
-    "2023":["jan_sweden"], // 可为空
-    "2022":["nov_denmark","oct_italy","sep_france","aug_germany"]
-  };
-
-  // 🌍 国家筛选器
-  const allCountries=["All","Denmark","Italy","France","Germany","Sweden"];
-  const countryDiv=document.getElementById("country-filters");
-  allCountries.forEach(c=>{
-    const btn=document.createElement("button");
-    btn.textContent=c;
-    btn.dataset.country=c.toLowerCase();
-    btn.addEventListener("click",()=>{
-      document.querySelectorAll(".country-section").forEach(sec=>{
-        if(c==="All"||sec.dataset.country===c.toLowerCase()) sec.style.display="block";
-        else sec.style.display="none";
-      });
-      document.querySelectorAll(".country-filters button").forEach(b=>b.classList.remove("active"));
-      btn.classList.add("active");
-    });
-    countryDiv.appendChild(btn);
+  sections.forEach(sec=>{
+    const name=sec.dataset.country;
+    const id=name.toLowerCase();
+    sec.id=id;
+    const link=document.createElement("a");
+    link.href=`#${id}`; link.textContent=name;
+    nav.appendChild(link);
   });
 
-  // 📅 年份筛选器
-  const yearDiv=document.getElementById("year-filters");
-  years.forEach(y=>{
-    const btn=document.createElement("button");
-    btn.textContent=y;
-    btn.dataset.year=y;
-    btn.addEventListener("click",()=>{
-      document.querySelectorAll(".year-block").forEach(block=>{
-        if(block.dataset.year===y) block.style.display="block";
-        else block.style.display="none";
-      });
-      document.querySelectorAll(".year-filters button").forEach(b=>b.classList.remove("active"));
-      btn.classList.add("active");
-    });
-    yearDiv.appendChild(btn);
+  const timeline=document.querySelector(".timeline");
+  const months=["Aug 🇩🇪","Sep 🇫🇷","Oct 🇮🇹","Nov 🇩🇰"];
+  months.forEach(m=>{
+    const span=document.createElement("span");
+    span.textContent=m;
+    timeline.appendChild(span);
   });
-  yearDiv.querySelector("button").classList.add("active");
-  countryDiv.querySelector("button").classList.add("active");
 
-  // 🔄 动态生成年份与图片内容
-  years.forEach(year=>{
-    const yearBlock=document.createElement("div");
-    yearBlock.className="year-block";
-    yearBlock.dataset.year=year;
-    const content=document.createElement("div");
-    yearBlock.append(content);
-    galleryContainer.appendChild(yearBlock);
-
-    countriesPerYear[year].forEach(folder=>{
-      const [mon,countryRaw]=folder.split("_");
-      const country=countryRaw.charAt(0).toUpperCase()+countryRaw.slice(1);
-      const color1=randomColor();
-      const color2=tintColor(color1,80);
-      const section=document.createElement("div");
-      section.className="country-section";
-      section.dataset.country=country.toLowerCase();
-      section.style=`--theme1:${color1};--theme2:${color2}`;
-      section.id=country.toLowerCase();
-      section.innerHTML=`
-        <div class="country-header">
-          <h3>${mon.charAt(0).toUpperCase()+mon.slice(1)}. ${year} – ${country} Memories</h3>
-          <p>${country} travel moments — light, rhythm, and calm.</p>
-        </div>
-        <div class="gallery" id="gallery-${country.toLowerCase()}-${year}"></div>`;
-      content.appendChild(section);
-
-      // ♾️ 无限加载图片
-      const g=document.getElementById(`gallery-${country.toLowerCase()}-${year}`);
-      let index=1;
-      const basePath="{{ site.baseurl }}" + `/images/travel/${year}/${folder}/`;
-      const loadImage=()=>{
-        const path=basePath+`${year}_${country.toLowerCase()}_${index}.jpg`;
-        const img=new Image();
-        img.onload=()=>{
-          const a=document.createElement("a");
-          a.href=path;
-          a.className="glightbox";
-          a.dataset.gallery=country.toLowerCase()+year;
-          const im=document.createElement("img");
-          im.src=path;
-          im.alt=country+" photo "+index;
-          a.appendChild(im);
-          g.appendChild(a);
-          fadeIn.observe(im);
-          index++;
-          loadImage();
-        };
-        img.onerror=()=>{};
-        img.src=path;
-      };
-      loadImage();
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener("click",e=>{
+      e.preventDefault();
+      document.querySelector(a.getAttribute("href")).scrollIntoView({behavior:"smooth"});
     });
   });
 
-  // 🪄 淡入动画
+  const navLinks=document.querySelectorAll('#gallery-nav a');
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        navLinks.forEach(l=>l.classList.remove('active'));
+        document.querySelector(`#gallery-nav a[href="#${entry.target.id}"]`)?.classList.add('active');
+      }
+    });
+  },{threshold:0.3,rootMargin:"-20% 0px -60% 0px"});
+  sections.forEach(sec=>spy.observe(sec));
+
+  const imgs=document.querySelectorAll('.gallery img');
   const fadeIn=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");fadeIn.unobserve(e.target);}});
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        fadeIn.unobserve(e.target);
+      }
+    });
   });
+  imgs.forEach(img=>fadeIn.observe(img));
 
-  // 🔝 返回顶部
-  const back=document.createElement("div");
-  back.id="tg-backtop";
-  back.innerHTML="↑<span class='tooltip'>Back to Top</span>";
-  document.body.appendChild(back);
-  window.addEventListener("scroll",()=>{if(window.scrollY>600)back.classList.add("show");else back.classList.remove("show");});
-  back.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-
-  // 💡 Lightbox
-  GLightbox({selector:".glightbox",loop:true,openEffect:"zoom",closeEffect:"fade"});
-
-  // 工具函数
-  function randomColor(){
-    const colors=["#3498db","#9b59b6","#16a085","#e67e22","#c0392b","#1abc9c","#2ecc71","#f39c12"];
-    return colors[Math.floor(Math.random()*colors.length)];
-  }
-  function tintColor(hex,percent){
-    const num=parseInt(hex.slice(1),16),
-      amt=Math.round(2.55*percent),
-      R=(num>>16)+amt,G=(num>>8&0x00FF)+amt,B=(num&0x0000FF)+amt;
-    return "#"+(0x1000000+
-      (R<255?R<1?0:R:255)*0x10000+
-      (G<255?G<1?0:G:255)*0x100+
-      (B<255?B<1?0:B:255))
-      .toString(16).slice(1);
-  }
+  GLightbox({ selector:'.glightbox', loop:true, touchNavigation:true });
 });
 </script>
