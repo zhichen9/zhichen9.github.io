@@ -1,9 +1,11 @@
 ---
 layout: archive
-title: ""
+title: "Travel Gallery"
 permalink: /miscellaneous/
 author_profile: true
+use_javascript: true
 ---
+
 
 <h1 id="top" class="tg-page-title">🌍 Travel Gallery</h1>
 <p class="tg-page-subtitle">Every journey tells a story — automatically organized by year, country, and light.</p>
