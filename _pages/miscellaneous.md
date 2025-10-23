@@ -26,6 +26,9 @@ author_profile: true
          style="padding:8px 14px; width:60%; max-width:400px; border:1px solid #ccc; border-radius:8px; font-size:15px;">
 </div>
 
+<!-- 无结果提示 -->
+<p id="no-result" style="display:none; text-align:center; color:#999; margin:20px 0;">No matching results 😢</p>
+
 <div class="timeline"></div>
 
 <!-- ======================
@@ -210,12 +213,17 @@ window.addEventListener("load",()=>{
 
   // 搜索功能
   const input=document.getElementById("country-search");
+  const noRes=document.getElementById("no-result");
   input.addEventListener("input",()=>{
     const val=input.value.trim().toLowerCase();
+    let visible=0;
     sections.forEach(sec=>{
       const text=sec.textContent.toLowerCase();
-      sec.style.display=(text.includes(val)) ? "" : "none";
+      const match=text.includes(val);
+      sec.style.display=match?"":"none";
+      if(match) visible++;
     });
+    noRes.style.display = (visible===0 && val!=="") ? "block" : "none";
   });
 
   // 图片计数
