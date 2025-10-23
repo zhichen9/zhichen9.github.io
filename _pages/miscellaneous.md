@@ -29,7 +29,7 @@ A curated collection of my travel memories — moments and stories from differen
   </div>
 
   <div class="gallery">
-    {% for i in (1..20) %}
+    {% for i in (1..36) %}
       <img src="{{ site.baseurl }}/images/travel/2022/dec_denmark/2022_denmark_{{ i }}.jpg" alt="Denmark photo {{ i }}">
     {% endfor %}
   </div>
