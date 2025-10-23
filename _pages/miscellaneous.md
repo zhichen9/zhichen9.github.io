@@ -24,7 +24,7 @@ A curated collection of my travel memories — moments and stories from differen
 =================== -->
 <section id="denmark" class="travel-block" data-country="🇩🇰 Denmark" style="--accent-color:#d63031; --bg1:#fff6f6; --bg2:#fff;">
   <div class="travel-header">
-    <h2>🇩🇰 December 2022 – Denmark Memories</h2>
+    <h2>🇩🇰 Nov 2022 – Denmark Memories</h2>
     <p>Discovering Copenhagen’s colorful harbors, cozy streets, and the warmth of hygge in winter light.</p>
   </div>
 
@@ -41,7 +41,7 @@ A curated collection of my travel memories — moments and stories from differen
 =================== -->
 <section id="italy" class="travel-block" data-country="🇮🇹 Italy" style="--accent-color:#c0392b; --bg1:#fff5f2; --bg2:#fff;">
   <div class="travel-header">
-    <h2>🇮🇹 October 2022 – Italy Memories</h2>
+    <h2>🇮🇹 Oct 2022 – Italy Memories</h2>
     <p>Wandering through Rome’s ancient ruins and Venice’s serene canals — a journey through time and beauty.</p>
   </div>
 
@@ -58,7 +58,7 @@ A curated collection of my travel memories — moments and stories from differen
 =================== -->
 <section id="france" class="travel-block" data-country="🇫🇷 France" style="--accent-color:#e67e22; --bg1:#fff9f0; --bg2:#fff;">
   <div class="travel-header">
-    <h2>🇫🇷 September 2022 – France Memories</h2>
+    <h2>🇫🇷 Sep 2022 – France Memories</h2>
     <p>From the Louvre to the Eiffel Tower — art, architecture, and the rhythm of Paris nights.</p>
   </div>
 
@@ -75,7 +75,7 @@ A curated collection of my travel memories — moments and stories from differen
 =================== -->
 <section id="germany" class="travel-block" data-country="🇩🇪 Germany" style="--accent-color:#007acc; --bg1:#f0f8ff; --bg2:#fff;">
   <div class="travel-header">
-    <h2>🇩🇪 August 2022 – Germany Memories</h2>
+    <h2>🇩🇪 Aug 2022 – Germany Memories</h2>
     <p>Exploring Berlin’s vibrant streets and Hamburg’s peaceful waterways — where history meets modern charm.</p>
   </div>
 
