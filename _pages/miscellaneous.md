@@ -5,203 +5,194 @@ permalink: /miscellaneous/
 author_profile: true
 ---
 
-<!-- 顶部阅读进度条 -->
-<div id="progress-bar"></div>
+<!-- 
+  🌍 Travel Gallery Page
+  Author: Zhichen
+  Updated: 2025-10
+  Features:
+    - Sticky top nav with shadow + ScrollSpy
+    - Search filter
+    - Reading progress bar
+    - Loading fade-in
+    - Masonry gallery with fade-in images
+    - GLightbox fullscreen with English/中文 captions (toggle button 🌐)
+    - Country sections with flag-colored gradient header line
+    - Floating "Back to Top" button
+    - Per-country "Download Album" buttons
+-->
 
-<h1 id="top" style="text-align:center; margin-bottom:15px; opacity:0; transform:translateY(-12px); animation:fadeSlide 1.0s ease-out forwards;">
+{%- assign data = site.data.travel.descriptions -%}
+
+<!-- Reading progress bar + Loading overlay -->
+<div id="progress-bar"></div>
+<div id="loading-overlay" style="position:fixed;inset:0;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease;">
+  <div style="width:42px;height:42px;border:4px solid #ddd;border-top-color:#2980b9;border-radius:50%;animation:spin 1s linear infinite;"></div>
+  <p style="margin-top:12px;color:#666;">Loading gallery…</p>
+</div>
+
+<!-- Title + Search -->
+<h1 id="top" style="text-align:center;margin:12px 0 8px;opacity:0;transform:translateY(-10px);animation:fadeSlide 0.9s ease-out forwards;">
   🌍 Travel Gallery
 </h1>
-<p style="font-size:16px; text-align:center; margin-bottom:40px; color:#555;">
+<p style="text-align:center;color:#555;margin:0 0 18px;">
   A collection of travel memories — each place tells a story of moments, light, and time.
 </p>
 
-<!-- ======================
-导航栏 + 搜索框 + 时间轴
-====================== -->
 <nav id="gallery-nav"></nav>
 
-<!-- 搜索输入框 -->
-<div id="search-bar" style="text-align:center; margin:10px 0;">
-  <input type="text" id="country-search" placeholder="🔍 Search by country or keyword..." 
-         style="padding:8px 14px; width:60%; max-width:400px; border:1px solid #ccc; border-radius:8px; font-size:15px;">
+<div id="search-bar" style="text-align:center;margin:10px 0 2px;">
+  <input id="country-search" type="text" placeholder="🔍 Search country or keyword..."
+         style="padding:8px 14px;width:60%;max-width:420px;border:1px solid #ccc;border-radius:8px;font-size:15px;">
 </div>
+<p id="no-result" style="display:none;text-align:center;color:#999;margin:10px 0 16px;">No matching results 😢</p>
 
-<!-- 无结果提示 -->
-<p id="no-result" style="display:none; text-align:center; color:#999; margin:20px 0;">No matching results 😢</p>
+<!-- Countries -->
+{%- assign sections = 
+  "nov_denmark|🇩🇰|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
+   oct_italy|🇮🇹|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
+   sep_france|🇫🇷|France|#0055A4|28|2022|Sep,/downloads/france.zip;
+   aug_germany|🇩🇪|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
+   | split: ";" -%}
 
-<div class="timeline"></div>
+{%- for raw in sections -%}
+  {%- assign parts = raw | strip | split: "," -%}
+  {%- assign left = parts[0] | split: "|" -%}
+  {%- assign key = left[0] | strip -%}
+  {%- assign flag = left[1] | strip -%}
+  {%- assign cname = left[2] | strip -%}
+  {%- assign theme = left[3] | strip -%}
+  {%- assign total = left[4] | plus: 0 -%}
+  {%- assign year = left[5] | strip -%}
+  {%- assign month = left[6] | strip -%}
+  {%- assign dl = parts[1] | strip -%}
+  {%- assign photos = data[key] -%}
 
-<!-- ======================
-🇩🇰 Denmark
-====================== -->
-<div class="country-section" data-country="Denmark" data-flag="🇩🇰" style="--theme1:#8e44ad; --theme2:#f3e5f5;">
-  <div class="country-header">
-    <h3 class="toggle">🇩🇰 Nov. 2022 – Denmark Memories</h3>
-    <p>Where warmth meets simplicity — Copenhagen’s colors in the northern light.</p>
-  </div>
-  <p class="photo-desc">Nyhavn reflections, winter walks, and Danish hygge at dusk.</p>
-  <div class="gallery">
-    {% for i in (1..36) %}
-      <a href="{{ site.baseurl }}/images/travel/2022/nov_denmark/2022_denmark_{{ i }}.jpg"
-         class="glightbox"
-         data-gallery="denmark"
-         data-title="Denmark — Scene {{ i }}">
-        <img loading="lazy"
-             src="{{ site.baseurl }}/images/travel/2022/nov_denmark/2022_denmark_{{ i }}.jpg"
-             alt="Denmark photo {{ i }}">
-      </a>
-    {% endfor %}
-  </div>
-  <p class="download-link">
-    <a href="{{ site.baseurl }}/images/travel/2022/nov_denmark/denmark_memories.zip" download>⬇️ Download Denmark Album</a>
-  </p>
-</div>
+  <div class="country-section" data-country="{{ cname }}" style="--theme1:{{ theme }};--theme2:#f7f9ff;">
+    <div class="country-header">
+      <h3 class="toggle">{{ flag }} {{ month }}. {{ year }} – {{ cname }} Memories</h3>
+      <p style="margin:6px 0 10px;">Scenes from {{ cname }} — light, rhythm, and color in every frame.</p>
+    </div>
+    <p class="photo-desc">Click a photo to open full view. Use 🌐 to toggle English / 中文 captions.</p>
 
-<!-- ======================
-🇮🇹 Italy
-====================== -->
-<div class="country-section" data-country="Italy" data-flag="🇮🇹" style="--theme1:#c0392b; --theme2:#fbe9e7;">
-  <div class="country-header">
-    <h3 class="toggle">🇮🇹 Oct. 2022 – Italy Memories</h3>
-    <p>Exploring Rome, Florence, and Venice — cities of timeless art and gentle light.</p>
-  </div>
-  <p class="photo-desc">Scenes from Rome’s ruins, Venice’s canals, and Florence’s sunsets.</p>
-  <div class="gallery">
-    {% for i in (1..12) %}
-      <a href="{{ site.baseurl }}/images/travel/2022/oct_italy/2022_italy_{{ i }}.jpg"
-         class="glightbox"
-         data-gallery="italy"
-         data-title="Italy — Moment {{ i }}">
-        <img loading="lazy"
-             src="{{ site.baseurl }}/images/travel/2022/oct_italy/2022_italy_{{ i }}.jpg"
-             alt="Italy photo {{ i }}">
-      </a>
-    {% endfor %}
-  </div>
-  <p class="download-link">
-    <a href="{{ site.baseurl }}/images/travel/2022/oct_italy/italy_memories.zip" download>⬇️ Download Italy Album</a>
-  </p>
-</div>
+    <div class="gallery">
+      {%- for i in (1..total) -%}
+        {%- assign p = photos | where: "id", i | first -%}
 
-<!-- ======================
-🇫🇷 France
-====================== -->
-<div class="country-section" data-country="France" data-flag="🇫🇷" style="--theme1:#d35400; --theme2:#fff3e0;">
-  <div class="country-header">
-    <h3 class="toggle">🇫🇷 Sep. 2022 – France Memories</h3>
-    <p>Paris mornings, Lyon evenings — beauty in light, architecture, and rhythm.</p>
-  </div>
-  <p class="photo-desc">From the Eiffel Tower to quiet Paris streets and Provençal charm.</p>
-  <div class="gallery">
-    {% for i in (1..28) %}
-      <a href="{{ site.baseurl }}/images/travel/2022/sep_france/2022_france_{{ i }}.jpg"
-         class="glightbox"
-         data-gallery="france"
-         data-title="France — Moment {{ i }}">
-        <img loading="lazy"
-             src="{{ site.baseurl }}/images/travel/2022/sep_france/2022_france_{{ i }}.jpg"
-             alt="France photo {{ i }}">
-      </a>
-    {% endfor %}
-  </div>
-  <p class="download-link">
-    <a href="{{ site.baseurl }}/images/travel/2022/sep_france/france_memories.zip" download>⬇️ Download France Album</a>
-  </p>
-</div>
+        {%- assign title = p.title_en | default: cname | append: " — Scene " | append: i -%}
+        {%- assign cname_lower = cname | downcase -%}
 
-<!-- ======================
-🇩🇪 Germany
-====================== -->
-<div class="country-section" data-country="Germany" data-flag="🇩🇪" style="--theme1:#2980b9; --theme2:#e3f2fd;">
-  <div class="country-header">
-    <h3 class="toggle">🇩🇪 Aug. 2022 – Germany Memories</h3>
-    <p>Berlin’s energy and Munich’s calm — stories written in streets and rivers.</p>
-  </div>
-  <p class="photo-desc">Berlin walls, Hamburg harbors, and summer nights by the Rhine.</p>
-  <div class="gallery">
-    {% for i in (1..36) %}
-      <a href="{{ site.baseurl }}/images/travel/2022/aug_germany/2022_germany_{{ i }}.jpg"
-         class="glightbox"
-         data-gallery="germany"
-         data-title="Germany — Memory {{ i }}">
-        <img loading="lazy"
-             src="{{ site.baseurl }}/images/travel/2022/aug_germany/2022_germany_{{ i }}.jpg"
-             alt="Germany photo {{ i }}">
-      </a>
-    {% endfor %}
-  </div>
-  <p class="download-link">
-    <a href="{{ site.baseurl }}/images/travel/2022/aug_germany/germany_memories.zip" download>⬇️ Download Germany Album</a>
-  </p>
-</div>
+        <a href="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
+           class="glightbox"
+           data-gallery="{{ key }}"
+           data-title="{{ title }}"
+           data-description-en="📍 {{ p.location_en }} — {{ p.date }} — {{ p.weather_en }}<br>🏛️ {{ p.landmark_en }}<br>📖 {{ p.description_en }}"
+           data-description-zh="📍 {{ p.location_zh }} — {{ p.date }} — {{ p.weather_zh }}<br>🏛️ {{ p.landmark_zh }}<br>📖 {{ p.description_zh }}">
+          <img loading="lazy"
+               src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
+               alt="{{ title }}">
+        </a>
+      {%- endfor -%}
+    </div>
 
-<!-- 联系方式 -->
-<hr style="margin-top:60px; margin-bottom:10px;">
-<p style="text-align:center; margin-top:40px; color:#555; font-size:15px;">
-  📧 Contact: <a href="mailto:zhichen.colin@gmail.com" style="color:#2980b9; text-decoration:none;">zhichen.colin@gmail.com</a>
+    <p class="download-link">
+      <a href="{{ dl }}" download>💾 Download {{ cname }} Album ({{ total }} photos)</a>
+    </p>
+    <div class="back-top"><a href="#top">↑ Back to Top</a></div>
+  </div>
+{%- endfor -%}
+
+<hr style="margin-top:56px;margin-bottom:10px;">
+<p style="text-align:center;margin-top:10px;color:#555;font-size:15px;">
+  📧 Contact: <a href="mailto:zhichen.colin@gmail.com" style="color:#2980b9;text-decoration:none;">zhichen.colin@gmail.com</a>
 </p>
 
-<!-- 返回顶部按钮 -->
 <button id="go-top" title="Back to Top">↑</button>
 
-<!-- CSS -->
+<!-- Lightbox & Styles -->
 <link rel="stylesheet" href="{{ '/assets/css/glightbox.min.css' | relative_url }}">
 <style>
-#progress-bar{position:fixed;top:0;left:0;height:4px;width:0;
-  background:linear-gradient(90deg,#2980b9,#8e44ad);z-index:200;}
-#gallery-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);
-  backdrop-filter:blur(6px);text-align:center;padding:10px;border-bottom:1px solid #ddd;margin-bottom:8px;transition:box-shadow .3s ease;}
-#gallery-nav.shadow{box-shadow:0 2px 8px rgba(0,0,0,.1);}
-#gallery-nav a{display:inline-block;margin:0 6px;padding:8px 14px;border-radius:8px;
-  font-weight:600;background:#f4f4f4;color:#333;text-decoration:none;transition:all .3s ease;}
-#gallery-nav a.active,#gallery-nav a:hover{background:#333;color:#fff;}
-#go-top{position:fixed;bottom:30px;right:30px;background:#2980b9;color:white;
-  border:none;border-radius:50%;width:44px;height:44px;font-size:18px;
-  box-shadow:0 4px 12px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:all .3s;}
-#go-top.show{opacity:1;pointer-events:auto;}
-#go-top:hover{transform:scale(1.1);}
-.country-section{position:relative;
-  background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);
-  border-radius:14px;padding:25px 20px;margin-bottom:60px;
-  box-shadow:0 2px 10px rgba(0,0,0,.05);}
-.country-section::before{content:"";display:block;height:6px;
-  border-radius:6px 6px 0 0;
-  background:linear-gradient(90deg,var(--theme1),#fff,var(--theme2));
-  position:absolute;left:0;right:0;top:0;}
-.download-link{text-align:center;margin:8px 0;}
-.download-link a{background:#2980b9;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:14px;}
-.download-link a:hover{background:#1f5f87;}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeSlide{to{opacity:1;transform:translateY(0)}}
+#progress-bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#2980b9,#8e44ad);z-index:200}
+#gallery-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);text-align:center;padding:10px;border-bottom:1px solid #ddd;transition:box-shadow .3s}
+#gallery-nav.shadow{box-shadow:0 2px 10px rgba(0,0,0,.1)}
+#gallery-nav a{display:inline-block;margin:0 8px;padding:8px 14px;border-radius:8px;background:#f5f5f5;color:#333;text-decoration:none;font-weight:600;transition:all .3s}
+#gallery-nav a.active,#gallery-nav a:hover{background:#333;color:#fff}
+#country-search:focus{outline:none;border-color:#2980b9;box-shadow:0 0 6px rgba(41,128,185,.28)}
+.country-section{position:relative;background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);border-radius:14px;padding:25px 20px;margin-bottom:58px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.country-section::before{content:"";display:block;height:6px;border-radius:6px 6px 0 0;background:linear-gradient(90deg,var(--theme1),var(--theme2));position:absolute;left:0;right:0;top:0}
+.country-header h3{color:var(--theme1);font-size:20px;margin:0 0 6px;font-weight:700;cursor:pointer}
+.photo-desc{font-style:italic;color:#666;margin:2px 0 14px;text-align:center}
+.gallery{column-count:3;column-gap:15px}
+.gallery a{position:relative;display:inline-block;break-inside:avoid}
+.gallery img{width:100%;height:auto;border-radius:8px;margin-bottom:15px;opacity:0;transform:translateY(14px);transition:all .8s ease}
+.gallery img.visible{opacity:1;transform:translateY(0)}
+.gallery img:hover{transform:scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.download-link{text-align:center;margin:8px 0}
+.download-link a{background:#2980b9;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:14px}
+.download-link a:hover{background:#1f5f87}
+.back-top{text-align:right;margin-top:8px}
+.back-top a{font-size:14px;color:#777;text-decoration:none}
+.back-top a:hover{color:var(--theme1)}
+#go-top{position:fixed;bottom:30px;right:30px;background:#2980b9;color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.22);opacity:0;pointer-events:none;transition:all .3s}
+#go-top.show{opacity:1;pointer-events:auto}
+#go-top:hover{transform:scale(1.08)}
+/* Lightbox captions */
+.gdesc-inner{background:rgba(255,255,255,0.92)!important;color:#222!important;border-radius:10px;padding:10px 14px;line-height:1.55;font-size:14px;max-width:820px;margin:auto}
+#lang-toggle{position:fixed;top:10px;right:10px;background:#333;color:#fff;font-size:13px;border:none;border-radius:8px;padding:6px 10px;z-index:9999;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#lang-toggle:hover{background:#555}
+@media(max-width:1000px){.gallery{column-count:2}}
+@media(max-width:680px){.gallery{column-count:1}}
 </style>
 
-<!-- JS -->
 <script src="{{ '/assets/js/glightbox.min.js' | relative_url }}"></script>
 <script>
-window.addEventListener("load",()=>{
-  // 自动生成导航（含国旗）
+window.addEventListener("load", ()=>{
+  const overlay=document.getElementById("loading-overlay");
+  setTimeout(()=>{overlay.style.opacity=0;setTimeout(()=>overlay.remove(),650)},500);
   const nav=document.getElementById("gallery-nav");
   const sections=[...document.querySelectorAll(".country-section")];
-  sections.forEach(sec=>{
-    const name=sec.dataset.country;
-    const flag=sec.dataset.flag || "";
-    const id=name.toLowerCase();
-    sec.id=id;
-    const a=document.createElement("a");
-    a.href=`#${id}`;
-    a.textContent=`${flag} ${name}`;
-    nav.appendChild(a);
-  });
-
-  // 滚动阴影
-  window.addEventListener("scroll",()=>{
-    document.getElementById("gallery-nav").classList.toggle("shadow",window.scrollY>60);
-    goTop.classList.toggle("show",window.scrollY>400);
-  });
-
-  // 返回顶部按钮
-  const goTop=document.getElementById("go-top");
+  sections.forEach(sec=>{const name=sec.dataset.country;const id=name.toLowerCase();sec.id=id;const a=document.createElement("a");a.href=`#${id}`;a.textContent=name;nav.appendChild(a);});
+  const navLinks=[...document.querySelectorAll('#gallery-nav a')];
+  const spy=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.remove('active'));const c=document.querySelector(`#gallery-nav a[href="#${e.target.id}"]`);if(c)c.classList.add('active');}});},{threshold:0.3,rootMargin:"-20% 0px -60% 0px"});
+  sections.forEach(sec=>spy.observe(sec));
+  const goTop=document.getElementById("go-top");const progress=document.getElementById("progress-bar");
+  const onScroll=()=>{nav.classList.toggle("shadow",window.scrollY>60);goTop.classList.toggle("show",window.scrollY>420);
+    const max=document.body.scrollHeight-window.innerHeight;const pct=max>0?(window.scrollY/max)*100:0;progress.style.width=pct+"%";};
+  onScroll();window.addEventListener("scroll",onScroll);
   goTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+  const input=document.getElementById("country-search");const noRes=document.getElementById("no-result");
+  input.addEventListener("input",()=>{const val=input.value.trim().toLowerCase();let visible=0;
+    sections.forEach(sec=>{const match=sec.textContent.toLowerCase().includes(val);sec.style.display=match?"":"none";if(match)visible++;});
+    noRes.style.display=(visible===0&&val!=="")?"block":"none";});
+  const imgs=document.querySelectorAll(".gallery img");
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target);}});},{rootMargin:"0px 0px -10% 0px"});imgs.forEach(i=>io.observe(i));
+  document.querySelectorAll(".country-header .toggle").forEach(h3=>{h3.addEventListener("click",()=>{const gal=h3.parentElement.parentElement.querySelector(".gallery");gal.style.display=(gal.style.display==='none'?'':'none');});});
 
-  // Lightbox
-  GLightbox({ selector:'.glightbox', loop:true, touchNavigation:true });
+  // 🌐 Language toggle
+  let currentLang='en';
+  const btn=document.createElement("button");
+  btn.id="lang-toggle";btn.textContent="🌐 EN / 中文";
+  btn.addEventListener("click",()=>{currentLang=(currentLang==='en'?'zh':'en');updateLang();});
+  document.body.appendChild(btn);
+
+  const lb=GLightbox({
+    selector:".glightbox",
+    touchNavigation:true,
+    loop:true,
+    zoomable:true,
+    descPosition:"bottom",
+    onOpen:()=>updateLang()
+  });
+
+  function updateLang(){
+    document.querySelectorAll(".gdesc-inner").forEach(el=>{
+      const parent=el.closest(".gslide");
+      const a=parent?.querySelector("a.glightbox");
+      if(!a)return;
+      const text=a.dataset[`description${currentLang==='en'?'En':'Zh'}`];
+      el.innerHTML=text||"";
+    });
+  }
 });
 </script>
