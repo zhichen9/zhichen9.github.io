@@ -22,10 +22,10 @@ I’d be happy to hear from you! </em>
 
 <h3 style="font-weight:600; color:#333;">🏫 Office Address</h3>
 <p style="font-size: 1.05em; line-height:1.6;">
-C. T. Bauer College of Business<br>
+<em> C. T. Bauer College of Business<br>
 University of Houston<br>
 4250 Martin Luther King Blvd<br>
-Houston, TX 77004, USA
+Houston, TX 77004, USA </em> 
 </p>
 
 <hr style="margin: 40px 0;">
