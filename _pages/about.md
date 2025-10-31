@@ -21,31 +21,38 @@ My research interests focus on <em>Healthcare Operations</em>, <em>Digital Platf
 In my leisure time, I enjoy traveling, exploring cities, experiencing diverse cultures, and playing sports such as basketball, badminton, and cycling.
 </p>
 
-<hr style="margin-top: 25px; margin-bottom: 25px;">
+<hr style="margin-top: 25px; margin-bottom: 30px;">
 
 
 <!-- ========================== -->
-<!-- 🌎 Visitors Map Section -->
+<!-- 📰 News + 🌎 Visitors Map -->
 <!-- ========================== -->
 
-<section id="visitors-map" style="margin-top: 30px;">
+<section id="news-map" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
 
-  <h3 style="font-weight: normal; color: #555;">🌎 Visitors Map</h3>
-
-  <!-- 如果以后要恢复 News，可取消下面的注释 -->
-  <!--
-  <h3>📰 News</h3>
-  <p>Coming soon...</p>
-  -->
-
-  <div style="text-align:center; margin-top:15px;">
-    <script type="text/javascript" id="clustrmaps"
-      src="//clustrmaps.com/map_v2.js?d=oPLM1fsDm01h0b7IUIURdDxjeBc3a5aCKYY4XlNKs1g&cl=ffffff&w=a">
-    </script>
+  <!-- Left Column: News -->
+  <div style="flex: 1 1 48%; min-width: 300px;">
+    <h3 style="font-weight: normal; color: #555;">📰 News</h3>
+    <p style="color: #888; font-style: italic;">No news yet. Updates will appear here soon.</p>
+    <!--
+    <ul>
+      <li>Oct 2025 — Presented at the <em>INFORMS Annual Meeting</em> in Atlanta.</li>
+      <li>Sep 2025 — Paper under review at <em>MSOM</em>.</li>
+    </ul>
+    -->
   </div>
 
-  <p style="text-align:center; font-size:13px; color:#777; margin-top:8px;">
-    Tracking visitors since October 2025
-  </p>
+  <!-- Right Column: Visitors Map -->
+  <div style="flex: 1 1 48%; min-width: 300px; text-align: center;">
+    <h3 style="font-weight: normal; color: #555;">🌎 Visitors Map</h3>
+    <div style="margin-top:10px;">
+      <script type="text/javascript" id="clustrmaps"
+        src="//clustrmaps.com/map_v2.js?d=oPLM1fsDm01h0b7IUIURdDxjeBc3a5aCKYY4XlNKs1g&cl=ffffff&w=a">
+      </script>
+    </div>
+    <p style="text-align:center; font-size:13px; color:#777; margin-top:8px;">
+      Tracking visitors since October 2025
+    </p>
+  </div>
 
 </section>
