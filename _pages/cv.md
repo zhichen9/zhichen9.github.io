@@ -36,15 +36,3 @@ author_profile: true
   <li>Jiangsu Province College Students’ Innovative Training Plan Program, 2017.</li>
 </ul>
 
-<h2>Contact</h2>
-<p>
-If you are interested in exchanging ideas or discussing potential collaborations, please feel free to contact me. 
-I am always happy to connect with researchers, students, and professionals who share similar interests.
-</p>
-
-
-<hr style="margin-top:15px; margin-bottom:10px;">
-
-<p>
-<b>Email:</b> <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a>
-</p>
