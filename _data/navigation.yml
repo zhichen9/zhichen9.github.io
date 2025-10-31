@@ -21,8 +21,8 @@ main:
   - title: "Miscellaneous"
     url: /miscellaneous/
 
-  - title: "My Gallery"
-    url: /my-gallery/
+  # - title: "My Gallery"
+  #   url: /my-gallery/
 
   - title: "Contact"
     url: /contact/
