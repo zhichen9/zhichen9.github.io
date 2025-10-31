@@ -14,7 +14,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "Zhi Chen"
 title_separator          : "-"
-name                     : &name "Zhi Chen"
+name                     : &name "Zhi Chen (陈智)"
 description              : &description "personal description"
 url                      : https://zhichen9.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -29,7 +29,7 @@ author:
   name             : "Zhi Chen"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. Student in Supply Chain Management"
-  location         : "Houston, USA"
+  location         : "Houston, TX, USA"
   employer         : "University of Houston"
   uri              : # URL
   email            : "zhichen.colin@gmail.com" 
@@ -206,7 +206,10 @@ collections:
   # teaching:
   #   output: true
   #   permalink: /:collection/:path/
-  publications:
+  # publications:
+  #   output: true
+  #   permalink: /:collection/:path/
+  Reseaarch:
     output: true
     permalink: /:collection/:path/
   # portfolio:
@@ -247,9 +250,18 @@ defaults:
   #     share: true
   #     comments: true
   # _publications
+  # - scope:
+  #     path: ""
+  #     type: publications
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     share: true
+  #     comments: true
+  _Research
   - scope:
       path: ""
-      type: publications
+      type: research
     values:
       layout: single
       author_profile: true
