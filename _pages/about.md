@@ -24,35 +24,57 @@ In my leisure time, I enjoy traveling, exploring cities, experiencing diverse cu
 <hr style="margin-top: 25px; margin-bottom: 30px;">
 
 
-<!-- ========================== -->
-<!-- 📰 News + 🌎 Visitors Map -->
-<!-- ========================== -->
+<!-- ===================================================== -->
+<!-- 📰 News Timeline  +  🌎 Visitors Map Layout -->
+<!-- ===================================================== -->
 
-<section id="news-map" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
+<section id="news-map"
+         style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:20px;background:none;">
 
-  <!-- Left Column: News -->
-  <div style="flex: 1 1 48%; min-width: 300px;">
-    <h3 style="font-weight: normal; color: #555;">📰 News</h3>
-    <p style="color: #888; font-style: italic;">No news yet. Updates will appear here soon.</p>
-    <!--
-    <ul>
-      <li>Oct 2025 — Presented at the <em>INFORMS Annual Meeting</em> in Atlanta.</li>
-      <li>Sep 2025 — Paper under review at <em>MSOM</em>.</li>
-    </ul>
-    -->
+  <!-- Left Column : News Timeline -->
+  <div style="flex:1 1 48%;min-width:300px;background:none;">
+    <h3 style="font-weight:normal;color:#333;margin-bottom:10px;">📰 News</h3>
+
+    <!-- Timeline container -->
+    <div style="position:relative;padding-left:20px;margin-top:15px;border-left:2px solid #e0e0e0;">
+      <p style="color:#999;font-style:italic;">No news yet. Updates will appear here soon.</p>
+      
+      <!-- Example entries (uncomment when ready) -->
+      <!--
+      <div style="position:relative;margin-bottom:18px;">
+        <span style="position:absolute;left:-10px;top:4px;width:10px;height:10px;
+                     background-color:#2b6cb0;border-radius:50%;"></span>
+        <span style="font-weight:600;color:#2b6cb0;">Oct 2025 —</span>
+        Presented at the <em>INFORMS Annual Meeting</em> in Atlanta.
+      </div>
+
+      <div style="position:relative;margin-bottom:18px;">
+        <span style="position:absolute;left:-10px;top:4px;width:10px;height:10px;
+                     background-color:#2b6cb0;border-radius:50%;"></span>
+        <span style="font-weight:600;color:#2b6cb0;">Sep 2025 —</span>
+        Paper under review at <em>Manufacturing & Service Operations Management</em>.
+      </div>
+      -->
+    </div>
   </div>
 
-  <!-- Right Column: Visitors Map -->
-  <div style="flex: 1 1 48%; min-width: 300px; text-align: center;">
-    <h3 style="font-weight: normal; color: #555;">🌎 Visitors Map</h3>
+  <!-- Right Column : Visitors Map -->
+  <div style="flex:1 1 48%;min-width:300px;text-align:center;background:none;">
+    <h3 style="font-weight:normal;color:#333;margin-bottom:10px;">🌎 Visitors Map</h3>
     <div style="margin-top:10px;">
       <script type="text/javascript" id="clustrmaps"
-        src="//clustrmaps.com/map_v2.js?d=oPLM1fsDm01h0b7IUIURdDxjeBc3a5aCKYY4XlNKs1g&cl=ffffff&w=a">
+              src="//clustrmaps.com/map_v2.js?d=oPLM1fsDm01h0b7IUIURdDxjeBc3a5aCKYY4XlNKs1g&cl=ffffff&w=a">
       </script>
     </div>
-    <p style="text-align:center; font-size:13px; color:#777; margin-top:8px;">
+    <p style="text-align:center;font-size:13px;color:#777;margin-top:8px;">
       Tracking visitors since October 2025
     </p>
   </div>
 
 </section>
+
+<!-- ===================================================== -->
+<!-- 🌫️ Bottom Divider for Smooth Footer Transition -->
+<!-- ===================================================== -->
+
+<hr style="margin-top: 40px; border: none; border-top: 1px solid #e8e8e8; width: 95%; opacity: 0.6;">
