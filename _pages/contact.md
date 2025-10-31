@@ -8,9 +8,9 @@ author_profile: true
 <div style="margin-top: 20px;">
 
 <p style="font-size: 1.1em; line-height: 1.7;">
-Thank you for visiting my website! I’m currently a first-year Ph.D. student, just beginning my journey in research and learning many new things along the way.
+<em> Thank you for visiting my website! I’m currently a first-year Ph.D. student, just beginning my journey in research and learning many new things along the way.
 If you’d like to connect for academic discussions, share ideas, or simply chat about research interests, please feel free to reach me through the contact information below.
-I’d be happy to hear from you!
+I’d be happy to hear from you! </em>
 </p>
 
 <hr style="margin: 30px 0;">
