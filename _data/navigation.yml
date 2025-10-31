@@ -1,7 +1,7 @@
 # main links links
 main:
-  - title: "Publications"
-    url: /publications/
+  - title: "Research"
+    url: /research/
 
  # - title: "Talks"
  #   url: /talks/    
@@ -20,4 +20,10 @@ main:
     
   - title: "Miscellaneous"
     url: /miscellaneous/
+
+  - title: "Contact"
+    url: /contact/
+
+  # - title: "Blog Posts"
+ #   url: /year-archive/
 
