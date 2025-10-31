@@ -7,8 +7,10 @@ redirect_from:
   - /about.html
 ---
 
+Welcome to my personal website!
+
 <p style="margin-bottom: 10px;">
-Hi! I am a first-year Ph.D. student in Supply Chain Management at the C. T. Bauer College of Business, University of Houston.
+Hi! I’m Zhi Chen, a first-year Ph.D. student in Supply Chain Management at the C. T. Bauer College of Business, University of Houston.
 </p>
 <p style="margin-bottom: 10px;">
 My research interests focus on Healthcare Operations, Digital Platforms, Retail Operations, Online Reviews, and Information Technology.
