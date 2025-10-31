@@ -7,15 +7,15 @@ author_profile: true
 
 <h2>Education</h2>
 <ul>
-  <li>Ph.D. in Supply Chain Management (Aug. 2025 - Present), <b>C. T. Bauer College of Business</b>, <a href="https://www.uh.edu/">University of Houston</a>.</li>
-  <li>M.S. in Management Science and Engineering, <a href="https://en.tongji.edu.cn/">Tongji University</a>, Sep. 2022 – Jun. 2025.</li>
-  <li>B.S. in Information Management and Information Systems, <a href="https://en.hhu.edu.cn/">Hohai University</a>, Sep. 2016 – Jun. 2020.</li>
+  <li>Ph.D. in Supply Chain Management, <b>C. T. Bauer College of Business</b>, <a href="https://www.uh.edu/">University of Houston</a>, Aug. 2025 - Present.</li>
+  <li>M.S. in Management Science and Engineering, <b>School of Economics and Management</b>,  <a href="https://en.tongji.edu.cn/">Tongji University</a>, Sep. 2022 – Jun. 2025.</li>
+  <li>B.S. in Information Management and Information Systems, <b>Business School</b>,  <a href="https://en.hhu.edu.cn/">Hohai University</a>, Sep. 2016 – Jun. 2020.</li>
   <li>Visiting Student, <a href="https://www.klu.org/">Kühne Logistics University</a>, Sep. 2022 – Jan. 2023.</li>
 </ul>
 
 <h2>Academic Employment</h2>
 <ul>
-  <li>Ph.D. Student, C. T. Bauer College of Business, University of Houston, 2025 – Present.</li>
+  <li>Instructional Assistant, C. T. Bauer College of Business, University of Houston, 2025 – Present.</li>
   <li>Graduate Research Assistant, Tongji University, 2022 – 2025.</li>
 </ul>
 
