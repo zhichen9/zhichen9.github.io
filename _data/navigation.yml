@@ -22,7 +22,7 @@ main:
     url: /miscellaneous/
 
   - title: "my-gallery"
-   url: /my-gallery/
+    url: /my-gallery/
 
   - title: "Contact"
     url: /contact/
