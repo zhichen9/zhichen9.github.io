@@ -12,7 +12,7 @@ theme                    : jekyll-theme-minimal
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 locale                   : "en-US"
-title                    : "Zhi Chen"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "Zhi Chen (陈智)"
 description              : &description "personal description"
@@ -23,7 +23,7 @@ repository               : "zhichen9/zhichen9.github.io"
 # Site Author
 author:
   avatar           : "test2.jpg"
-  name             : "Zhi Chen"
+  name             : "Zhi Chen (陈智)"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. Student in Supply Chain Management"
   location         : "Houston, TX, USA"
