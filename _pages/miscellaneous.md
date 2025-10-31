@@ -36,7 +36,8 @@ author_profile: true
 </h1>
 <p style="text-align:center;color:#555;margin:0 0 18px;">
  <em> Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.
-  A collection of travel memories — each place tells a story of moments, light, and time. </em> 
+  
+   A collection of travel memories — each place tells a story of moments, light, and time. </em> 
 </p>
 
 <nav id="gallery-nav"></nav>
