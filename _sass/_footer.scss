@@ -90,3 +90,8 @@
     }
   }
 }
+
+/* --- Custom: hide Sitemap link in footer, keep Feed --- */
+.page__footer a[href*="/sitemap/"] {
+  display: none !important;
+}
