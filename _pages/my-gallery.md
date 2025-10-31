@@ -5,12 +5,6 @@ permalink: /my-gallery/
 author_profile: true
 ---
 
-## 📸 My Gallery
-
-Welcome to my gallery!  
-Here are a few snapshots from my academic life and personal journey.
-
-
 <!-- 
   🌍 Travel Gallery Page
   Author: Zhichen
@@ -38,9 +32,10 @@ Here are a few snapshots from my academic life and personal journey.
 
 <!-- Title + Search -->
 <h1 id="top" style="text-align:center;margin:12px 0 8px;opacity:0;transform:translateY(-10px);animation:fadeSlide 0.9s ease-out forwards;">
-  🌍 Travel Gallery
+   📸 My Gallery
 </h1>
 <p style="text-align:center;color:#555;margin:0 0 18px;">
+  Welcome to my gallery!  Here are a few snapshots from my academic life and personal journey.
   A collection of travel memories — each place tells a story of moments, light, and time.
 </p>
 
