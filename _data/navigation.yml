@@ -24,6 +24,6 @@ main:
   - title: "Contact"
     url: /contact/
 
-  # - title: "Blog Posts"
- #   url: /year-archive/
+  - title: "my-gallery"
+   url: /my-gallery/
 
