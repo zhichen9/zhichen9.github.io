@@ -38,8 +38,8 @@ markdown: false
 </h1>
 
 <p class="gallery-intro">
-  Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.<br>
-  A collection of travel memories — each place tells a story of moments, light, and time.
+  <em> Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.<br> </em> 
+  <em> A collection of travel memories — each place tells a story of moments, light, and time. </em>
 </p>
 
 <nav id="gallery-nav"></nav>
