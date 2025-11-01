@@ -3,8 +3,10 @@ layout: archive
 title: ""
 permalink: /miscellaneous/
 author_profile: true
+markdown: false
 ---
 
+{% raw %}
 <!-- 
   🌍 Travel Gallery Page
   Author: Zhichen
@@ -30,14 +32,14 @@ author_profile: true
   <p style="margin-top:12px;color:#666;">Loading gallery…</p>
 </div>
 
-<!-- Title + Search -->
+<!-- Title + Intro -->
 <h1 id="top" style="text-align:center;margin:12px 0 8px;opacity:0;transform:translateY(-10px);animation:fadeSlide 0.9s ease-out forwards;">
   🌍 Travel Gallery
 </h1>
-<p style="text-align:center;color:#555;margin:0 0 18px;">
- <em> Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.
-  
-   A collection of travel memories — each place tells a story of moments, light, and time. </em> 
+
+<p class="gallery-intro">
+  Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.<br>
+  A collection of travel memories — each place tells a story of moments, light, and time.
 </p>
 
 <nav id="gallery-nav"></nav>
@@ -79,7 +81,7 @@ author_profile: true
     <div class="gallery">
       {%- for i in (1..total) -%}
         {%- assign p = photos | where: "id", i | first -%}
-
+        {%- if p -%}
         {%- assign title = p.title_en | default: cname | append: " — Scene " | append: i -%}
         {%- assign cname_lower = cname | downcase -%}
 
@@ -93,6 +95,7 @@ author_profile: true
                src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
                alt="{{ title }}">
         </a>
+        {%- endif -%}
       {%- endfor -%}
     </div>
 
@@ -129,7 +132,7 @@ author_profile: true
 .gallery a{position:relative;display:inline-block;break-inside:avoid}
 .gallery img{width:100%;height:auto;border-radius:8px;margin-bottom:15px;opacity:0;transform:translateY(14px);transition:all .8s ease}
 .gallery img.visible{opacity:1;transform:translateY(0)}
-.gallery img:hover{transform:scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.gallery img:hover{transform:scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,.2);will-change:transform}
 .download-link{text-align:center;margin:8px 0}
 .download-link a{background:#2980b9;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:14px}
 .download-link a:hover{background:#1f5f87}
@@ -139,10 +142,11 @@ author_profile: true
 #go-top{position:fixed;bottom:30px;right:30px;background:#2980b9;color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.22);opacity:0;pointer-events:none;transition:all .3s}
 #go-top.show{opacity:1;pointer-events:auto}
 #go-top:hover{transform:scale(1.08)}
-/* Lightbox captions */
 .gdesc-inner{background:rgba(255,255,255,0.92)!important;color:#222!important;border-radius:10px;padding:10px 14px;line-height:1.55;font-size:14px;max-width:820px;margin:auto}
 #lang-toggle{position:fixed;top:10px;right:10px;background:#333;color:#fff;font-size:13px;border:none;border-radius:8px;padding:6px 10px;z-index:9999;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 #lang-toggle:hover{background:#555}
+/* Custom intro paragraph */
+.gallery-intro{text-align:center;color:#555;font-size:16px;line-height:1.6;letter-spacing:.3px;font-style:italic;margin:0 0 18px;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif}
 @media(max-width:1000px){.gallery{column-count:2}}
 @media(max-width:680px){.gallery{column-count:1}}
 </style>
@@ -169,28 +173,17 @@ window.addEventListener("load", ()=>{
     noRes.style.display=(visible===0&&val!=="")?"block":"none";});
   const imgs=document.querySelectorAll(".gallery img");
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target);}});},{rootMargin:"0px 0px -10% 0px"});imgs.forEach(i=>io.observe(i));
-  document.querySelectorAll(".country-header .toggle").forEach(h3=>{h3.addEventListener("click",()=>{const gal=h3.parentElement.parentElement.querySelector(".gallery");gal.style.display=(gal.style.display==='none'?'':'none');});});
-
-  // 🌐 Language toggle
+  document.querySelectorAll(".country-header .toggle").forEach(h3=>{h3.addEventListener("click",()=>{const gal=h3.parentElement.parentElement.querySelector(".gallery");gal.style.display=(gal.style.display==='none'?'block':'none');});});
   let currentLang='en';
   const btn=document.createElement("button");
   btn.id="lang-toggle";btn.textContent="🌐 EN / 中文";
   btn.addEventListener("click",()=>{currentLang=(currentLang==='en'?'zh':'en');updateLang();});
   document.body.appendChild(btn);
-
-  const lb=GLightbox({
-    selector:".glightbox",
-    touchNavigation:true,
-    loop:true,
-    zoomable:true,
-    descPosition:"bottom",
-    onOpen:()=>updateLang()
-  });
-
+  const lb=GLightbox({selector:".glightbox",touchNavigation:true,loop:true,zoomable:true,descPosition:"bottom",onOpen:()=>updateLang()});
   function updateLang(){
     document.querySelectorAll(".gdesc-inner").forEach(el=>{
       const parent=el.closest(".gslide");
-      const a=parent?.querySelector("a.glightbox");
+      const a=document.querySelector(`a[href="${parent?.querySelector('img')?.src}"]`);
       if(!a)return;
       const text=a.dataset[`description${currentLang==='en'?'En':'Zh'}`];
       el.innerHTML=text||"";
@@ -198,3 +191,4 @@ window.addEventListener("load", ()=>{
   }
 });
 </script>
+{% endraw %}
