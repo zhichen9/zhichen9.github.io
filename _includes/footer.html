@@ -6,17 +6,36 @@
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
     {% endif %}
+
     {% if site.author.github %}
-      <li><a href="http://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+      <li>
+        <a href="http://github.com/{{ site.author.github }}">
+          <i class="fab fa-github" aria-hidden="true"></i> GitHub
+        </a>
+      </li>
     {% endif %}
+
     {% if site.author.bitbucket %}
-      <li><a href="http://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
+      <li>
+        <a href="http://bitbucket.org/{{ site.author.bitbucket }}">
+          <i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket
+        </a>
+      </li>
     {% endif %}
+
     {% if site.atom_feed.hide != true %}
       <li>
         <a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}">
-          <i class="fa fa-fw fa-rss-square" aria-hidden="true"></i>
-          {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
+          <i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed
+        </a>
+      </li>
+    {% endif %}
+
+    {% if site.sitemap != false %}
+      <!-- Sitemap link hidden from interface -->
+      <li style="display: none;">
+        <a href="{{ '/sitemap.xml' | relative_url }}">
+          <i class="fa fa-fw fa-sitemap" aria-hidden="true"></i> Sitemap
         </a>
       </li>
     {% endif %}
@@ -24,10 +43,10 @@
 </div>
 {% endif %}
 
-<!-- ✅ Custom Copyright Section -->
+<!-- Custom Copyright Section -->
 <div class="page__footer-copyright" style="font-size: 0.9em; color: #999; margin-top: 10px; text-align: left; line-height: 1.6;">
   <em>
-    Copyright © {{ site.time | date: "%Y" }} by Zhi Chen. All Rights Reserved.<br>
-    Last Modified: {{ site.time | date: "%B, %Y" }}.
+    Copyright © {{ site.time | date: "%Y" }} {{ site.author.name }}. All Rights Reserved.<br>
+    Last Modified: {{ site.time | date: "%B %d, %Y" }}.
   </em>
 </div>
