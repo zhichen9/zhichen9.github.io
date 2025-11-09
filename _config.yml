@@ -33,18 +33,19 @@ author:
   uri              : "https://www.bauer.uh.edu/search/directory/profile.asp?firstname=Zhi&lastname=Chen"
   email            : "zhichen.colin@gmail.com" 
   linkedin         : "https://www.linkedin.com/in/zhi-chen-684140327"
-  links:
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:zchen68@cougarnet.uh.edu"
+  
+  # links:
+  #   - label: "Email"
+  #     icon: "fas fa-envelope"
+  #     url: "mailto:zchen68@cougarnet.uh.edu"
 
-    - label: "University of Houston"
-      icon: "fas fa-university"
-      url: "https://www.bauer.uh.edu/search/directory/profile.asp?firstname=Zhi&lastname=Chen"
+  #   - label: "University of Houston"
+  #     icon: "fas fa-university"
+  #     url: "https://www.bauer.uh.edu/search/directory/profile.asp?firstname=Zhi&lastname=Chen"
 
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/zhi-chen-684140327"
+  #   - label: "LinkedIn"
+  #     icon: "fab fa-linkedin"
+  #     url: "https://www.linkedin.com/in/zhi-chen-684140327"
 
 
 # Site Settings
