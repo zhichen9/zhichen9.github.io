@@ -16,9 +16,25 @@ I’d be happy to hear from you! </em>
 <hr style="margin: 30px 0;">
 
 <h3 style="font-weight:600; color:#333;">📧 Email</h3>
-<p style="font-size: 1.05em; margin-bottom: 25px;">
-<a href="mailto:zhichen.colin@gmail.com" style="color:#004080; text-decoration:none;">zhichen.colin@gmail.com</a>
-</p>
+
+<ul style="list-style:none; padding-left:0; font-size:1.05em; line-height:1.8;">
+  <li>
+    <strong>
+      <a href="mailto:zhichen.colin@gmail.com" 
+         style="color:#004080; text-decoration:none;">
+         zhichen.colin@gmail.com
+      </a>
+    </strong>
+    <span style="color:#666; font-style:italic;">(primary)</span>
+  </li>
+  <li>
+    <a href="mailto:zchen68@cougarnet.uh.edu" 
+       style="color:#004080; text-decoration:none;">
+       zchen68@cougarnet.uh.edu
+    </a>
+    <span style="color:#666; font-style:italic;">(university)</span>
+  </li>
+</ul>
 
 <h3 style="font-weight:600; color:#333;">🏫 Office Address</h3>
 <p style="font-size: 1.05em; line-height:1.6;">
