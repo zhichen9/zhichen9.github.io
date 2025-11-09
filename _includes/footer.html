@@ -1,7 +1,13 @@
 {% include base_path %}
 
+{%- comment -%}
+  Footer section
+  ✅ Keep sitemap.xml and feed.xml generation
+  🚫 Hide Sitemap and Feed icons from footer UI
+{%- endcomment -%}
+
 {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-<div class="page__footer-follow">
+<div class="page__footer-follow" style="display:none;">
   <ul class="social-icons">
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
@@ -32,8 +38,7 @@
     {% endif %}
 
     {% if site.sitemap != false %}
-      <!-- Sitemap link hidden from interface -->
-      <li style="display: none;">
+      <li>
         <a href="{{ '/sitemap.xml' | relative_url }}">
           <i class="fa fa-fw fa-sitemap" aria-hidden="true"></i> Sitemap
         </a>
@@ -44,7 +49,7 @@
 {% endif %}
 
 <!-- Custom Copyright Section -->
-<div class="page__footer-copyright" style="font-size: 0.9em; color: #999; margin-top: 10px; text-align: left; line-height: 1.6;">
+<div class="page__footer-copyright" style="font-size:0.9em; color:#999; margin-top:10px; text-align:left; line-height:1.6;">
   <em>
     Copyright © {{ site.time | date: "%Y" }} {{ site.author.name }}. All Rights Reserved.<br>
     Last Modified: {{ site.time | date: "%B %d, %Y" }}.
