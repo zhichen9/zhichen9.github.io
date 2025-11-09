@@ -204,6 +204,7 @@ timezone: America/Los_Angeles
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
