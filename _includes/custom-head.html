@@ -1,7 +1,17 @@
 <style>
+/* --- Fix employer link layout --- */
 .author__desktop a {
   display: inline !important;
   margin-left: 2px;
   vertical-align: middle;
+  color: inherit; /* 保持与正文颜色一致 */
+  text-decoration: none; /* 默认不显示下划线 */
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+/* --- Hover 美化效果 --- */
+.author__desktop a:hover {
+  color: #0a66c2; /* LinkedIn 蓝 或学校蓝 */
+  text-decoration: underline; /* 悬停时加下划线 */
 }
 </style>
