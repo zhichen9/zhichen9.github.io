@@ -32,6 +32,7 @@ author:
   employer         : "University of Houston"
   uri              : "https://www.bauer.uh.edu/search/directory/profile.asp?firstname=Zhi&lastname=Chen"
   email            : "zhichen.colin@gmail.com" 
+  linkedin         : "https://www.linkedin.com/in/zhi-chen-684140327"
   links:
     - label: "Email"
       icon: "fas fa-envelope"
