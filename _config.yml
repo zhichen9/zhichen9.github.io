@@ -32,6 +32,19 @@ author:
   employer         : "University of Houston"
   uri              : # URL
   email            : "zhichen.colin@gmail.com" 
+  links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:zchen68@cougarnet.uh.edu"
+
+    - label: "University of Houston"
+      icon: "fas fa-university"
+      url: "https://www.bauer.uh.edu/search/directory/profile.asp?firstname=Zhi&lastname=Chen"
+
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "www.linkedin.com/in/zhi-chen-684140327"
+
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, e.g. "500x300.png"
