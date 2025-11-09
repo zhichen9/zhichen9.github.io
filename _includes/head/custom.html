@@ -33,6 +33,13 @@
 
 <!-- Custom style to fix employer link layout -->
 <style>
+/* 调整图标与文字的间距 */
+.author__desktop .icon-pad-right {
+  margin-right: 4px !important; /* 原本是 8-10px，改成更紧凑 */
+  vertical-align: middle;
+}
+
+/* 控制链接布局和 hover 效果 */
 .author__desktop a {
   display: inline !important;
   margin-left: 2px;
@@ -41,8 +48,10 @@
   text-decoration: none;
   transition: color 0.2s ease, text-decoration 0.2s ease;
 }
+
 .author__desktop a:hover {
   color: #0a66c2; /* LinkedIn 蓝 或学校蓝 */
   text-decoration: underline;
 }
 </style>
+
