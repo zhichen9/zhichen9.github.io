@@ -4,22 +4,85 @@
 
 {% include seo.html %}
 
-<meta name="description" content="Zhi Chen (陈智), Ph.D. student in Supply Chain Management at the University of Houston. Research interests: Healthcare Operations, Digital Platforms, Retail Operations, Online Reviews, and Information Technology.">
-<meta name="keywords" content="Zhi Chen, 陈智, University of Houston, Supply Chain Management, Research, Healthcare Operations, Digital Platforms">
+<!-- ============================= -->
+<!-- 📈 Basic SEO Meta Information -->
+<!-- ============================= -->
+<meta name="description" content="Zhi Chen (陈智) — Ph.D. student in Supply Chain Management at the University of Houston. Research on healthcare operations, digital platforms, and retail operations.">
+<meta name="keywords" content="Zhi Chen, 陈智, University of Houston, C.T. Bauer College of Business, Ph.D. Student, Supply Chain Management, Healthcare Operations, Digital Platforms, Retail Operations">
 <meta name="author" content="Zhi Chen">
 
+<!-- ============================= -->
+<!-- 🌐 Open Graph for Google / LinkedIn / WeChat -->
+<!-- ============================= -->
+<meta property="og:title" content="Zhi Chen | Ph.D. Student at University of Houston">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhichen9.github.io/">
+<meta property="og:image" content="https://zhichen9.github.io/assets/img/profile.jpg">
+<meta property="og:description" content="Ph.D. student in Supply Chain Management at the C.T. Bauer College of Business, University of Houston. Research on healthcare operations, digital platforms, and retail operations.">
+<meta property="og:site_name" content="Zhi Chen Academic Website">
+
+<!-- ============================= -->
+<!-- 🐦 Twitter Card -->
+<!-- ============================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zhi Chen | Ph.D. Student at University of Houston">
+<meta name="twitter:description" content="Research on healthcare operations, digital platforms, and retail operations.">
+<meta name="twitter:image" content="https://zhichen9.github.io/assets/img/profile.jpg">
+
+<!-- ============================= -->
+<!-- 🧠 JSON-LD: Structured Data for Google Knowledge Panel -->
+<!-- ============================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Zhi Chen",
+  "alternateName": "陈智",
+  "url": "https://zhichen9.github.io/",
+  "image": "https://zhichen9.github.io/assets/img/profile.jpg",
+  "jobTitle": "Ph.D. Student in Supply Chain Management",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Houston",
+    "department": {
+      "@type": "CollegeOrUniversity",
+      "name": "C.T. Bauer College of Business"
+    }
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Houston"
+  },
+  "sameAs": [
+    "https://scholar.google.com/",
+    "https://www.linkedin.com/",
+    "https://orcid.org/"
+  ],
+  "description": "Ph.D. student in Supply Chain Management at the University of Houston. Research interests include healthcare operations, digital platforms, and retail operations."
+}
+</script>
+
+<!-- ============================= -->
+<!-- 📡 Atom Feed -->
+<!-- ============================= -->
 <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
-<!-- http://t.co/dKP3o1e -->
+<!-- ============================= -->
+<!-- 📱 Mobile Optimization -->
+<!-- ============================= -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ============================= -->
+<!-- 🧩 JS Helper -->
+<!-- ============================= -->
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
-<!-- For all browsers -->
+<!-- ============================= -->
+<!-- 🎨 Styles -->
+<!-- ============================= -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
-
 <meta http-equiv="cleartype" content="on">
