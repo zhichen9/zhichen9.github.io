@@ -3,7 +3,7 @@ layout: archive
 title: ""
 permalink: /miscellaneous/
 author_profile: true
-markdown: true
+markdown: false
 ---
 
 {% raw %}
@@ -38,8 +38,10 @@ markdown: true
 </h1>
 
 <p class="gallery-intro">
-  <em> Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.<br> 
-       A collection of travel memories — each place tells a story of moments, light, and time. </em>
+  <em>
+    Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.<br>
+    A collection of travel memories — each place tells a story of moments, light, and time.
+  </em>
 </p>
 
 <nav id="gallery-nav"></nav>
