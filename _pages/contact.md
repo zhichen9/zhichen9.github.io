@@ -25,6 +25,8 @@ author_profile: true
     </a>
   </p>
 
+  <hr style="margin: 30px 0;">
+
   <h3 style="font-weight:600; color:#333;">🏫 Office Address</h3>
   <p style="font-size: 1.05em; line-height:1.6;">
     <em>
