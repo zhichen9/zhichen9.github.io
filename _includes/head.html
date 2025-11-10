@@ -1,7 +1,6 @@
 {% include base_path %}
 
 <meta charset="utf-8">
-
 {% include seo.html %}
 
 <!-- ============================= -->
@@ -11,13 +10,16 @@
 <meta name="keywords" content="Zhi Chen, 陈智, University of Houston, C.T. Bauer College of Business, Ph.D. Student, Supply Chain Management, Healthcare Operations, Digital Platforms, Retail Operations">
 <meta name="author" content="Zhi Chen">
 
+<!-- Canonical URL -->
+<link rel="canonical" href="https://zhichen9.github.io/">
+
 <!-- ============================= -->
 <!-- 🌐 Open Graph for Google / LinkedIn / WeChat -->
 <!-- ============================= -->
 <meta property="og:title" content="Zhi Chen | Ph.D. Student at University of Houston">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zhichen9.github.io/">
-<meta property="og:image" content="https://zhichen9.github.io/assets/img/profile.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhichen9/zhichen9.github.io/test1/images/test5.jpg">
 <meta property="og:description" content="Ph.D. student in Supply Chain Management at the C.T. Bauer College of Business, University of Houston. Research on healthcare operations, digital platforms, and retail operations.">
 <meta property="og:site_name" content="Zhi Chen Academic Website">
 
@@ -27,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zhi Chen | Ph.D. Student at University of Houston">
 <meta name="twitter:description" content="Research on healthcare operations, digital platforms, and retail operations.">
-<meta name="twitter:image" content="https://zhichen9.github.io/assets/img/profile.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhichen9/zhichen9.github.io/test1/images/test5.jpg">
 
 <!-- ============================= -->
 <!-- 🧠 JSON-LD: Structured Data for Google Knowledge Panel -->
@@ -35,30 +37,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Zhi Chen",
-  "alternateName": "陈智",
-  "url": "https://zhichen9.github.io/",
-  "image": "https://zhichen9.github.io/assets/img/profile.jpg",
-  "jobTitle": "Ph.D. Student in Supply Chain Management",
-  "affiliation": {
-    "@type": "CollegeOrUniversity",
-    "name": "University of Houston",
-    "department": {
-      "@type": "CollegeOrUniversity",
-      "name": "C.T. Bauer College of Business"
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Zhi Chen",
+      "alternateName": "陈智",
+      "url": "https://zhichen9.github.io/",
+      "image": "https://raw.githubusercontent.com/zhichen9/zhichen9.github.io/test1/images/test5.jpg",
+      "jobTitle": "Ph.D. Student in Supply Chain Management",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "C.T. Bauer College of Business, University of Houston",
+        "url": "https://www.bauer.uh.edu/"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Houston",
+        "url": "https://uh.edu/"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Houston"
+      },
+      "sameAs": [
+        "https://scholar.google.com/",
+        "https://www.linkedin.com/in/zhi-chen-684140327",
+        "https://orcid.org/"
+      ],
+      "description": "Zhi Chen (陈智) is a Ph.D. student in Supply Chain Management at the C.T. Bauer College of Business, University of Houston. Research interests include healthcare operations, digital platforms, and retail operations."
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://zhichen9.github.io/",
+      "name": "Zhi Chen Academic Website",
+      "description": "Ph.D. student in Supply Chain Management at the University of Houston. Research on healthcare operations, digital platforms, and retail operations.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Zhi Chen"
+      }
     }
-  },
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "University of Houston"
-  },
-  "sameAs": [
-    "https://scholar.google.com/",
-    "https://www.linkedin.com/",
-    "https://orcid.org/"
-  ],
-  "description": "Ph.D. student in Supply Chain Management at the University of Houston. Research interests include healthcare operations, digital platforms, and retail operations."
+  ]
 }
 </script>
 
