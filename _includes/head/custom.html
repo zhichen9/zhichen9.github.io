@@ -33,25 +33,34 @@
 
 <!-- Custom style to fix employer link layout -->
 <style>
-/* 调整图标与文字的间距 */
-.author__desktop .icon-pad-right {
-  margin-right: 0.5px !important; /* 原本是 8-10px，改成更紧凑 */
-  vertical-align: middle;
+/* ========== 作者信息区样式优化 ========== */
+/* 调整整体行高，让项目之间更紧凑 */
+.author__desktop {
+  line-height: 1.2; /* 原主题一般为 1.6，这里改为 1.2 更紧凑 */
 }
 
-/* 控制链接布局和 hover 效果 */
+/* 调整图标与文字的间距与对齐方式 */
+.author__desktop .icon-pad-right {
+  margin-right: 0; /* 移除多余右间距 */
+  vertical-align: middle; /* 图标垂直居中 */
+}
+
+/* 控制链接布局与 hover 效果 */
 .author__desktop a {
-  display: inline !important;
-  margin-left: 0.5px;
-  vertical-align: middle;
-  color: inherit;
-  text-decoration: none;
+  display: inline-flex !important; /* 图标与文字同行排列 */
+  align-items: center; /* 垂直居中对齐 */
+  gap: 4px; /* 图标与文字之间的距离 */
+  margin-left: 0;
+  color: inherit; /* 保持与周围文字颜色一致 */
+  text-decoration: none; /* 默认无下划线 */
   transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
+/* 鼠标悬停时的样式 */
 .author__desktop a:hover {
-  color: #0a66c2; /* LinkedIn 蓝 或学校蓝 */
+  color: #0a66c2; /* LinkedIn 蓝 / 学校蓝 */
   text-decoration: underline;
 }
 </style>
+
 
