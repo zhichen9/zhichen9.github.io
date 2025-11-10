@@ -25,12 +25,6 @@ author_profile: true
     </a>
   </p>
 
-  <p style="font-size: 1.05em; margin-bottom: 25px;">
-    <a href="mailto:zchen68@cougarnet.uh.edu" style="color:#004080; text-decoration:none;">
-      zchen68@cougarnet.uh.edu
-    </a>
-  </p>
-
   <hr style="margin: 30px 0;">
 
   <h3 style="font-weight:600; color:#333;">🏫 Office Address</h3>
