@@ -54,7 +54,8 @@ markdown: false
 
 <!-- Countries -->
 {%- assign sections = 
-  "nov_denmark|🇩🇰|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
+  "dec_finland|🇫🇮|Finland|#003580|12|2022|Dec,/downloads/finland.zip;
+   nov_denmark|🇩🇰|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
    oct_italy|🇮🇹|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
    sep_france|🇫🇷|France|#0055A4|28|2022|Sep,/downloads/france.zip;
    aug_germany|🇩🇪|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
