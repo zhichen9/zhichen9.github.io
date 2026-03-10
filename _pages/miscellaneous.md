@@ -92,8 +92,22 @@ markdown: false
            class="glightbox"
            data-gallery="{{ key }}"
            data-title="{{ title }}"
-           data-description-en="📍 {{ p.location_en }} — {{ p.date }} — {{ p.weather_en }}<br>🏛️ {{ p.landmark_en }}<br>📖 {{ p.description_en }}"
-           data-description-zh="📍 {{ p.location_zh }} — {{ p.date }} — {{ p.weather_zh }}<br>🏛️ {{ p.landmark_zh }}<br>📖 {{ p.description_zh }}">
+           data-description-en="
+             <div class='caption-block'>
+               <div class='caption-meta'><strong>Location:</strong> {{ p.location_en }}</div>
+               <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
+               <div class='caption-meta'><strong>Weather:</strong> {{ p.weather_en }}</div>
+               <div class='caption-meta'><strong>Landmark:</strong> {{ p.landmark_en }}</div>
+               <div class='caption-text'>{{ p.description_en }}</div>
+             </div>"
+           data-description-zh="
+             <div class='caption-block'>
+               <div class='caption-meta'><strong>地点：</strong>{{ p.location_zh }}</div>
+               <div class='caption-meta'><strong>时间：</strong>{{ p.date }}</div>
+               <div class='caption-meta'><strong>天气：</strong>{{ p.weather_zh }}</div>
+               <div class='caption-meta'><strong>地标：</strong>{{ p.landmark_zh }}</div>
+               <div class='caption-text'>{{ p.description_zh }}</div>
+             </div>">
           <img loading="lazy"
                src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
                alt="{{ title }}">
@@ -148,6 +162,9 @@ markdown: false
 .gdesc-inner{background:rgba(255,255,255,0.92)!important;color:#222!important;border-radius:10px;padding:10px 14px;line-height:1.55;font-size:14px;max-width:820px;margin:auto}
 #lang-toggle{position:fixed;top:10px;right:10px;background:#333;color:#fff;font-size:13px;border:none;border-radius:8px;padding:6px 10px;z-index:9999;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 #lang-toggle:hover{background:#555}
+.caption-block{text-align:left;line-height:1.7;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif}
+.caption-meta{font-size:14px;color:#444;margin-bottom:4px}
+.caption-text{margin-top:10px;font-size:15px;color:#222;font-style:italic}
 /* Custom intro paragraph */
 .gallery-intro{text-align:center;color:#555;font-size:16px;line-height:1.6;letter-spacing:.3px;font-style:italic;margin:0 0 18px;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif}
 @media(max-width:1000px){.gallery{column-count:2}}
@@ -159,36 +176,112 @@ markdown: false
 window.addEventListener("load", ()=>{
   const overlay=document.getElementById("loading-overlay");
   setTimeout(()=>{overlay.style.opacity=0;setTimeout(()=>overlay.remove(),650)},500);
+
   const nav=document.getElementById("gallery-nav");
   const sections=[...document.querySelectorAll(".country-section")];
-  sections.forEach(sec=>{const name=sec.dataset.country;const id=name.toLowerCase();sec.id=id;const a=document.createElement("a");a.href=`#${id}`;a.textContent=name;nav.appendChild(a);});
+  sections.forEach(sec=>{
+    const name=sec.dataset.country;
+    const id=name.toLowerCase();
+    sec.id=id;
+    const a=document.createElement("a");
+    a.href=`#${id}`;
+    a.textContent=name;
+    nav.appendChild(a);
+  });
+
   const navLinks=[...document.querySelectorAll('#gallery-nav a')];
-  const spy=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.remove('active'));const c=document.querySelector(`#gallery-nav a[href="#${e.target.id}"]`);if(c)c.classList.add('active');}});},{threshold:0.3,rootMargin:"-20% 0px -60% 0px"});
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        navLinks.forEach(l=>l.classList.remove('active'));
+        const c=document.querySelector(`#gallery-nav a[href="#${e.target.id}"]`);
+        if(c)c.classList.add('active');
+      }
+    });
+  },{threshold:0.3,rootMargin:"-20% 0px -60% 0px"});
   sections.forEach(sec=>spy.observe(sec));
-  const goTop=document.getElementById("go-top");const progress=document.getElementById("progress-bar");
-  const onScroll=()=>{nav.classList.toggle("shadow",window.scrollY>60);goTop.classList.toggle("show",window.scrollY>420);
-    const max=document.body.scrollHeight-window.innerHeight;const pct=max>0?(window.scrollY/max)*100:0;progress.style.width=pct+"%";};
-  onScroll();window.addEventListener("scroll",onScroll);
+
+  const goTop=document.getElementById("go-top");
+  const progress=document.getElementById("progress-bar");
+  const onScroll=()=>{
+    nav.classList.toggle("shadow",window.scrollY>60);
+    goTop.classList.toggle("show",window.scrollY>420);
+    const max=document.body.scrollHeight-window.innerHeight;
+    const pct=max>0?(window.scrollY/max)*100:0;
+    progress.style.width=pct+"%";
+  };
+  onScroll();
+  window.addEventListener("scroll",onScroll);
+
   goTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-  const input=document.getElementById("country-search");const noRes=document.getElementById("no-result");
-  input.addEventListener("input",()=>{const val=input.value.trim().toLowerCase();let visible=0;
-    sections.forEach(sec=>{const match=sec.textContent.toLowerCase().includes(val);sec.style.display=match?"":"none";if(match)visible++;});
-    noRes.style.display=(visible===0&&val!=="")?"block":"none";});
+
+  const input=document.getElementById("country-search");
+  const noRes=document.getElementById("no-result");
+  input.addEventListener("input",()=>{
+    const val=input.value.trim().toLowerCase();
+    let visible=0;
+    sections.forEach(sec=>{
+      const match=sec.textContent.toLowerCase().includes(val);
+      sec.style.display=match?"":"none";
+      if(match)visible++;
+    });
+    noRes.style.display=(visible===0&&val!=="")?"block":"none";
+  });
+
   const imgs=document.querySelectorAll(".gallery img");
-  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target);}});},{rootMargin:"0px 0px -10% 0px"});imgs.forEach(i=>io.observe(i));
-  document.querySelectorAll(".country-header .toggle").forEach(h3=>{h3.addEventListener("click",()=>{const gal=h3.parentElement.parentElement.querySelector(".gallery");gal.style.display=(gal.style.display==='none'?'block':'none');});});
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      }
+    });
+  },{rootMargin:"0px 0px -10% 0px"});
+  imgs.forEach(i=>io.observe(i));
+
+  document.querySelectorAll(".country-header .toggle").forEach(h3=>{
+    h3.addEventListener("click",()=>{
+      const gal=h3.parentElement.parentElement.querySelector(".gallery");
+      gal.style.display=(gal.style.display==='none'?'block':'none');
+    });
+  });
+
   let currentLang='en';
   const btn=document.createElement("button");
-  btn.id="lang-toggle";btn.textContent="🌐 EN / 中文";
-  btn.addEventListener("click",()=>{currentLang=(currentLang==='en'?'zh':'en');updateLang();});
+  btn.id="lang-toggle";
+  btn.textContent="🌐 EN / 中文";
+  btn.addEventListener("click",()=>{
+    currentLang=(currentLang==='en'?'zh':'en');
+    updateLang();
+  });
   document.body.appendChild(btn);
-  const lb=GLightbox({selector:".glightbox",touchNavigation:true,loop:true,zoomable:true,descPosition:"bottom",onOpen:()=>updateLang()});
+
+  const lb=GLightbox({
+    selector:".glightbox",
+    touchNavigation:true,
+    loop:true,
+    zoomable:true,
+    descPosition:"bottom",
+    onOpen:()=>updateLang(),
+    afterSlideChange:()=>updateLang()
+  });
+
   function updateLang(){
-    document.querySelectorAll(".gdesc-inner").forEach(el=>{
-      const parent=el.closest(".gslide");
-      const a=document.querySelector(`a[href="${parent?.querySelector('img')?.src}"]`);
-      if(!a)return;
-      const text=a.dataset[`description${currentLang==='en'?'En':'Zh'}`];
+    document.querySelectorAll(".gslide-description .gdesc-inner").forEach(el=>{
+      const slide=el.closest(".gslide");
+      const img=slide?.querySelector(".gslide-image img");
+      const src=img?.getAttribute("src");
+      if(!src)return;
+
+      const matchingLink=[...document.querySelectorAll("a.glightbox")].find(a=>{
+        const href=a.getAttribute("href");
+        return href===src || href.endsWith(src);
+      });
+
+      if(!matchingLink)return;
+      const text=currentLang==='en'
+        ? matchingLink.dataset.descriptionEn
+        : matchingLink.dataset.descriptionZh;
       el.innerHTML=text||"";
     });
   }
