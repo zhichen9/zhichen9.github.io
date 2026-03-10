@@ -21,9 +21,11 @@ markdown: false
     - Country sections with flag-colored gradient header line
     - Floating "Back to Top" button
     - Per-country "Download Album" buttons
+    - Per-country summary/subtitle from _data/travel/section_meta.yml
 -->
 
 {%- assign data = site.data.travel.descriptions -%}
+{%- assign meta = site.data.travel.section_meta -%}
 
 <!-- Reading progress bar + Loading overlay -->
 <div id="progress-bar"></div>
@@ -73,12 +75,23 @@ markdown: false
   {%- assign month = left[6] | strip -%}
   {%- assign dl = parts[1] | strip -%}
   {%- assign photos = data[key] -%}
+  {%- assign secmeta = meta[key] -%}
 
   <div class="country-section" data-country="{{ cname }}" style="--theme1:{{ theme }};--theme2:#f7f9ff;">
     <div class="country-header">
       <h3 class="toggle">{{ flag }} {{ month }}. {{ year }} – {{ cname }} Memories</h3>
-      <p style="margin:6px 0 10px;">Scenes from {{ cname }} — light, rhythm, and color in every frame.</p>
+
+      {%- if secmeta and secmeta.summary_en -%}
+        <p class="section-summary">{{ secmeta.summary_en }}</p>
+      {%- else -%}
+        <p class="section-summary">Scenes from {{ cname }} — light, rhythm, and color in every frame.</p>
+      {%- endif -%}
+
+      {%- if secmeta and secmeta.subtitle_en -%}
+        <p class="section-subtitle">{{ secmeta.subtitle_en }}</p>
+      {%- endif -%}
     </div>
+
     <p class="photo-desc">Click a photo to open full view. Use 🌐 to toggle English / 中文 captions.</p>
 
     <div class="gallery">
@@ -130,43 +143,135 @@ markdown: false
 
 <button id="go-top" title="Back to Top">↑</button>
 
-<!-- Lightbox & Styles -->
 <link rel="stylesheet" href="{{ '/assets/css/glightbox.min.css' | relative_url }}">
+
 <style>
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes fadeSlide{to{opacity:1;transform:translateY(0)}}
-#progress-bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#2980b9,#8e44ad);z-index:200}
-#gallery-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);text-align:center;padding:10px;border-bottom:1px solid #ddd;transition:box-shadow .3s}
+
+#progress-bar{
+  position:fixed;top:0;left:0;height:4px;width:0;
+  background:linear-gradient(90deg,#2980b9,#8e44ad);
+  z-index:200
+}
+
+#gallery-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(8px);
+  text-align:center;padding:10px;
+  border-bottom:1px solid #ddd;
+  transition:box-shadow .3s
+}
 #gallery-nav.shadow{box-shadow:0 2px 10px rgba(0,0,0,.1)}
-#gallery-nav a{display:inline-block;margin:0 8px;padding:8px 14px;border-radius:8px;background:#f5f5f5;color:#333;text-decoration:none;font-weight:600;transition:all .3s}
+#gallery-nav a{
+  display:inline-block;margin:0 8px;padding:8px 14px;border-radius:8px;
+  background:#f5f5f5;color:#333;text-decoration:none;font-weight:600;transition:all .3s
+}
 #gallery-nav a.active,#gallery-nav a:hover{background:#333;color:#fff}
-#country-search:focus{outline:none;border-color:#2980b9;box-shadow:0 0 6px rgba(41,128,185,.28)}
-.country-section{position:relative;background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);border-radius:14px;padding:25px 20px;margin-bottom:58px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.country-section::before{content:"";display:block;height:6px;border-radius:6px 6px 0 0;background:linear-gradient(90deg,var(--theme1),var(--theme2));position:absolute;left:0;right:0;top:0}
-.country-header h3{color:var(--theme1);font-size:20px;margin:0 0 6px;font-weight:700;cursor:pointer}
-.photo-desc{font-style:italic;color:#666;margin:2px 0 14px;text-align:center}
+
+#country-search:focus{
+  outline:none;border-color:#2980b9;box-shadow:0 0 6px rgba(41,128,185,.28)
+}
+
+.country-section{
+  position:relative;
+  background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);
+  border-radius:14px;padding:25px 20px;margin-bottom:58px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05)
+}
+.country-section::before{
+  content:"";display:block;height:6px;border-radius:6px 6px 0 0;
+  background:linear-gradient(90deg,var(--theme1),var(--theme2));
+  position:absolute;left:0;right:0;top:0
+}
+
+.country-header h3{
+  color:var(--theme1);font-size:20px;margin:0 0 6px;font-weight:700;cursor:pointer
+}
+.section-summary{
+  margin:6px 0 8px;
+  color:#555;
+  font-size:16px;
+  line-height:1.6;
+  text-align:left;
+}
+.section-subtitle{
+  margin:0 0 12px;
+  color:#6a6a6a;
+  font-size:15px;
+  line-height:1.7;
+  text-align:center;
+  font-style:italic;
+}
+
+.photo-desc{
+  font-style:italic;color:#666;margin:2px 0 14px;text-align:center
+}
+
 .gallery{column-count:3;column-gap:15px}
 .gallery a{position:relative;display:inline-block;break-inside:avoid}
-.gallery img{width:100%;height:auto;border-radius:8px;margin-bottom:15px;opacity:0;transform:translateY(14px);transition:all .8s ease}
+.gallery img{
+  width:100%;height:auto;border-radius:8px;margin-bottom:15px;
+  opacity:0;transform:translateY(14px);transition:all .8s ease
+}
 .gallery img.visible{opacity:1;transform:translateY(0)}
-.gallery img:hover{transform:scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,.2);will-change:transform}
+.gallery img:hover{
+  transform:scale(1.03);
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  will-change:transform
+}
+
 .download-link{text-align:center;margin:8px 0}
-.download-link a{background:#2980b9;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:14px}
+.download-link a{
+  background:#2980b9;color:#fff;padding:8px 14px;border-radius:8px;
+  text-decoration:none;font-size:14px
+}
 .download-link a:hover{background:#1f5f87}
+
 .back-top{text-align:right;margin-top:8px}
 .back-top a{font-size:14px;color:#777;text-decoration:none}
 .back-top a:hover{color:var(--theme1)}
-#go-top{position:fixed;bottom:30px;right:30px;background:#2980b9;color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.22);opacity:0;pointer-events:none;transition:all .3s}
+
+#go-top{
+  position:fixed;bottom:30px;right:30px;background:#2980b9;color:#fff;border:none;
+  border-radius:50%;width:44px;height:44px;font-size:18px;
+  box-shadow:0 4px 12px rgba(0,0,0,.22);
+  opacity:0;pointer-events:none;transition:all .3s
+}
 #go-top.show{opacity:1;pointer-events:auto}
 #go-top:hover{transform:scale(1.08)}
-.gdesc-inner{background:rgba(255,255,255,0.92)!important;color:#222!important;border-radius:10px;padding:10px 14px;line-height:1.55;font-size:14px;max-width:820px;margin:auto}
-#lang-toggle{position:fixed;top:10px;right:10px;background:#333;color:#fff;font-size:13px;border:none;border-radius:8px;padding:6px 10px;z-index:9999;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+
+.gdesc-inner{
+  background:rgba(255,255,255,0.92)!important;
+  color:#222!important;border-radius:10px;padding:10px 14px;
+  line-height:1.55;font-size:14px;max-width:820px;margin:auto
+}
+
+#lang-toggle{
+  position:fixed;top:10px;right:10px;background:#333;color:#fff;font-size:13px;
+  border:none;border-radius:8px;padding:6px 10px;z-index:9999;cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,.3)
+}
 #lang-toggle:hover{background:#555}
-.caption-block{text-align:left;line-height:1.7;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif}
-.caption-meta{font-size:14px;color:#444;margin-bottom:4px}
-.caption-text{margin-top:10px;font-size:15px;color:#222;font-style:italic}
-/* Custom intro paragraph */
-.gallery-intro{text-align:center;color:#555;font-size:16px;line-height:1.6;letter-spacing:.3px;font-style:italic;margin:0 0 18px;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif}
+
+.caption-block{
+  text-align:left;line-height:1.7;
+  font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif
+}
+.caption-meta{
+  font-size:14px;color:#444;margin-bottom:4px
+}
+.caption-text{
+  margin-top:10px;font-size:15px;color:#222;font-style:italic
+}
+
+.gallery-intro{
+  text-align:center;color:#555;font-size:16px;line-height:1.6;letter-spacing:.3px;
+  font-style:italic;margin:0 0 18px;
+  font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif
+}
+
 @media(max-width:1000px){.gallery{column-count:2}}
 @media(max-width:680px){.gallery{column-count:1}}
 </style>
@@ -179,6 +284,7 @@ window.addEventListener("load", ()=>{
 
   const nav=document.getElementById("gallery-nav");
   const sections=[...document.querySelectorAll(".country-section")];
+
   sections.forEach(sec=>{
     const name=sec.dataset.country;
     const id=name.toLowerCase();
@@ -203,6 +309,7 @@ window.addEventListener("load", ()=>{
 
   const goTop=document.getElementById("go-top");
   const progress=document.getElementById("progress-bar");
+
   const onScroll=()=>{
     nav.classList.toggle("shadow",window.scrollY>60);
     goTop.classList.toggle("show",window.scrollY>420);
@@ -271,17 +378,19 @@ window.addEventListener("load", ()=>{
       const slide=el.closest(".gslide");
       const img=slide?.querySelector(".gslide-image img");
       const src=img?.getAttribute("src");
-      if(!src)return;
+      if(!src) return;
 
       const matchingLink=[...document.querySelectorAll("a.glightbox")].find(a=>{
         const href=a.getAttribute("href");
         return href===src || href.endsWith(src);
       });
 
-      if(!matchingLink)return;
+      if(!matchingLink) return;
+
       const text=currentLang==='en'
         ? matchingLink.dataset.descriptionEn
         : matchingLink.dataset.descriptionZh;
+
       el.innerHTML=text||"";
     });
   }
