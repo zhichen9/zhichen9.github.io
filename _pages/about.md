@@ -34,20 +34,19 @@ I am a first-year Ph.D. student in Supply Chain Management at the C. T. Bauer Co
 - B.S. in Information Management and Information Systems, Hohai University, Sep. 2016 - Jun. 2020.
 - Visiting Student, Kuhne Logistics University, Sep. 2022 - Jan. 2023.
 
-## Research Experience and Academic Employment
+## Academic Employment
 
 - Instructional Assistant, C. T. Bauer College of Business, University of Houston, 2025 - Present.
 - Graduate Research Assistant, Tongji University, 2022 - 2025.
 
 ## Research Interests
 
-Healthcare Operations; Digital Platforms; Retail Operations; Online Reviews; Information Technology.
+- Healthcare Operations; Digital Platforms; Retail Operations; Online Reviews; Information Technology.
 
 ## Skills
 
-Research Methods: Empirical Analysis, Game Theory, Optimization.
-
-Technical Proficiencies: Python, C, Java, SPSS, MATLAB, Mathematica.
+- Research Methods: Empirical Analysis, Game Theory, Optimization.
+- Technical Proficiencies: Python, C, Java, SPSS, MATLAB, Mathematica.
 
 ## Selected Awards
 
