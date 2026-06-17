@@ -7,36 +7,12 @@ body_class: misc-gallery-page
 markdown: false
 ---
 
-<!-- 
-  🌍 Travel Gallery Page
-  Author: Zhichen
-  Updated: 2025-10
-  Features:
-    - Sticky top nav with shadow + ScrollSpy
-    - Search filter
-    - Reading progress bar
-    - Loading fade-in
-    - Masonry gallery with fade-in images
-    - GLightbox fullscreen with English/中文 captions (toggle button 🌐)
-    - Country sections with flag-colored gradient header line
-    - Floating "Back to Top" button
-    - Per-country "Download Album" buttons
-    - Per-country summary/subtitle from _data/travel/section_meta.yml
--->
-
 {%- assign data = site.data.travel.descriptions -%}
 {%- assign meta = site.data.travel.section_meta -%}
 
-<!-- Reading progress bar + Loading overlay -->
-<div id="progress-bar"></div>
-<div id="loading-overlay" style="position:fixed;inset:0;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease;">
-  <div style="width:42px;height:42px;border:4px solid #ddd;border-top-color:#2980b9;border-radius:50%;animation:spin 1s linear infinite;"></div>
-  <p style="margin-top:12px;color:#666;">Loading gallery…</p>
-</div>
-
 <!-- Title + Intro -->
-<h1 id="top" style="text-align:center;margin:12px 0 8px;opacity:0;transform:translateY(-10px);animation:fadeSlide 0.9s ease-out forwards;">
-  🌍 Travel Gallery
+<h1 id="top" style="margin:0 0 16px;">
+  Travel Gallery
 </h1>
 
 <p class="gallery-intro">
@@ -52,7 +28,7 @@ markdown: false
   <input id="country-search" type="text" placeholder="🔍 Search country or keyword..."
          style="padding:8px 14px;width:60%;max-width:420px;border:1px solid #ccc;border-radius:8px;font-size:15px;">
 </div>
-<p id="no-result" style="display:none;text-align:center;color:#999;margin:10px 0 16px;">No matching results 😢</p>
+<p id="no-result" style="display:none;text-align:center;color:#999;margin:10px 0 16px;">No matching results.</p>
 
 <!-- Countries -->
 {%- assign sections = 
@@ -149,98 +125,92 @@ markdown: false
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes fadeSlide{to{opacity:1;transform:translateY(0)}}
 
-#progress-bar{
-  position:fixed;top:0;left:0;height:4px;width:0;
-  background:linear-gradient(90deg,#2980b9,#8e44ad);
-  z-index:200
-}
-
 #gallery-nav{
   position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,0.96);
-  backdrop-filter:blur(8px);
-  text-align:center;padding:10px;
-  border-bottom:1px solid #ddd;
-  transition:box-shadow .3s
+  background:var(--site-bg,#fff);
+  text-align:left;
+  padding:8px 0;
+  border-top:1px solid var(--site-border,#e6e6e6);
+  border-bottom:1px solid var(--site-border,#e6e6e6)
 }
-#gallery-nav.shadow{box-shadow:0 2px 10px rgba(0,0,0,.1)}
+#gallery-nav.shadow{box-shadow:none}
 #gallery-nav a{
-  display:inline-block;margin:0 8px;padding:8px 14px;border-radius:8px;
-  background:#f5f5f5;color:#333;text-decoration:none;font-weight:600;transition:all .3s
+  display:inline-block;margin:0 18px 0 0;padding:0;
+  background:transparent;color:var(--site-link,#0645ad);text-decoration:none;font-weight:400
 }
-#gallery-nav a.active,#gallery-nav a:hover{background:#333;color:#fff}
+#gallery-nav a.active,#gallery-nav a:hover{text-decoration:underline;background:transparent;color:var(--site-link-hover,#000)}
 
 #country-search:focus{
-  outline:none;border-color:#2980b9;box-shadow:0 0 6px rgba(41,128,185,.28)
+  outline:none;border-color:#777;box-shadow:none
 }
 
 .country-section{
   position:relative;
-  background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);
-  border-radius:14px;padding:25px 20px;margin-bottom:58px;
-  box-shadow:0 2px 10px rgba(0,0,0,.05)
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  margin:32px 0 44px;
+  box-shadow:none;
+  border-top:1px solid var(--site-border,#e6e6e6)
 }
-.country-section::before{
-  content:"";display:block;height:6px;border-radius:6px 6px 0 0;
-  background:linear-gradient(90deg,var(--theme1),var(--theme2));
-  position:absolute;left:0;right:0;top:0
-}
+.country-section::before{display:none}
 
 .country-header h3{
-  color:var(--theme1);font-size:20px;margin:0 0 6px;font-weight:700;cursor:pointer
+  color:var(--site-text,#222);font-size:1.15em;margin:14px 0 6px;font-weight:700;cursor:pointer
 }
 .section-summary{
   margin:6px 0 8px;
-  color:#555;
-  font-size:16px;
+  color:var(--site-muted,#666);
+  font-size:1em;
   line-height:1.6;
   text-align:left;
 }
 .section-subtitle{
   margin:0 0 12px;
-  color:#6a6a6a;
-  font-size:15px;
+  color:var(--site-muted,#666);
+  font-size:0.95em;
   line-height:1.7;
-  text-align:center;
+  text-align:left;
   font-style:italic;
 }
 
 .photo-desc{
-  font-style:italic;color:#666;margin:2px 0 14px;text-align:center
+  font-style:italic;color:var(--site-muted,#666);margin:2px 0 14px;text-align:left
 }
 
 .gallery{column-count:3;column-gap:15px}
 .gallery a{position:relative;display:inline-block;break-inside:avoid}
 .gallery img{
-  width:100%;height:auto;border-radius:8px;margin-bottom:15px;
-  opacity:0;transform:translateY(14px);transition:all .8s ease
+  width:100%;height:auto;border-radius:0;margin-bottom:15px;
+  opacity:1;transform:none;transition:opacity .2s ease
 }
-.gallery img.visible{opacity:1;transform:translateY(0)}
+.gallery img.visible{opacity:1;transform:none}
 .gallery img:hover{
-  transform:scale(1.03);
-  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  transform:none;
+  opacity:.9;
+  box-shadow:none;
   will-change:transform
 }
 
 .download-link{text-align:center;margin:8px 0}
 .download-link a{
-  background:#2980b9;color:#fff;padding:8px 14px;border-radius:8px;
-  text-decoration:none;font-size:14px
+  background:transparent;color:var(--site-link,#0645ad);padding:0;border-radius:0;
+  text-decoration:underline;font-size:0.95em
 }
-.download-link a:hover{background:#1f5f87}
+.download-link a:hover{background:transparent;color:var(--site-link-hover,#000)}
 
 .back-top{text-align:right;margin-top:8px}
 .back-top a{font-size:14px;color:#777;text-decoration:none}
 .back-top a:hover{color:var(--theme1)}
 
 #go-top{
-  position:fixed;bottom:30px;right:30px;background:#2980b9;color:#fff;border:none;
-  border-radius:50%;width:44px;height:44px;font-size:18px;
-  box-shadow:0 4px 12px rgba(0,0,0,.22);
+  position:fixed;bottom:30px;right:30px;background:var(--site-bg,#fff);color:var(--site-link,#0645ad);border:1px solid var(--site-border,#e6e6e6);
+  border-radius:0;width:34px;height:34px;font-size:16px;
+  box-shadow:none;
   opacity:0;pointer-events:none;transition:all .3s
 }
 #go-top.show{opacity:1;pointer-events:auto}
-#go-top:hover{transform:scale(1.08)}
+#go-top:hover{text-decoration:underline;transform:none}
 
 .gdesc-inner{
   background:rgba(255,255,255,0.92)!important;
@@ -249,11 +219,11 @@ markdown: false
 }
 
 #lang-toggle{
-  position:fixed;top:10px;right:10px;background:#333;color:#fff;font-size:13px;
-  border:none;border-radius:8px;padding:6px 10px;z-index:9999;cursor:pointer;
-  box-shadow:0 2px 8px rgba(0,0,0,.3)
+  position:fixed;top:10px;right:10px;background:var(--site-bg,#fff);color:var(--site-link,#0645ad);font-size:13px;
+  border:1px solid var(--site-border,#e6e6e6);border-radius:0;padding:4px 8px;z-index:9999;cursor:pointer;
+  box-shadow:none
 }
-#lang-toggle:hover{background:#555}
+#lang-toggle:hover{text-decoration:underline;background:var(--site-bg,#fff)}
 
 .caption-block{
   text-align:left;line-height:1.7;
@@ -267,9 +237,9 @@ markdown: false
 }
 
 .gallery-intro{
-  text-align:center;color:#555;font-size:16px;line-height:1.6;letter-spacing:.3px;
+  text-align:left;color:var(--site-muted,#666);font-size:1em;line-height:1.6;letter-spacing:0;
   font-style:italic;margin:0 0 18px;
-  font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif
+  font-family:Arial, Helvetica, sans-serif
 }
 
 @media(max-width:1000px){.gallery{column-count:2}}
@@ -279,9 +249,6 @@ markdown: false
 <script src="{{ '/assets/js/glightbox.min.js' | relative_url }}"></script>
 <script>
 window.addEventListener("load", ()=>{
-  const overlay=document.getElementById("loading-overlay");
-  setTimeout(()=>{overlay.style.opacity=0;setTimeout(()=>overlay.remove(),650)},500);
-
   const nav=document.getElementById("gallery-nav");
   const sections=[...document.querySelectorAll(".country-section")];
 
@@ -308,14 +275,10 @@ window.addEventListener("load", ()=>{
   sections.forEach(sec=>spy.observe(sec));
 
   const goTop=document.getElementById("go-top");
-  const progress=document.getElementById("progress-bar");
 
   const onScroll=()=>{
     nav.classList.toggle("shadow",window.scrollY>60);
     goTop.classList.toggle("show",window.scrollY>420);
-    const max=document.body.scrollHeight-window.innerHeight;
-    const pct=max>0?(window.scrollY/max)*100:0;
-    progress.style.width=pct+"%";
   };
   onScroll();
   window.addEventListener("scroll",onScroll);
