@@ -86,13 +86,6 @@ markdown: false
            class="glightbox"
            data-gallery="{{ key }}"
            data-title="{{ title }}"
-           data-description="
-             <div class='caption-block'>
-               <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
-               <div class='caption-meta'><strong>Location:</strong> {{ p.location_en }}</div>
-               <div class='caption-meta'><strong>Place / Background:</strong> {{ p.landmark_en }}</div>
-               <div class='caption-text'>{{ p.description_en }}</div>
-             </div>"
            data-description-en="
              <div class='caption-block'>
                <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
@@ -242,10 +235,19 @@ markdown: false
 #go-top.show{opacity:1;pointer-events:auto}
 #go-top:hover{text-decoration:underline;transform:none}
 
+.glightbox-container .gslide-description{
+  position:absolute;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.96)!important;
+  max-height:38vh;overflow-y:auto;padding:12px 16px 18px;
+  border-top:1px solid rgba(0,0,0,0.08)
+}
 .gdesc-inner{
-  background:rgba(255,255,255,0.92)!important;
-  color:#222!important;border-radius:10px;padding:10px 14px;
-  line-height:1.55;font-size:14px;max-width:820px;margin:auto
+  background:transparent!important;
+  color:#222!important;border-radius:0;padding:0;
+  line-height:1.55;font-size:14px;max-width:860px;margin:0 auto
+}
+.glightbox-open #lang-toggle{
+  z-index:1000001
 }
 
 #lang-toggle{
@@ -362,6 +364,20 @@ window.addEventListener("load", ()=>{
   });
 
   let currentLang='en';
+  const galleryLinks=[...document.querySelectorAll("a.glightbox")];
+
+  function slidePath(url){
+    try{return new URL(url,location.href).pathname;}
+    catch(e){return url||"";}
+  }
+
+  galleryLinks.forEach(link=>{
+    link.classList.remove("image-popup");
+    if(link.dataset.descriptionEn){
+      link.setAttribute("data-description",link.dataset.descriptionEn);
+    }
+  });
+
   const btn=document.createElement("button");
   btn.id="lang-toggle";
   btn.textContent="EN / 中文";
@@ -371,36 +387,38 @@ window.addEventListener("load", ()=>{
   });
   document.body.appendChild(btn);
 
-  const lb=GLightbox({
-    selector:".glightbox",
-    touchNavigation:true,
-    loop:true,
-    zoomable:true,
-    descPosition:"bottom",
-    onOpen:()=>updateLang(),
-    afterSlideChange:()=>updateLang()
-  });
+  function findGalleryLink(src){
+    const path=slidePath(src);
+    return galleryLinks.find(link=>slidePath(link.getAttribute("href"))===path);
+  }
+
+  function captionForLink(link){
+    if(!link)return"";
+    return currentLang==='zh'
+      ?(link.dataset.descriptionZh||link.dataset.descriptionEn||"")
+      :(link.dataset.descriptionEn||"");
+  }
 
   function updateLang(){
     document.querySelectorAll(".gslide-description .gdesc-inner").forEach(el=>{
       const slide=el.closest(".gslide");
       const img=slide?.querySelector(".gslide-image img");
-      const src=img?.getAttribute("src");
-      if(!src) return;
-
-      const matchingLink=[...document.querySelectorAll("a.glightbox")].find(a=>{
-        const href=a.getAttribute("href");
-        return href===src || href.endsWith(src);
-      });
-
-      if(!matchingLink) return;
-
-      const text=currentLang==='en'
-        ? matchingLink.dataset.descriptionEn
-        : matchingLink.dataset.descriptionZh;
-
-      el.innerHTML=text||"";
+      if(!img)return;
+      const src=img.getAttribute("src")||img.getAttribute("data-src")||"";
+      const link=findGalleryLink(src);
+      const text=captionForLink(link);
+      if(text)el.innerHTML=text;
     });
   }
+
+  GLightbox({
+    selector:".glightbox",
+    touchNavigation:true,
+    loop:true,
+    zoomable:true,
+    descPosition:"bottom",
+    onOpen:()=>setTimeout(updateLang,0),
+    afterSlideChange:()=>updateLang()
+  });
 });
 </script>
