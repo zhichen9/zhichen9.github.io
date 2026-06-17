@@ -11,9 +11,9 @@ markdown: false
 {%- assign meta = site.data.travel.section_meta -%}
 
 <!-- Title + Intro -->
-<h1 id="top" style="margin:0 0 16px;">
+<h2 id="top" class="gallery-title">
   Travel Gallery
-</h1>
+</h2>
 
 <p class="gallery-intro">
   <em>
@@ -240,6 +240,15 @@ markdown: false
   text-align:left;color:var(--site-muted,#666);font-size:1em;line-height:1.6;letter-spacing:0;
   font-style:italic;margin:0 0 18px;
   font-family:Arial, Helvetica, sans-serif
+}
+
+.gallery-title{
+  margin:0 0 12px;
+  padding-bottom:0.1em;
+  border-bottom:1px solid var(--site-border,#e6e6e6);
+  font-size:1.15em;
+  line-height:1.25;
+  font-weight:700
 }
 
 @media(max-width:1000px){.gallery{column-count:2}}
