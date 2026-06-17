@@ -86,20 +86,13 @@ markdown: false
            class="glightbox"
            data-gallery="{{ key }}"
            data-title="{{ title }}"
-           data-description-en="
-             <div class='caption-block'>
-               <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
-               <div class='caption-meta'><strong>Location:</strong> {{ p.location_en }}</div>
-               <div class='caption-meta'><strong>Place / Background:</strong> {{ p.landmark_en }}</div>
-               <div class='caption-text'>{{ p.description_en }}</div>
-             </div>"
-           data-description-zh="
-             <div class='caption-block'>
-               <div class='caption-meta'><strong>时间：</strong>{{ p.date }}</div>
-               <div class='caption-meta'><strong>地点：</strong>{{ p.location_zh }}</div>
-               <div class='caption-meta'><strong>地点/背景：</strong>{{ p.landmark_zh }}</div>
-               <div class='caption-text'>{{ p.description_zh }}</div>
-             </div>">
+           data-caption-date="{{ p.date }}"
+           data-caption-location-en="{{ p.location_en }}"
+           data-caption-location-zh="{{ p.location_zh }}"
+           data-caption-place-en="{{ p.landmark_en }}"
+           data-caption-place-zh="{{ p.landmark_zh }}"
+           data-caption-desc-en="{{ p.description_en }}"
+           data-caption-desc-zh="{{ p.description_zh }}">
           <img loading="lazy"
                src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
                alt="{{ title }}">
@@ -235,19 +228,87 @@ markdown: false
 #go-top.show{opacity:1;pointer-events:auto}
 #go-top:hover{text-decoration:underline;transform:none}
 
+.glightbox-container .gslide.current{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  max-height:100vh
+}
+.glightbox-container .gslide-media{
+  flex:1 1 auto;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  max-height:calc(100vh - 150px);
+  width:100%
+}
+.glightbox-container .gslide-image img{
+  max-height:calc(100vh - 150px)!important;
+  width:auto!important;
+  object-fit:contain
+}
+.glightbox-container .gslide-title{
+  display:none!important
+}
 .glightbox-container .gslide-description{
-  position:absolute;left:0;right:0;bottom:0;
-  background:rgba(255,255,255,0.96)!important;
-  max-height:38vh;overflow-y:auto;padding:12px 16px 18px;
-  border-top:1px solid rgba(0,0,0,0.08)
+  position:relative!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  flex:0 0 auto;
+  width:100%;
+  background:#fff!important;
+  max-height:none;
+  overflow:visible;
+  padding:16px 24px 20px;
+  border-top:1px solid #e6e6e6;
+  box-shadow:0 -4px 18px rgba(0,0,0,0.06)
 }
 .gdesc-inner{
   background:transparent!important;
-  color:#222!important;border-radius:0;padding:0;
-  line-height:1.55;font-size:14px;max-width:860px;margin:0 auto
+  color:#222!important;
+  border-radius:0;padding:0;
+  line-height:1.55;font-size:14px;max-width:920px;margin:0 auto
+}
+.caption-panel{
+  text-align:center;
+  font-family:Georgia,"Times New Roman",serif
+}
+.caption-panel__title{
+  margin:0 0 10px;
+  font-size:17px;
+  font-weight:700;
+  color:#111;
+  line-height:1.35
+}
+.caption-panel__meta{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:6px 14px;
+  margin:0 0 8px;
+  font-size:13px;
+  color:#555;
+  line-height:1.5;
+  font-family:Arial,Helvetica,sans-serif
+}
+.caption-panel__meta-item strong{
+  font-weight:600;
+  color:#333
+}
+.caption-panel__text{
+  margin:10px auto 0;
+  max-width:760px;
+  font-size:14px;
+  line-height:1.65;
+  color:#444;
+  font-style:italic
 }
 .glightbox-open #lang-toggle{
-  z-index:1000001
+  z-index:1000001;
+  top:12px;
+  right:12px
 }
 
 #lang-toggle{
@@ -256,6 +317,15 @@ markdown: false
   box-shadow:none
 }
 #lang-toggle:hover{text-decoration:underline;background:var(--site-bg,#fff)}
+
+@media(max-width:680px){
+  .glightbox-container .gslide-description{padding:14px 16px 18px}
+  .caption-panel__title{font-size:15px}
+  .caption-panel__meta{
+    flex-direction:column;
+    gap:4px
+  }
+}
 
 .caption-block{
   text-align:left;line-height:1.7;
@@ -373,9 +443,7 @@ window.addEventListener("load", ()=>{
 
   galleryLinks.forEach(link=>{
     link.classList.remove("image-popup");
-    if(link.dataset.descriptionEn){
-      link.setAttribute("data-description",link.dataset.descriptionEn);
-    }
+    link.setAttribute("data-description",buildCaption(link,currentLang));
   });
 
   const btn=document.createElement("button");
@@ -392,11 +460,29 @@ window.addEventListener("load", ()=>{
     return galleryLinks.find(link=>slidePath(link.getAttribute("href"))===path);
   }
 
-  function captionForLink(link){
+  function buildCaption(link,lang){
     if(!link)return"";
-    return currentLang==='zh'
-      ?(link.dataset.descriptionZh||link.dataset.descriptionEn||"")
-      :(link.dataset.descriptionEn||"");
+    const isZh=lang==='zh';
+    const title=link.getAttribute("data-title")||"";
+    const date=link.dataset.captionDate||"";
+    const location=isZh?(link.dataset.captionLocationZh||link.dataset.captionLocationEn||""):(link.dataset.captionLocationEn||"");
+    const place=isZh?(link.dataset.captionPlaceZh||link.dataset.captionPlaceEn||""):(link.dataset.captionPlaceEn||"");
+    const desc=isZh?(link.dataset.captionDescZh||link.dataset.captionDescEn||""):(link.dataset.captionDescEn||"");
+    const labels=isZh
+      ?{date:"时间",location:"地点",place:"地点 / 背景"}
+      :{date:"Date",location:"Location",place:"Place / Background"};
+
+    return `
+      <div class="caption-panel">
+        <div class="caption-panel__title">${title}</div>
+        <div class="caption-panel__meta">
+          <span class="caption-panel__meta-item"><strong>${labels.date}:</strong> ${date}</span>
+          <span class="caption-panel__meta-item"><strong>${labels.location}:</strong> ${location}</span>
+          <span class="caption-panel__meta-item"><strong>${labels.place}:</strong> ${place}</span>
+        </div>
+        ${desc?`<p class="caption-panel__text">${desc}</p>`:""}
+      </div>
+    `;
   }
 
   function updateLang(){
@@ -406,8 +492,7 @@ window.addEventListener("load", ()=>{
       if(!img)return;
       const src=img.getAttribute("src")||img.getAttribute("data-src")||"";
       const link=findGalleryLink(src);
-      const text=captionForLink(link);
-      if(text)el.innerHTML=text;
+      el.innerHTML=buildCaption(link,currentLang);
     });
   }
 
