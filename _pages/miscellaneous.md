@@ -57,9 +57,6 @@ markdown: false
   <div class="country-section" data-country="{{ cname }}" style="--theme1:{{ theme }};--theme2:#f7f9ff;">
     <div class="country-header">
       <div class="country-heading">
-        <img class="country-thumb"
-             src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_1.jpg"
-             alt="{{ cname }} album cover">
         <img class="country-flag"
              src="https://flagcdn.com/w40/{{ flag }}.png"
              alt="{{ cname }} flag"
@@ -160,15 +157,8 @@ markdown: false
 .country-heading{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   margin:14px 0 8px
-}
-.country-thumb{
-  width:56px;
-  height:42px;
-  object-fit:cover;
-  border:1px solid var(--site-border,#e6e6e6);
-  background:#fff
 }
 .country-flag{
   width:28px;
@@ -181,14 +171,14 @@ markdown: false
   color:var(--site-text,#222);font-size:1.15em;margin:0;font-weight:700;cursor:pointer
 }
 .section-summary{
-  margin:6px 0 8px 108px;
+  margin:6px 0 8px;
   color:var(--site-muted,#666);
   font-size:1em;
   line-height:1.6;
   text-align:left;
 }
 .section-subtitle{
-  margin:0 0 12px 108px;
+  margin:0 0 12px;
   color:var(--site-muted,#666);
   font-size:0.95em;
   line-height:1.7;
@@ -197,7 +187,7 @@ markdown: false
 }
 
 .photo-desc{
-  font-style:italic;color:var(--site-muted,#666);margin:2px 0 14px 108px;text-align:left
+  font-style:italic;color:var(--site-muted,#666);margin:2px 0 14px;text-align:left
 }
 
 .gallery{column-count:3;column-gap:15px}
