@@ -32,11 +32,11 @@ markdown: false
 
 <!-- Countries -->
 {%- assign sections = 
-  "dec_finland|🇫🇮|Finland|#003580|11|2022|Dec,/downloads/finland.zip;
-   nov_denmark|🇩🇰|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
-   oct_italy|🇮🇹|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
-   sep_france|🇫🇷|France|#0055A4|28|2022|Sep,/downloads/france.zip;
-   aug_germany|🇩🇪|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
+  "dec_finland|fi|Finland|#003580|11|2022|Dec,/downloads/finland.zip;
+   nov_denmark|dk|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
+   oct_italy|it|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
+   sep_france|fr|France|#0055A4|28|2022|Sep,/downloads/france.zip;
+   aug_germany|de|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
    | split: ";" -%}
 
 {%- for raw in sections -%}
@@ -60,7 +60,13 @@ markdown: false
         <img class="country-thumb"
              src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_1.jpg"
              alt="{{ cname }} album cover">
-        <h3 class="toggle"><span class="country-code">{{ flag }}</span> {{ month }}. {{ year }} – {{ cname }} Memories</h3>
+        <img class="country-flag"
+             src="https://flagcdn.com/w40/{{ flag }}.png"
+             alt="{{ cname }} flag"
+             width="28"
+             height="21"
+             loading="lazy">
+        <h3 class="toggle">{{ month }}. {{ year }} – {{ cname }} Memories</h3>
       </div>
 
       {%- if secmeta and secmeta.summary_en -%}
@@ -164,25 +170,25 @@ markdown: false
   border:1px solid var(--site-border,#e6e6e6);
   background:#fff
 }
-.country-code{
-  display:inline-block;
-  min-width:22px;
-  color:var(--site-muted,#666);
-  font-size:0.9em;
-  letter-spacing:0.02em
+.country-flag{
+  width:28px;
+  height:21px;
+  object-fit:cover;
+  border:1px solid var(--site-border,#e6e6e6);
+  flex-shrink:0
 }
 .country-header h3{
   color:var(--site-text,#222);font-size:1.15em;margin:0;font-weight:700;cursor:pointer
 }
 .section-summary{
-  margin:6px 0 8px 68px;
+  margin:6px 0 8px 108px;
   color:var(--site-muted,#666);
   font-size:1em;
   line-height:1.6;
   text-align:left;
 }
 .section-subtitle{
-  margin:0 0 12px 68px;
+  margin:0 0 12px 108px;
   color:var(--site-muted,#666);
   font-size:0.95em;
   line-height:1.7;
@@ -191,7 +197,7 @@ markdown: false
 }
 
 .photo-desc{
-  font-style:italic;color:var(--site-muted,#666);margin:2px 0 14px 68px;text-align:left
+  font-style:italic;color:var(--site-muted,#666);margin:2px 0 14px 108px;text-align:left
 }
 
 .gallery{column-count:3;column-gap:15px}
