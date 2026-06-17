@@ -25,18 +25,18 @@ markdown: false
 <nav id="gallery-nav"></nav>
 
 <div id="search-bar" style="text-align:center;margin:10px 0 2px;">
-  <input id="country-search" type="text" placeholder="🔍 Search country or keyword..."
+  <input id="country-search" type="text" placeholder="Search country or keyword..."
          style="padding:8px 14px;width:60%;max-width:420px;border:1px solid #ccc;border-radius:8px;font-size:15px;">
 </div>
 <p id="no-result" style="display:none;text-align:center;color:#999;margin:10px 0 16px;">No matching results.</p>
 
 <!-- Countries -->
 {%- assign sections = 
-  "dec_finland|🇫🇮|Finland|#003580|12|2022|Dec,/downloads/finland.zip;
-   nov_denmark|🇩🇰|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
-   oct_italy|🇮🇹|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
-   sep_france|🇫🇷|France|#0055A4|28|2022|Sep,/downloads/france.zip;
-   aug_germany|🇩🇪|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
+  "dec_finland|FI|Finland|#003580|11|2022|Dec,/downloads/finland.zip;
+   nov_denmark|DK|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
+   oct_italy|IT|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
+   sep_france|FR|France|#0055A4|28|2022|Sep,/downloads/france.zip;
+   aug_germany|DE|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
    | split: ";" -%}
 
 {%- for raw in sections -%}
@@ -50,12 +50,18 @@ markdown: false
   {%- assign year = left[5] | strip -%}
   {%- assign month = left[6] | strip -%}
   {%- assign dl = parts[1] | strip -%}
+  {%- assign cname_lower = cname | downcase -%}
   {%- assign photos = data[key] -%}
   {%- assign secmeta = meta[key] -%}
 
   <div class="country-section" data-country="{{ cname }}" style="--theme1:{{ theme }};--theme2:#f7f9ff;">
     <div class="country-header">
-      <h3 class="toggle">{{ flag }} {{ month }}. {{ year }} – {{ cname }} Memories</h3>
+      <div class="country-heading">
+        <img class="country-thumb"
+             src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_1.jpg"
+             alt="{{ cname }} album cover">
+        <h3 class="toggle"><span class="country-code">{{ flag }}</span> {{ month }}. {{ year }} – {{ cname }} Memories</h3>
+      </div>
 
       {%- if secmeta and secmeta.summary_en -%}
         <p class="section-summary">{{ secmeta.summary_en }}</p>
@@ -68,14 +74,13 @@ markdown: false
       {%- endif -%}
     </div>
 
-    <p class="photo-desc">Click a photo to open full view. Use 🌐 to toggle English / 中文 captions.</p>
+    <p class="photo-desc">Click a photo to open full view. Use EN / 中文 to switch captions.</p>
 
     <div class="gallery">
       {%- for i in (1..total) -%}
         {%- assign p = photos | where: "id", i | first -%}
         {%- if p -%}
         {%- assign title = p.title_en | default: cname | append: " — Scene " | append: i -%}
-        {%- assign cname_lower = cname | downcase -%}
 
         <a href="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
            class="glightbox"
@@ -83,18 +88,16 @@ markdown: false
            data-title="{{ title }}"
            data-description-en="
              <div class='caption-block'>
-               <div class='caption-meta'><strong>Location:</strong> {{ p.location_en }}</div>
                <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
-               <div class='caption-meta'><strong>Weather:</strong> {{ p.weather_en }}</div>
-               <div class='caption-meta'><strong>Landmark:</strong> {{ p.landmark_en }}</div>
+               <div class='caption-meta'><strong>Location:</strong> {{ p.location_en }}</div>
+               <div class='caption-meta'><strong>Place / Background:</strong> {{ p.landmark_en }}</div>
                <div class='caption-text'>{{ p.description_en }}</div>
              </div>"
            data-description-zh="
              <div class='caption-block'>
-               <div class='caption-meta'><strong>地点：</strong>{{ p.location_zh }}</div>
                <div class='caption-meta'><strong>时间：</strong>{{ p.date }}</div>
-               <div class='caption-meta'><strong>天气：</strong>{{ p.weather_zh }}</div>
-               <div class='caption-meta'><strong>地标：</strong>{{ p.landmark_zh }}</div>
+               <div class='caption-meta'><strong>地点：</strong>{{ p.location_zh }}</div>
+               <div class='caption-meta'><strong>地点/背景：</strong>{{ p.landmark_zh }}</div>
                <div class='caption-text'>{{ p.description_zh }}</div>
              </div>">
           <img loading="lazy"
@@ -106,7 +109,7 @@ markdown: false
     </div>
 
     <p class="download-link">
-      <a href="{{ dl }}" download>💾 Download {{ cname }} Album ({{ total }} photos)</a>
+      <a href="{{ dl }}" download>Download {{ cname }} Album ({{ total }} photos)</a>
     </p>
     <div class="back-top"><a href="#top">↑ Back to Top</a></div>
   </div>
@@ -114,7 +117,7 @@ markdown: false
 
 <hr style="margin-top:56px;margin-bottom:10px;">
 <p style="text-align:center;margin-top:10px;color:#555;font-size:15px;">
-  📧 Contact: <a href="mailto:zhichen.colin@gmail.com" style="color:#2980b9;text-decoration:none;">zhichen.colin@gmail.com</a>
+  Contact: <a href="mailto:zhichen.colin@gmail.com" style="color:#2980b9;text-decoration:none;">zhichen.colin@gmail.com</a>
 </p>
 
 <button id="go-top" title="Back to Top">↑</button>
@@ -155,18 +158,38 @@ markdown: false
 }
 .country-section::before{display:none}
 
+.country-heading{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:14px 0 8px
+}
+.country-thumb{
+  width:56px;
+  height:42px;
+  object-fit:cover;
+  border:1px solid var(--site-border,#e6e6e6);
+  background:#fff
+}
+.country-code{
+  display:inline-block;
+  min-width:22px;
+  color:var(--site-muted,#666);
+  font-size:0.9em;
+  letter-spacing:0.02em
+}
 .country-header h3{
-  color:var(--site-text,#222);font-size:1.15em;margin:14px 0 6px;font-weight:700;cursor:pointer
+  color:var(--site-text,#222);font-size:1.15em;margin:0;font-weight:700;cursor:pointer
 }
 .section-summary{
-  margin:6px 0 8px;
+  margin:6px 0 8px 68px;
   color:var(--site-muted,#666);
   font-size:1em;
   line-height:1.6;
   text-align:left;
 }
 .section-subtitle{
-  margin:0 0 12px;
+  margin:0 0 12px 68px;
   color:var(--site-muted,#666);
   font-size:0.95em;
   line-height:1.7;
@@ -175,7 +198,7 @@ markdown: false
 }
 
 .photo-desc{
-  font-style:italic;color:var(--site-muted,#666);margin:2px 0 14px;text-align:left
+  font-style:italic;color:var(--site-muted,#666);margin:2px 0 14px 68px;text-align:left
 }
 
 .gallery{column-count:3;column-gap:15px}
@@ -252,7 +275,13 @@ markdown: false
 }
 
 @media(max-width:1000px){.gallery{column-count:2}}
-@media(max-width:680px){.gallery{column-count:1}}
+@media(max-width:680px){
+  .gallery{column-count:1}
+  .section-summary,
+  .section-subtitle,
+  .photo-desc{margin-left:0}
+  .country-heading{align-items:flex-start}
+}
 </style>
 
 <script src="{{ '/assets/js/glightbox.min.js' | relative_url }}"></script>
@@ -328,7 +357,7 @@ window.addEventListener("load", ()=>{
   let currentLang='en';
   const btn=document.createElement("button");
   btn.id="lang-toggle";
-  btn.textContent="🌐 EN / 中文";
+  btn.textContent="EN / 中文";
   btn.addEventListener("click",()=>{
     currentLang=(currentLang==='en'?'zh':'en');
     updateLang();
