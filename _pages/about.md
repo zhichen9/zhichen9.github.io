@@ -20,7 +20,8 @@ redirect_from:
     C. T. Bauer College of Business<br>
     University of Houston<br>
     Houston, TX, USA<br>
-    E-mail: <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a>
+    E-mail: <a href="mailto:zhichen.colin@gmail.com">zhichen.colin@gmail.com</a><br>
+    [<a href="{{ '/cv/' | relative_url }}">Curriculum Vitae</a>]
   </p>
 </div>
 

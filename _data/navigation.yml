@@ -18,8 +18,5 @@ main:
  # - title: "Blog Posts"
  #   url: /year-archive/
     
-  - title: "Curriculum Vitae"
-    url: /cv/
-
   - title: "Miscellaneous"
     url: /miscellaneous/
