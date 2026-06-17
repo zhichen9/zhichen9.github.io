@@ -61,11 +61,17 @@ In my leisure time, I enjoy traveling, exploring cities, experiencing diverse cu
   <!-- Right Column : Visitors Map -->
   <div style="flex:1 1 48%;min-width:300px;text-align:center;background:none;">
     <h3 style="font-weight:normal;color:#333;margin-bottom:10px;">🌎 Visitors Map</h3>
-    <div style="margin-top:10px;">
+    <div id="clustrmaps-widget" style="margin-top:10px;min-height:180px;">
       <script type="text/javascript" id="clustrmaps"
-              src="//clustrmaps.com/map_v2.js?d=oPLM1fsDm01h0b7IUIURdDxjeBc3a5aCKYY4XlNKs1g&cl=ffffff&w=a">
+              src="https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=oPLM1fsDm01h0b7IUIURdDxjeBc3a5aCKYY4XlNKs1g">
       </script>
+      <noscript>
+        <p style="font-size:13px;color:#777;">Visitor map requires JavaScript.</p>
+      </noscript>
     </div>
+    <p class="clustrmaps-fallback" style="text-align:center;font-size:13px;color:#999;margin-top:8px;">
+      If the map does not appear, the external ClustrMaps service may be temporarily unavailable.
+    </p>
     <p style="text-align:center;font-size:13px;color:#777;margin-top:8px;">
       Tracking visitors since October 2025
     </p>
