@@ -7,6 +7,10 @@ redirect_from:
   - /resume
 ---
 
+<p>
+  <a class="btn" href="{{ '/files/Zhi_Chen_CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download CV</a>
+</p>
+
 ## Education
 
 Ph.D. in Supply Chain Management, University of Houston, Aug. 2025 - Present.
