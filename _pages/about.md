@@ -61,8 +61,8 @@ Technical Proficiencies: Python, C, Java, SPSS, MATLAB, Mathematica.
 
 ## Visitors
 
-<div id="visitor-map-container" style="margin-top:10px;min-height:180px;">
-  <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=QUTFhPF9-eC4Mdh7Msb9VPTEKLF9ECA6uBTRmQtF1og&cl=ffffff&w=a"></script>
+<div id="visitor-map-container" class="visitor-map">
+  <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=QUTFhPF9-eC4Mdh7Msb9VPTEKLF9ECA6uBTRmQtF1og&cl=ffffff&w=420"></script>
   <noscript>
     <p>Visitor map requires JavaScript.</p>
   </noscript>
