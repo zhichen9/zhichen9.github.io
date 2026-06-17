@@ -49,6 +49,12 @@ Academic Progress Scholarship, Hohai University, 2017.
 
 Jiangsu Province College Students' Innovative Training Plan Program, 2017.
 
+## News
+
+Aug. 2025: Started the Ph.D. program in Supply Chain Management at the University of Houston.
+
+Jun. 2025: Received the M.S. degree in Management Science and Engineering from Tongji University.
+
 ## Visitors
 
 <div id="visitor-map-container" style="margin-top:10px;min-height:180px;">
