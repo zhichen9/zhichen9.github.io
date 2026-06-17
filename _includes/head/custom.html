@@ -273,11 +273,36 @@ body {
     padding: 14px 10px;
   }
 
+  .greedy-nav button {
+    display: none;
+  }
+
+  .greedy-nav .visible-links,
+  .greedy-nav .hidden-links {
+    position: static;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .greedy-nav .hidden-links.hidden {
+    display: block !important;
+  }
+
+  .greedy-nav .hidden-links::before {
+    display: none;
+  }
+
   .masthead__menu-item,
   .masthead__menu-item--lg,
   .masthead__menu-item--theme {
     float: none;
     display: block;
+    height: auto;
     margin: 0 0 5px;
     padding: 0;
     white-space: normal;
