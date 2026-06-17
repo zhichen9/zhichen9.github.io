@@ -93,10 +93,17 @@ body {
   background: var(--site-nav-bg);
   border-bottom: 1px solid var(--site-border);
   box-shadow: none;
+  box-sizing: border-box;
 }
 
 .masthead__inner-wrap {
   padding: 10px 8px;
+}
+
+.masthead__menu,
+.academic-nav {
+  margin: 0;
+  padding: 0;
 }
 
 .academic-nav__title {
@@ -145,7 +152,7 @@ body {
 }
 
 #main {
-  max-width: 960px;
+  max-width: 860px;
   margin: 18px auto 0;
   padding: 0 12px;
 }
@@ -190,8 +197,8 @@ body {
 }
 
 .page__footer {
-  max-width: 960px;
-  margin: 36px auto 0;
+  max-width: 860px;
+  margin: 32px auto 0;
   padding: 0 12px 24px;
   background: var(--site-bg);
   border-top: 1px solid var(--site-border);
@@ -235,6 +242,10 @@ body {
   max-width: 1120px;
 }
 
+.research-page #main {
+  max-width: 760px;
+}
+
 .misc-gallery-page .page__title {
   text-align: center;
 }
@@ -263,37 +274,61 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 92px;
+    width: 86px;
     min-height: 100vh;
-    background: var(--site-nav-bg);
-    border-right: 1px solid #d4d4d4;
+    background: #eeeeee;
+    border-right: 1px solid #cfcfcf;
     border-bottom: 0;
+    z-index: 10;
   }
 
   .masthead__inner-wrap {
     width: auto;
-    padding: 12px 8px;
+    padding: 10px 6px;
   }
 
   .academic-nav__title,
   .academic-nav__link,
   .theme-toggle {
-    font-size: 0.86em;
-    line-height: 1.2;
+    font-size: 12px;
+    line-height: 1.18;
+  }
+
+  .academic-nav__title {
+    margin-bottom: 6px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #888;
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .academic-nav__link {
+    margin-bottom: 3px;
+    color: #0645ad;
+    text-decoration: underline;
   }
 
   .theme-toggle {
-    margin-top: 4px;
+    position: fixed;
+    left: 6px;
+    bottom: 10px;
+    width: 72px;
+    color: #0645ad;
+    font-size: 11px;
   }
 
   #main,
   .page__footer {
-    margin-left: 110px;
+    margin-left: 104px;
     margin-right: auto;
   }
 
   #main {
-    margin-top: 12px;
+    margin-top: 8px;
+  }
+
+  .research-page #main {
+    max-width: 760px;
   }
 }
 </style>
