@@ -1,45 +1,42 @@
 ---
 layout: archive
-#title: "CV"
+title: "Curriculum Vitae"
 permalink: /cv/
-author_profile: true
+author_profile: false
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## Education
 
-## [Curriculum Vitae](https://www.dropbox.com/scl/fi/lg5vs8n82mcinu0eojtc6/ZHI-CHEN_CV-2024.pdf?rlkey=0tkfqp7p9yv3g8u4a79jowjq8&st=06hj24rx&dl=0)
+Ph.D. in Supply Chain Management, University of Houston, Aug. 2025 - Present.
 
+M.S. in Management Science and Engineering, Tongji University, Sep. 2022 - Jun. 2025.
 
-Education
-======
-* Tongji University 
-  * M.S. Management Science and Engineering &nbsp;&nbsp;&nbsp;&nbsp; Sep.2022-Mar.2025(Expected)
-* Hohai University
-  * B.S. Information Management and Information Systems &nbsp;&nbsp;&nbsp;&nbsp; Sep.2016-Jun.2020
-* Kuhne Logistics University
-  * Exchange Student &nbsp;&nbsp;&nbsp;&nbsp; Sep.2022-Jan.2023
+B.S. in Information Management and Information Systems, Hohai University, Sep. 2016 - Jun. 2020.
 
-Research Experience
-======
-* Nov 2023– Apr 2024: Research Assistant
-  * Searching and reading of related literature, better understanding of the research, and what methodology will be used in the research. Reproduction based on relevant literature
-  * Provide some opinions on the research and refine the hypothesis
-  * Solve and analyze the given model
+Visiting Student, Kuhne Logistics University, Sep. 2022 - Jan. 2023.
 
-* Aug 2023– Sep 2023:   New Bike Lanes and Their Impacts
-  * Read related literature to understand the research background
-  * According to the requirements, search relevant materials and literature to obtain feasible carbon emission calculation formulas
-  * According to the obtained carbon emission formula, use python and existing data to solve and analyze
+## Academic Employment
 
-* Jan 2019– April 2019:  River Chief Management Information System
-  * Mainly improve the function of the existing river chief management information system, including marking the location of each camera in the google map and labeling it
-  * Make some functional changes to the existing system to bid for new projects
-  
-Research Skills
-======
-* Research Methods: Modeling, Game Theory
-* Technical Proficiencies: Latex, C, Java, Spss, Matlab, Mathematica, Solidworks
+Instructional Assistant, C. T. Bauer College of Business, University of Houston, 2025 - Present.
+
+Graduate Research Assistant, Tongji University, 2022 - 2025.
+
+## Research Interests
+
+Healthcare Operations; Digital Platforms; Retail Operations; Online Reviews; Information Technology.
+
+## Research Skills
+
+Research Methods: Empirical Analysis, Game Theory, Optimization.
+
+Technical Proficiencies: Python, C, Java, SPSS, MATLAB, Mathematica.
+
+## Awards and Honors
+
+Academic Progress Scholarship, Hohai University, 2017.
+
+Jiangsu Province College Students' Innovative Training Plan Program, 2017.
 
 
