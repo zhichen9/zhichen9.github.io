@@ -32,11 +32,11 @@ markdown: false
 
 <!-- Countries -->
 {%- assign sections = 
-  "dec_finland|FI|Finland|#003580|11|2022|Dec,/downloads/finland.zip;
-   nov_denmark|DK|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
-   oct_italy|IT|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
-   sep_france|FR|France|#0055A4|28|2022|Sep,/downloads/france.zip;
-   aug_germany|DE|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
+  "dec_finland|🇫🇮|Finland|#003580|11|2022|Dec,/downloads/finland.zip;
+   nov_denmark|🇩🇰|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
+   oct_italy|🇮🇹|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
+   sep_france|🇫🇷|France|#0055A4|28|2022|Sep,/downloads/france.zip;
+   aug_germany|🇩🇪|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
    | split: ";" -%}
 
 {%- for raw in sections -%}
@@ -86,6 +86,13 @@ markdown: false
            class="glightbox"
            data-gallery="{{ key }}"
            data-title="{{ title }}"
+           data-description="
+             <div class='caption-block'>
+               <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
+               <div class='caption-meta'><strong>Location:</strong> {{ p.location_en }}</div>
+               <div class='caption-meta'><strong>Place / Background:</strong> {{ p.landmark_en }}</div>
+               <div class='caption-text'>{{ p.description_en }}</div>
+             </div>"
            data-description-en="
              <div class='caption-block'>
                <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
