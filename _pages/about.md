@@ -61,8 +61,8 @@ In my leisure time, I enjoy traveling, exploring cities, experiencing diverse cu
   <!-- Right Column : Visitors Map -->
   <div style="flex:1 1 48%;min-width:300px;text-align:center;background:none;">
     <h3 style="font-weight:normal;color:#333;margin-bottom:10px;">🌎 Visitors Map</h3>
-    <div id="mapmyvisitors-widget" style="margin-top:10px;min-height:180px;">
-      <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=QUTFhPF9-eC4Mdh7Msb9VPTEKLF9ECA6uBTRmQtF1og&cl=ffffff&w=a"></script>
+    <div id="visitor-map-container" style="margin-top:10px;min-height:180px;">
+      <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=QUTFhPF9-eC4Mdh7Msb9VPTEKLF9ECA6uBTRmQtF1og&cl=ffffff&w=a"></script>
       <noscript>
         <p style="font-size:13px;color:#777;">Visitor map requires JavaScript.</p>
       </noscript>
