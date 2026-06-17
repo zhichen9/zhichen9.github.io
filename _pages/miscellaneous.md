@@ -1,0 +1,398 @@
+---
+layout: archive
+title: "Miscellaneous"
+permalink: /miscellaneous/
+author_profile: false
+body_class: misc-gallery-page
+markdown: false
+---
+
+<!-- 
+  🌍 Travel Gallery Page
+  Author: Zhichen
+  Updated: 2025-10
+  Features:
+    - Sticky top nav with shadow + ScrollSpy
+    - Search filter
+    - Reading progress bar
+    - Loading fade-in
+    - Masonry gallery with fade-in images
+    - GLightbox fullscreen with English/中文 captions (toggle button 🌐)
+    - Country sections with flag-colored gradient header line
+    - Floating "Back to Top" button
+    - Per-country "Download Album" buttons
+    - Per-country summary/subtitle from _data/travel/section_meta.yml
+-->
+
+{%- assign data = site.data.travel.descriptions -%}
+{%- assign meta = site.data.travel.section_meta -%}
+
+<!-- Reading progress bar + Loading overlay -->
+<div id="progress-bar"></div>
+<div id="loading-overlay" style="position:fixed;inset:0;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease;">
+  <div style="width:42px;height:42px;border:4px solid #ddd;border-top-color:#2980b9;border-radius:50%;animation:spin 1s linear infinite;"></div>
+  <p style="margin-top:12px;color:#666;">Loading gallery…</p>
+</div>
+
+<!-- Title + Intro -->
+<h1 id="top" style="text-align:center;margin:12px 0 8px;opacity:0;transform:translateY(-10px);animation:fadeSlide 0.9s ease-out forwards;">
+  🌍 Travel Gallery
+</h1>
+
+<p class="gallery-intro">
+  <em>
+    Welcome to my gallery! Here are a few snapshots from my academic life and personal journey.<br>
+    A collection of travel memories — each place tells a story of moments, light, and time.
+  </em>
+</p>
+
+<nav id="gallery-nav"></nav>
+
+<div id="search-bar" style="text-align:center;margin:10px 0 2px;">
+  <input id="country-search" type="text" placeholder="🔍 Search country or keyword..."
+         style="padding:8px 14px;width:60%;max-width:420px;border:1px solid #ccc;border-radius:8px;font-size:15px;">
+</div>
+<p id="no-result" style="display:none;text-align:center;color:#999;margin:10px 0 16px;">No matching results 😢</p>
+
+<!-- Countries -->
+{%- assign sections = 
+  "dec_finland|🇫🇮|Finland|#003580|12|2022|Dec,/downloads/finland.zip;
+   nov_denmark|🇩🇰|Denmark|#C60C30|36|2022|Nov,/downloads/denmark.zip;
+   oct_italy|🇮🇹|Italy|#008C45|12|2022|Oct,/downloads/italy.zip;
+   sep_france|🇫🇷|France|#0055A4|28|2022|Sep,/downloads/france.zip;
+   aug_germany|🇩🇪|Germany|#000000|36|2022|Aug,/downloads/germany.zip" 
+   | split: ";" -%}
+
+{%- for raw in sections -%}
+  {%- assign parts = raw | strip | split: "," -%}
+  {%- assign left = parts[0] | split: "|" -%}
+  {%- assign key = left[0] | strip -%}
+  {%- assign flag = left[1] | strip -%}
+  {%- assign cname = left[2] | strip -%}
+  {%- assign theme = left[3] | strip -%}
+  {%- assign total = left[4] | plus: 0 -%}
+  {%- assign year = left[5] | strip -%}
+  {%- assign month = left[6] | strip -%}
+  {%- assign dl = parts[1] | strip -%}
+  {%- assign photos = data[key] -%}
+  {%- assign secmeta = meta[key] -%}
+
+  <div class="country-section" data-country="{{ cname }}" style="--theme1:{{ theme }};--theme2:#f7f9ff;">
+    <div class="country-header">
+      <h3 class="toggle">{{ flag }} {{ month }}. {{ year }} – {{ cname }} Memories</h3>
+
+      {%- if secmeta and secmeta.summary_en -%}
+        <p class="section-summary">{{ secmeta.summary_en }}</p>
+      {%- else -%}
+        <p class="section-summary">Scenes from {{ cname }} — light, rhythm, and color in every frame.</p>
+      {%- endif -%}
+
+      {%- if secmeta and secmeta.subtitle_en -%}
+        <p class="section-subtitle">{{ secmeta.subtitle_en }}</p>
+      {%- endif -%}
+    </div>
+
+    <p class="photo-desc">Click a photo to open full view. Use 🌐 to toggle English / 中文 captions.</p>
+
+    <div class="gallery">
+      {%- for i in (1..total) -%}
+        {%- assign p = photos | where: "id", i | first -%}
+        {%- if p -%}
+        {%- assign title = p.title_en | default: cname | append: " — Scene " | append: i -%}
+        {%- assign cname_lower = cname | downcase -%}
+
+        <a href="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
+           class="glightbox"
+           data-gallery="{{ key }}"
+           data-title="{{ title }}"
+           data-description-en="
+             <div class='caption-block'>
+               <div class='caption-meta'><strong>Location:</strong> {{ p.location_en }}</div>
+               <div class='caption-meta'><strong>Date:</strong> {{ p.date }}</div>
+               <div class='caption-meta'><strong>Weather:</strong> {{ p.weather_en }}</div>
+               <div class='caption-meta'><strong>Landmark:</strong> {{ p.landmark_en }}</div>
+               <div class='caption-text'>{{ p.description_en }}</div>
+             </div>"
+           data-description-zh="
+             <div class='caption-block'>
+               <div class='caption-meta'><strong>地点：</strong>{{ p.location_zh }}</div>
+               <div class='caption-meta'><strong>时间：</strong>{{ p.date }}</div>
+               <div class='caption-meta'><strong>天气：</strong>{{ p.weather_zh }}</div>
+               <div class='caption-meta'><strong>地标：</strong>{{ p.landmark_zh }}</div>
+               <div class='caption-text'>{{ p.description_zh }}</div>
+             </div>">
+          <img loading="lazy"
+               src="{{ site.baseurl }}/images/travel/{{ year }}/{{ key }}/{{ year }}_{{ cname_lower }}_{{ i }}.jpg"
+               alt="{{ title }}">
+        </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <p class="download-link">
+      <a href="{{ dl }}" download>💾 Download {{ cname }} Album ({{ total }} photos)</a>
+    </p>
+    <div class="back-top"><a href="#top">↑ Back to Top</a></div>
+  </div>
+{%- endfor -%}
+
+<hr style="margin-top:56px;margin-bottom:10px;">
+<p style="text-align:center;margin-top:10px;color:#555;font-size:15px;">
+  📧 Contact: <a href="mailto:zhichen.colin@gmail.com" style="color:#2980b9;text-decoration:none;">zhichen.colin@gmail.com</a>
+</p>
+
+<button id="go-top" title="Back to Top">↑</button>
+
+<link rel="stylesheet" href="{{ '/assets/css/glightbox.min.css' | relative_url }}">
+
+<style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeSlide{to{opacity:1;transform:translateY(0)}}
+
+#progress-bar{
+  position:fixed;top:0;left:0;height:4px;width:0;
+  background:linear-gradient(90deg,#2980b9,#8e44ad);
+  z-index:200
+}
+
+#gallery-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(8px);
+  text-align:center;padding:10px;
+  border-bottom:1px solid #ddd;
+  transition:box-shadow .3s
+}
+#gallery-nav.shadow{box-shadow:0 2px 10px rgba(0,0,0,.1)}
+#gallery-nav a{
+  display:inline-block;margin:0 8px;padding:8px 14px;border-radius:8px;
+  background:#f5f5f5;color:#333;text-decoration:none;font-weight:600;transition:all .3s
+}
+#gallery-nav a.active,#gallery-nav a:hover{background:#333;color:#fff}
+
+#country-search:focus{
+  outline:none;border-color:#2980b9;box-shadow:0 0 6px rgba(41,128,185,.28)
+}
+
+.country-section{
+  position:relative;
+  background:linear-gradient(180deg,var(--theme2) 0%,#fff 100%);
+  border-radius:14px;padding:25px 20px;margin-bottom:58px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05)
+}
+.country-section::before{
+  content:"";display:block;height:6px;border-radius:6px 6px 0 0;
+  background:linear-gradient(90deg,var(--theme1),var(--theme2));
+  position:absolute;left:0;right:0;top:0
+}
+
+.country-header h3{
+  color:var(--theme1);font-size:20px;margin:0 0 6px;font-weight:700;cursor:pointer
+}
+.section-summary{
+  margin:6px 0 8px;
+  color:#555;
+  font-size:16px;
+  line-height:1.6;
+  text-align:left;
+}
+.section-subtitle{
+  margin:0 0 12px;
+  color:#6a6a6a;
+  font-size:15px;
+  line-height:1.7;
+  text-align:center;
+  font-style:italic;
+}
+
+.photo-desc{
+  font-style:italic;color:#666;margin:2px 0 14px;text-align:center
+}
+
+.gallery{column-count:3;column-gap:15px}
+.gallery a{position:relative;display:inline-block;break-inside:avoid}
+.gallery img{
+  width:100%;height:auto;border-radius:8px;margin-bottom:15px;
+  opacity:0;transform:translateY(14px);transition:all .8s ease
+}
+.gallery img.visible{opacity:1;transform:translateY(0)}
+.gallery img:hover{
+  transform:scale(1.03);
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  will-change:transform
+}
+
+.download-link{text-align:center;margin:8px 0}
+.download-link a{
+  background:#2980b9;color:#fff;padding:8px 14px;border-radius:8px;
+  text-decoration:none;font-size:14px
+}
+.download-link a:hover{background:#1f5f87}
+
+.back-top{text-align:right;margin-top:8px}
+.back-top a{font-size:14px;color:#777;text-decoration:none}
+.back-top a:hover{color:var(--theme1)}
+
+#go-top{
+  position:fixed;bottom:30px;right:30px;background:#2980b9;color:#fff;border:none;
+  border-radius:50%;width:44px;height:44px;font-size:18px;
+  box-shadow:0 4px 12px rgba(0,0,0,.22);
+  opacity:0;pointer-events:none;transition:all .3s
+}
+#go-top.show{opacity:1;pointer-events:auto}
+#go-top:hover{transform:scale(1.08)}
+
+.gdesc-inner{
+  background:rgba(255,255,255,0.92)!important;
+  color:#222!important;border-radius:10px;padding:10px 14px;
+  line-height:1.55;font-size:14px;max-width:820px;margin:auto
+}
+
+#lang-toggle{
+  position:fixed;top:10px;right:10px;background:#333;color:#fff;font-size:13px;
+  border:none;border-radius:8px;padding:6px 10px;z-index:9999;cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,.3)
+}
+#lang-toggle:hover{background:#555}
+
+.caption-block{
+  text-align:left;line-height:1.7;
+  font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif
+}
+.caption-meta{
+  font-size:14px;color:#444;margin-bottom:4px
+}
+.caption-text{
+  margin-top:10px;font-size:15px;color:#222;font-style:italic
+}
+
+.gallery-intro{
+  text-align:center;color:#555;font-size:16px;line-height:1.6;letter-spacing:.3px;
+  font-style:italic;margin:0 0 18px;
+  font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif
+}
+
+@media(max-width:1000px){.gallery{column-count:2}}
+@media(max-width:680px){.gallery{column-count:1}}
+</style>
+
+<script src="{{ '/assets/js/glightbox.min.js' | relative_url }}"></script>
+<script>
+window.addEventListener("load", ()=>{
+  const overlay=document.getElementById("loading-overlay");
+  setTimeout(()=>{overlay.style.opacity=0;setTimeout(()=>overlay.remove(),650)},500);
+
+  const nav=document.getElementById("gallery-nav");
+  const sections=[...document.querySelectorAll(".country-section")];
+
+  sections.forEach(sec=>{
+    const name=sec.dataset.country;
+    const id=name.toLowerCase();
+    sec.id=id;
+    const a=document.createElement("a");
+    a.href=`#${id}`;
+    a.textContent=name;
+    nav.appendChild(a);
+  });
+
+  const navLinks=[...document.querySelectorAll('#gallery-nav a')];
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        navLinks.forEach(l=>l.classList.remove('active'));
+        const c=document.querySelector(`#gallery-nav a[href="#${e.target.id}"]`);
+        if(c)c.classList.add('active');
+      }
+    });
+  },{threshold:0.3,rootMargin:"-20% 0px -60% 0px"});
+  sections.forEach(sec=>spy.observe(sec));
+
+  const goTop=document.getElementById("go-top");
+  const progress=document.getElementById("progress-bar");
+
+  const onScroll=()=>{
+    nav.classList.toggle("shadow",window.scrollY>60);
+    goTop.classList.toggle("show",window.scrollY>420);
+    const max=document.body.scrollHeight-window.innerHeight;
+    const pct=max>0?(window.scrollY/max)*100:0;
+    progress.style.width=pct+"%";
+  };
+  onScroll();
+  window.addEventListener("scroll",onScroll);
+
+  goTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+  const input=document.getElementById("country-search");
+  const noRes=document.getElementById("no-result");
+  input.addEventListener("input",()=>{
+    const val=input.value.trim().toLowerCase();
+    let visible=0;
+    sections.forEach(sec=>{
+      const match=sec.textContent.toLowerCase().includes(val);
+      sec.style.display=match?"":"none";
+      if(match)visible++;
+    });
+    noRes.style.display=(visible===0&&val!=="")?"block":"none";
+  });
+
+  const imgs=document.querySelectorAll(".gallery img");
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      }
+    });
+  },{rootMargin:"0px 0px -10% 0px"});
+  imgs.forEach(i=>io.observe(i));
+
+  document.querySelectorAll(".country-header .toggle").forEach(h3=>{
+    h3.addEventListener("click",()=>{
+      const gal=h3.parentElement.parentElement.querySelector(".gallery");
+      gal.style.display=(gal.style.display==='none'?'block':'none');
+    });
+  });
+
+  let currentLang='en';
+  const btn=document.createElement("button");
+  btn.id="lang-toggle";
+  btn.textContent="🌐 EN / 中文";
+  btn.addEventListener("click",()=>{
+    currentLang=(currentLang==='en'?'zh':'en');
+    updateLang();
+  });
+  document.body.appendChild(btn);
+
+  const lb=GLightbox({
+    selector:".glightbox",
+    touchNavigation:true,
+    loop:true,
+    zoomable:true,
+    descPosition:"bottom",
+    onOpen:()=>updateLang(),
+    afterSlideChange:()=>updateLang()
+  });
+
+  function updateLang(){
+    document.querySelectorAll(".gslide-description .gdesc-inner").forEach(el=>{
+      const slide=el.closest(".gslide");
+      const img=slide?.querySelector(".gslide-image img");
+      const src=img?.getAttribute("src");
+      if(!src) return;
+
+      const matchingLink=[...document.querySelectorAll("a.glightbox")].find(a=>{
+        const href=a.getAttribute("href");
+        return href===src || href.endsWith(src);
+      });
+
+      if(!matchingLink) return;
+
+      const text=currentLang==='en'
+        ? matchingLink.dataset.descriptionEn
+        : matchingLink.dataset.descriptionZh;
+
+      el.innerHTML=text||"";
+    });
+  }
+});
+</script>
