@@ -44,7 +44,7 @@
   --site-border: #e6e6e6;
   --site-link: #0645ad;
   --site-link-hover: #000000;
-  --site-nav-bg: #ffffff;
+  --site-nav-bg: #f3f3f3;
   --site-button-bg: #f7f7f7;
   --site-button-text: #333333;
   --site-button-border: #d8d8d8;
@@ -58,7 +58,7 @@
     --site-border: #33363a;
     --site-link: #8ab4f8;
     --site-link-hover: #d2e3fc;
-    --site-nav-bg: #161719;
+    --site-nav-bg: #1f2023;
     --site-button-bg: #202124;
     --site-button-text: #eeeeee;
     --site-button-border: #44474d;
@@ -72,7 +72,7 @@
   --site-border: #33363a;
   --site-link: #8ab4f8;
   --site-link-hover: #d2e3fc;
-  --site-nav-bg: #161719;
+  --site-nav-bg: #1f2023;
   --site-button-bg: #202124;
   --site-button-text: #eeeeee;
   --site-button-border: #44474d;
@@ -266,15 +266,16 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 112px;
+    width: 92px;
     min-height: 100vh;
-    border-right: 1px solid var(--site-border);
+    background: var(--site-nav-bg);
+    border-right: 1px solid #d4d4d4;
     border-bottom: 0;
   }
 
   .masthead__inner-wrap {
     width: auto;
-    padding: 14px 9px;
+    padding: 12px 8px;
   }
 
   .greedy-nav button {
@@ -307,17 +308,26 @@ body {
     float: none;
     display: block;
     height: auto;
-    margin: 0 0 4px;
+    margin: 0 0 3px;
     padding: 0;
     white-space: normal;
   }
 
   .masthead__menu-item--lg {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #999;
   }
 
   .masthead__menu-item a {
-    font-size: 0.95em;
+    color: #0645ad;
+    font-size: 0.86em;
+    line-height: 1.2;
+  }
+
+  .masthead__menu-item--lg a {
+    color: #000;
+    font-weight: 700;
   }
 
   .theme-toggle {
@@ -326,7 +336,7 @@ body {
 
   #main,
   .page__footer {
-    margin-left: 132px;
+    margin-left: 110px;
     margin-right: auto;
   }
 
