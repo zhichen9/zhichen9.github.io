@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-<p>
+<p class="academic-profile">
   <strong>Zhi Chen (陈智)</strong><br>
   Ph.D. Student in Supply Chain Management<br>
   C. T. Bauer College of Business, University of Houston<br>
@@ -27,7 +27,7 @@ B.S. in Information Management and Information Systems, Hohai University, Sep. 2
 
 Visiting Student, Kuhne Logistics University, Sep. 2022 - Jan. 2023.
 
-## Academic Employment
+## Research Experience and Academic Employment
 
 Instructional Assistant, C. T. Bauer College of Business, University of Houston, 2025 - Present.
 
@@ -37,7 +37,7 @@ Graduate Research Assistant, Tongji University, 2022 - 2025.
 
 Healthcare Operations; Digital Platforms; Retail Operations; Online Reviews; Information Technology.
 
-## Research Skills
+## Skills
 
 Research Methods: Empirical Analysis, Game Theory, Optimization.
 
@@ -49,7 +49,7 @@ Academic Progress Scholarship, Hohai University, 2017.
 
 Jiangsu Province College Students' Innovative Training Plan Program, 2017.
 
-## Visitor Map
+## Visitors
 
 <div id="visitor-map-container" style="margin-top:10px;min-height:180px;">
   <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=QUTFhPF9-eC4Mdh7Msb9VPTEKLF9ECA6uBTRmQtF1og&cl=ffffff&w=a"></script>
