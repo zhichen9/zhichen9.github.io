@@ -3,25 +3,19 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-          <li class="masthead__menu-item masthead__menu-item--theme">
-            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme: Light. Click to switch." title="Theme: Light">
-              <span class="theme-toggle__label">Theme: Light</span>
-            </button>
-          </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
+      <nav id="site-nav" class="academic-nav" aria-label="Primary navigation">
+        <a class="academic-nav__title" href="{{ base_path }}/">{{ site.title }}</a>
+        {% for link in site.data.navigation.main %}
+          {% if link.url contains 'http' %}
+            {% assign domain = '' %}
+          {% else %}
+            {% assign domain = base_path %}
+          {% endif %}
+          <a class="academic-nav__link" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme: Light. Click to switch." title="Theme: Light">
+          <span class="theme-toggle__label">Theme: Light</span>
+        </button>
       </nav>
     </div>
   </div>

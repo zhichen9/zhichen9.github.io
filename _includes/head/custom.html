@@ -96,26 +96,30 @@ body {
 }
 
 .masthead__inner-wrap {
-  max-width: 820px;
-  padding: 18px 16px 12px;
+  padding: 10px 8px;
 }
 
-.masthead__menu-item--lg {
-  padding-right: 28px;
+.academic-nav__title {
+  display: block;
+  margin: 0 0 7px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #999;
+  color: #000;
   font-weight: 700;
-}
-
-.masthead__menu-item a {
-  color: var(--site-text);
-}
-
-.masthead__menu-item a:hover {
-  color: var(--site-link-hover);
   text-decoration: underline;
 }
 
-.masthead__menu-item--theme {
-  float: right;
+.academic-nav__link {
+  display: block;
+  margin: 0 0 4px;
+  color: var(--site-link);
+  text-decoration: none;
+}
+
+.academic-nav__link:hover,
+.academic-nav__title:hover {
+  color: var(--site-link-hover);
+  text-decoration: underline;
 }
 
 .theme-toggle {
@@ -236,17 +240,10 @@ body {
 }
 
 @media (max-width: 720px) {
-  .masthead__menu-item--theme {
-    float: none;
-  }
-
-  .masthead__menu-item--lg {
-    display: block;
-    padding-right: 0;
-    margin-bottom: 8px;
-  }
-
-  .masthead__menu-item {
+  .academic-nav__title,
+  .academic-nav__link,
+  .theme-toggle {
+    display: inline-block;
     margin-right: 14px;
   }
 
@@ -278,56 +275,11 @@ body {
     padding: 12px 8px;
   }
 
-  .greedy-nav button {
-    display: none;
-  }
-
-  .greedy-nav .visible-links,
-  .greedy-nav .hidden-links {
-    position: static;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    transform: none;
-  }
-
-  .greedy-nav .hidden-links.hidden {
-    display: block !important;
-  }
-
-  .greedy-nav .hidden-links::before {
-    display: none;
-  }
-
-  .masthead__menu-item,
-  .masthead__menu-item--lg,
-  .masthead__menu-item--theme {
-    float: none;
-    display: block;
-    height: auto;
-    margin: 0 0 3px;
-    padding: 0;
-    white-space: normal;
-  }
-
-  .masthead__menu-item--lg {
-    margin-bottom: 8px;
-    padding-bottom: 3px;
-    border-bottom: 1px solid #999;
-  }
-
-  .masthead__menu-item a {
-    color: #0645ad;
+  .academic-nav__title,
+  .academic-nav__link,
+  .theme-toggle {
     font-size: 0.86em;
     line-height: 1.2;
-  }
-
-  .masthead__menu-item--lg a {
-    color: #000;
-    font-weight: 700;
   }
 
   .theme-toggle {
